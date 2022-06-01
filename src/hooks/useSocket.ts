@@ -1,14 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { io, Socket } from "socket.io-client";
-import { PROTOCOL } from "../utils/Constants";
-
-const ENDPOINT = "http://localhost:4000";
+import { API_URL, PROTOCOL } from "../utils/Constants";
 
 export function useSocket() {
   const [socket, setSocket] = useState<Socket<any, any>>();
 
   useEffect(() => {
-    const socket = io(ENDPOINT, {
+    const socket = io(API_URL, {
       transports: ["websocket"],
       upgrade: false,
     });

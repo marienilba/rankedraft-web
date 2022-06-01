@@ -2,8 +2,8 @@ import { Button, Flex, Stack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 // import { ResponsiveSunburst } from "@nivo/sunburst";
 import { ResponseToFPBData, Stats } from "./Data";
-import { Breeds } from "../../utils/BreedIndex";
-import { useTheme } from "../../hooks/useTheme";
+import { Breeds } from "../../../utils/BreedIndex";
+import { useTheme } from "../../../hooks/useTheme";
 
 export const ResponseToFPB = ({ stats }: { stats: Stats }) => {
   // const [bgTheme, colorTheme, theme] = useTheme();

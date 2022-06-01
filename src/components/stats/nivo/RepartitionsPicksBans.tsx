@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 // import { ResponsiveNetwork } from "@nivo/network";
 import { useState, useEffect } from "react";
-import { Breeds } from "../../utils/BreedIndex";
+import { Breeds } from "../../../utils/BreedIndex";
 import { Stats, PathPicksBansData } from "./Data";
 
 export const RepartitionsPicksBans = ({ stats }: { stats: Stats }) => {

@@ -3,7 +3,7 @@ import { DateWinrateData, Stats } from "./Data";
 import { useEffect, useState } from "react";
 import { Flex } from "@chakra-ui/react";
 import { YisWhatPercentOfX } from "../Functions";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../../hooks/useTheme";
 
 export const DateWinrate = ({ stats }: { stats: Stats }) => {
   // const [bgTheme, colorTheme, theme] = useTheme();

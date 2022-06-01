@@ -1,5 +1,9 @@
 import { PROTOCOLType } from "../components/ranked/ranked_module/Types";
 
+export const API_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.NEXT_PUBLIC_API_URL
+    : "http://localhost:4000";
 export const PROTOCOL: PROTOCOLType = {
   TO_CONFIRM: "toConfirm",
   TO_VALIDATE: "toValidate",

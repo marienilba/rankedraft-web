@@ -1,13 +1,14 @@
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { supabase } from "../../utils/supabaseClient";
 
 export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   //The line below isn't working as expected, see README.tx
   //   let authResult = await supabase.auth.api.getUserByCookie(req)
+
   let authResult = await getUser(req);
 
   if (authResult.error) {
+    console.error(authResult.error);
     return NextResponse.redirect(req.nextUrl.origin);
   } else if (!authResult.user) {
     return NextResponse.redirect(req.nextUrl.origin);

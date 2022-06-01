@@ -11,6 +11,7 @@ export const UserContextProvider = (props) => {
   const [user, setUser] = useState(null);
   const [userRole, setUserRole] = useState(null);
   const [subscription, setSubscription] = useState(null);
+  const [lastEvent, setLastEvent] = useState(null);
   const router = useRouter();
   const queryClient = useQueryClient();
 
@@ -20,14 +21,16 @@ export const UserContextProvider = (props) => {
     setUser(session?.user ?? null);
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        if (event === "SIGNED_OUT") {
+        if (event !== lastEvent) {
           await fetch("/api/auth/set", {
             method: "POST",
             headers: new Headers({ "Content-Type": "application/json" }),
             credentials: "same-origin",
             body: JSON.stringify({ event, session }),
           });
+          setLastEvent(event);
         }
+
         setSession(session);
         setUser(session?.user ?? null);
       }
@@ -37,20 +40,6 @@ export const UserContextProvider = (props) => {
       authListener?.unsubscribe();
     };
   }, []);
-
-  useEffect(() => {
-    async function setSupabaseCookie(session) {
-      await fetch("/api/auth/set", {
-        method: "POST",
-        headers: new Headers({ "Content-Type": "application/json" }),
-        credentials: "same-origin",
-        body: JSON.stringify({ event: "SIGNED_IN", session }),
-      });
-    }
-    if (userLoaded && session) {
-      setSupabaseCookie(session);
-    }
-  }, [userLoaded]);
 
   const getUserRole = () => supabase.auth.user();
 

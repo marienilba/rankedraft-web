@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 // import { ResponsiveNetwork } from "@nivo/network";
-import { Breeds } from "../../utils/BreedIndex";
+import { Breeds } from "../../../utils/BreedIndex";
 import { PathPicksBansData, Stats } from "./Data";
 import { useState, useRef, useEffect } from "react";
 
