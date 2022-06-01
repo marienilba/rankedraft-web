@@ -35,7 +35,10 @@ const Index = () => {
           <Heading fontSize="3xl">{t("translation-bold")}</Heading>
           <Text textAlign="justify">
             {t("translation-text")}{" "}
-            <Link isExternal href="https://github.com/">
+            <Link
+              isExternal
+              href="https://github.com/maelnilba/ranked-draft-web/tree/main/public/locales"
+            >
               github
             </Link>
             .
