@@ -80,7 +80,7 @@ export const Profile = ({
             {...backgroundColor}
             size="2xl"
             src={avatar ? useAvatarSrc(avatar) : useAvatarSrc(data.avatar)}
-            borderColor={theme[400]}
+            borderColor={theme[100]}
             borderWidth="4px"
             ignoreFallback
           />
@@ -89,6 +89,7 @@ export const Profile = ({
         <Flex ref={elementRef} height="100%">
           <Flex
             direction="column"
+            flex="s"
             {...zIndexPriority.ProfileOverlap}
             justifyContent="space-around"
             maxWidth={

@@ -25,7 +25,6 @@ export const Compositions = ({
 }: CompositionsProps) => {
   const { isScreen } = useWindowSize();
   const { t } = useTranslation(["history", "common"]);
-
   const { picks, bans } = draft;
   const otherLetter = myLetter === "A" ? "B" : "A";
   return (

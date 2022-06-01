@@ -7,6 +7,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { ChangeEvent, useCallback, useState } from "react";
+import { useBreeds } from "../../hooks/useBreeds";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Breeds, useBreedAvatar } from "../../utils/BreedIndex";
 
@@ -26,6 +27,7 @@ type BreedPickProps = {
 
 export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
   const { isScreen, isPad } = useWindowSize();
+  const { translate } = useBreeds();
 
   const handleEdit = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +35,10 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
     },
     [letter, index, pick]
   );
+
+  const capitalizeFirstLetter = useCallback((txt) => {
+    return txt.charAt(0).toUpperCase() + txt.slice(1);
+  }, []);
 
   const [value, setValue] = useState(pick.mode);
 
@@ -56,7 +62,7 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
           <Flex as={Button}>
             {path === "placeholder"
               ? ""
-              : path.charAt(0).toUpperCase() + path.slice(1)}
+              : capitalizeFirstLetter(translate(pick.breed))}
           </Flex>
         )}
 

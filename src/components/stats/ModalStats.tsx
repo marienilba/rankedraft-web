@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useQuery } from "react-query";
+import { useBreeds } from "../../hooks/useBreeds";
 import { fetchStats } from "../../queries/Stats";
 import { Breeds } from "../../utils/BreedIndex";
 import { LoadingTopBar } from "../LoadingTopBar";
@@ -126,7 +127,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
   const { t } = useTranslation(["stats"]);
   const { repartitions: myRepartitions } = myPicks;
   const { repartitions: theirRepartitions } = theirPicks;
-
+  const { translate } = useBreeds();
   const capitalizeFirstLetter = (txt: string): string => {
     return txt.charAt(0).toUpperCase() + txt.slice(1);
   };
@@ -167,7 +168,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
                 if (wins + looses > 0)
                   return (
                     <Tr key={`picks_m-${idx}`}>
-                      <Td>{capitalizeFirstLetter(Breeds[idx + 1])}</Td>
+                      <Td>{capitalizeFirstLetter(translate(idx + 1))}</Td>
                       <Td>{wins + looses}</Td>
                       <Td isNumeric>{percent.toFixed(2)}%</Td>
                     </Tr>

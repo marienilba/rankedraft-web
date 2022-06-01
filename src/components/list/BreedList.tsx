@@ -21,6 +21,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useCallback, useEffect, useRef } from "react";
+import { useBreeds } from "../../hooks/useBreeds";
 import useInput from "../../hooks/useInput";
 import { useTheme } from "../../hooks/useTheme";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -40,7 +41,7 @@ export const BreedList = ({
 }: NumberListProps) => {
   const { theme } = useTheme();
 
-  const [isOpen, setIsOpen] = useBoolean(false);
+  const [_, setIsOpen] = useBoolean(false);
   const breed = Breeds[selected];
   const capitalizeFirstLetter = useCallback((txt) => {
     return txt.charAt(0).toUpperCase() + txt.slice(1);
@@ -126,7 +127,7 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
   const { isScreen, isPad, isMobile } = useWindowSize();
   const { backgroundColor, theme } = useTheme();
   const { onOpen, onClose, isOpen } = useDisclosure();
-
+  const { translate } = useBreeds();
   const ref: any = useRef();
 
   useOutsideClick({
@@ -179,7 +180,7 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
                   if (e.key === "Enter") {
                     let filter = breedsArr.filter((b) => {
                       let text = input.value.toLowerCase();
-                      const breed = Breeds[b];
+                      const breed = translate(b);
                       if (text.includes("é")) text = text.replaceAll("é", "e");
 
                       if (breed.startsWith(text)) return true;
@@ -211,7 +212,7 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
                   <Heading fontWeight={600} fontSize="md">
                     {selected === 0
                       ? placeholder
-                      : capitalizeFirstLetter(breed)}
+                      : capitalizeFirstLetter(translate(selected))}
                   </Heading>
                 )}
               </Stack>
@@ -272,7 +273,9 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
                         alt={`/profile/${breed}.png`}
                       />
                       <Heading fontWeight={600} fontSize="md">
-                        {b === 0 ? placeholder : capitalizeFirstLetter(breed)}
+                        {b === 0
+                          ? placeholder
+                          : capitalizeFirstLetter(translate(b))}
                       </Heading>
                     </Stack>
                   );

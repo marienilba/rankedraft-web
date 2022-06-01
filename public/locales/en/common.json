@@ -34,5 +34,26 @@
   "no_more_load": "No more to load",
   "all": "All",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "breeds": {
+    "0": "default",
+    "1": "cra",
+    "2": "ecaflip",
+    "3": "eliotrope",
+    "4": "eniripsa",
+    "5": "enutrof",
+    "6": "feca",
+    "7": "huppermage",
+    "8": "iop",
+    "9": "osamodas",
+    "10": "pandawa",
+    "11": "rogue",
+    "12": "sacrier",
+    "13": "sadida",
+    "14": "sram",
+    "15": "foggernaut",
+    "16": "xelor",
+    "17": "masqueraider",
+    "18": "ouginak"
+  }
 }
