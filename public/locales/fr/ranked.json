@@ -1,0 +1,54 @@
+{
+  "deprecated": " Le module de ranked est déprécié sur mobile.",
+  "ladder": {
+    "title": "Ladder",
+    "rank": "Rang",
+    "username": "Pseudo",
+    "elo": "Elo",
+    "strikes": "Consécutives",
+    "no_player": "Aucun joueur"
+  },
+  "lobbies": {
+    "tooltip": "Voir les lobbies en cours",
+    "title": "Draft en cours",
+    "time_ago": "Il y a {{time}}"
+  },
+  "module": {
+    "title": "Ranked Draft",
+    "register": "S'inscire",
+    "looking_for": "En recherche d'adversaire",
+    "opponent_find": "Adversaire trouvé !",
+    "accept": "Accepter",
+    "refuse": "Refuser",
+    "refuse_warning_title": "Êtes-vous sur de vouloir refuser ?",
+    "refuse_warning_message": "Le refus peut-être sanctionner par des pénalitées et avertissements s'il est occassioné de manière fréquentes ou pratiquant un abus.",
+    "forfeit": "Abandonner",
+    "report": "Signaler",
+    "report_modal": {
+      "title": "Signaler {{username}}",
+      "toxic": "Comportement toxique ciblé",
+      "AFK": "AFK Fréquement",
+      "unrespect": "Ne respecte pas les règles de conduite"
+    },
+    "confirm_refuse": "Oui, refuser",
+    "send_link": "Envoyer un lien d'invitation",
+    "waiting_link": "En attente d'un lien de {{username}}",
+    "link_tooltip": "Lien KTA pour créer une draft",
+    "invalid_link": "Lien invalide",
+    "start_link": "Lancer la draft via le lien de {{username}}",
+    "result_match": "Résultat du match pour {{username}}",
+    "waiting_result": "Attente du résultat adverse.",
+    "respect_rules": "Veuillez respecter le règlement",
+    "rules": {
+      "title": "Conduite des drafts ranked.",
+      "1": "— Les drafts ranked fonctionne grâce au fair-play des joueurs.",
+      "2": "— L'abus de faux résultat rapporté est soumis à avertissements, sanctions si récidive.",
+      "3": "— Le forfait est cependant pas sanctionné."
+    },
+    "won": "Gagné",
+    "lost": "Perdu",
+    "already_in": "Une instance est déjà en cours sur le compte",
+    "logout": "Déconnecter",
+    "opponent_left": "L'adversaire a quitter le lobby."
+  }
+}

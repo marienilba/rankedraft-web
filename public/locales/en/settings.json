@@ -1,0 +1,23 @@
+{
+  "theme": "Theme",
+  "language": "Language",
+  "auto-complete": "Auto-complete draft",
+  "auto-complete_tooltip": "Auto-complete the letter",
+  "import_from_sheet": "Import from spreadsheet",
+  "import_file": "Import file",
+  "import_file_warning": "You must have at least one autocomplete nickname",
+  "delete_histories": "Delete all history",
+  "delete_histories_warning_title": "Delete History",
+  "delete_histories_warning_message": "This action will delete your entire history. No rollback is possible.",
+  "email_check_input": "Type your email to confirm",
+  "switch_visible": "Be visible in the current matches tab",
+  "switch_sfx": "Disable ranked module sound notifications",
+  "index_bads": "Indexes don't match",
+  "transfer": "Transfer",
+  "test_to_confirm": "Test to confirm",
+  "url": "urL",
+  "result": "Result",
+  "initiative": "initiative",
+  "map": "Map",
+  "comments": "Comments"
+}

@@ -1,0 +1,13 @@
+{
+  "create_team": "Create team",
+  "join_team": "Join a team",
+  "team_name": "Team name",
+  "kta_link": "KTA link",
+  "join": "Join",
+  "invitation_code": "Invitation code",
+  "members": "Members",
+  "left_team": "Leave team",
+  "toast_title": "Invitation code added to your clipboard.",
+  "toast_message": "Give the invitation code to those you want invited.",
+  "create": "Create"
+}

@@ -1,0 +1,13 @@
+{
+  "apply": "Apply",
+  "unban": "Unban",
+  "ban": "Ban {{n}}",
+  "banishment": "banishment",
+  "hours": "hours",
+  "weeks": "weeks",
+  "months": "months",
+  "perma": "permanently",
+  "select": "Choose one",
+  "role": "role",
+  "avatar": "avatar"
+}

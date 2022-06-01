@@ -1,0 +1,29 @@
+{
+  "tabs": {
+    "global": "Global",
+    "letter": "Letter",
+    "picks": "Picks",
+    "opponents": "Opponents"
+  },
+  "caption": {
+    "global": "Global statistics on {{nb}} matches",
+    "letter": "Statistics based on letter on {{nb}} matches",
+    "opponents": "Statistics against each opponent",
+    "my_picks": "My picks",
+    "opp_picks": "Opposing picks"
+  },
+  "th": {
+    "result": "Result",
+    "number": "Number",
+    "winrate": "Winrate",
+    "letter": "Letter",
+    "breed": "Class",
+    "opponent": "Opponent",
+    "win": "Victory",
+    "lose": "Loss"
+  },
+  "td": {
+    "wins": "Wins",
+    "loses": "Losses"
+  }
+}

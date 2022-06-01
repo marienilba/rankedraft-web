@@ -1,0 +1,21 @@
+{
+  "draft_history": "Historique de draft",
+  "add_3_clicks": "Ajouter vos drafts en 3 cliques",
+  "search_in": "Rechercher parmis vos drafts",
+  "ranked_matchs": "Parties classées",
+  "search_opp": "Recherche d'adversaire",
+  "classement": "Classement basé sur un système d'élo",
+  "tips": {
+    "title": "Tips & tricks",
+    "auto-detect-bold": "Auto-detection de la lettre",
+    "auto-detect-text": "Ajouter votre pseudo KTA ou le nom de votre équipe KTA permet de saisir automatiquement la lettre lors de l'ajout de draft",
+    "import-bold": "Importer votre google sheet ou excel",
+    "import-text": "Télécharger votre tableur sous le format .tsv, et importer le dans Options, saissisez les index associés, tester puis transferer",
+    "share-bold": "Partager votre historique",
+    "share-text": "Créer une équipe dans Équipes puis copier le lien d'invitation, envoyer le au gens avec lesquels vous souhaitez partager l'historique. Lors de l'ajout d'une draft, selectionner l'équipe",
+    "seizure-bold": "Saissi multiple",
+    "seizure-text": "Lors de la saissi d'adversaire ou tag par un \",\" afin d'en saissir plusieurs",
+    "show-comments-bold": "Afficher les commentaires",
+    "show-comments-text": "permet d'afficher l'entièreté des commentaires dans la prévisualisation de l'historique"
+  }
+}

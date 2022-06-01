@@ -1,0 +1,13 @@
+{
+  "create_team": "Créer une équipe",
+  "join_team": "Rejoindre une équipe",
+  "team_name": "Nom d'équipe",
+  "kta_link": "Lien KTA",
+  "join": "Rejoindre",
+  "invitation_code": "Code d'invitation",
+  "members": "Membres",
+  "left_team": "Quitter l'équipe",
+  "toast_title": "Code d'invitation ajouter à votre presse-papier.",
+  "toast_message": "Donner le code d'invitation à ceux que vous voulez invité.",
+  "create": "Créer"
+}

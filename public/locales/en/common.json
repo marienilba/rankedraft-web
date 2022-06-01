@@ -1,0 +1,38 @@
+{
+  "page": {
+    "home": "Home",
+    "ranked": "Ranked",
+    "history": "History",
+    "teams": "Teams",
+    "profile": "Profile",
+    "more": "More",
+    "settings": "Settings",
+    "moderation": "Moderation",
+    "cgu_policy": "CGU and Policy",
+    "contribute": "Contribute",
+    "stats": "Statistics"
+  },
+  "username": "Nickname",
+  "team": "team",
+  "login": "Login",
+  "logout": "Log out",
+  "linking": {
+    "or": "or",
+    "to": "to"
+  },
+  "pronoun": {
+    "my": "My",
+    "their": "Their"
+  },
+  "delete": "Delete",
+  "quit": "Quit",
+  "save": "Save",
+  "search": "Search",
+  "confirm": "Confirm",
+  "edit": "Edit",
+  "loading": "Loading..",
+  "no_more_load": "No more to load",
+  "all": "All",
+  "yes": "Yes",
+  "no": "No"
+}

@@ -1,0 +1,31 @@
+{
+  "no_match": "No match",
+  "add_new": "Add Draft",
+  "stats": "Statistics",
+  "composition": "Composition",
+  "compo": "composition",
+  "include_filters": "Include filters",
+  "respect_order": "Respect order",
+  "respect_compo": "Used my/their comp",
+  "breed": "Breed {{b}}",
+  "map": "Map",
+  "tags": "Tags",
+  "result": "Result",
+  "win": "Victory",
+  "lose": "Loss",
+  "erase": "Erase",
+  "date": "Date",
+  "date_format": "DD/MM/YYYY",
+  "module": {
+    "new_draft": "New draft",
+    "paste_link": "Paste draft link",
+    "open_link": "Open link",
+    "opponent": "Opponent",
+    "picks": "Picks",
+    "bans": "bans",
+    "mode": "mode",
+    "remaining_breeds": "Remaining breeds",
+    "comments": "Comments",
+    "your_comments": "Your comments..."
+  }
+}

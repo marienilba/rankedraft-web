@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.0",
+    "@chakra-ui/react": "^2.1.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@supabase/supabase-js": "^1.35.3",
+    "axios": "^0.27.2",
+    "cookies-next": "^2.0.4",
+    "copy-to-clipboard": "^3.3.1",
+    "framer-motion": "^6.3.3",
+    "lodash.isequal": "^4.5.0",
+    "next": "^12.1.6",
+    "next-i18next": "^11.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-hotkeys-hook": "^3.4.6",
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^9.1.0",
+    "react-query": "^3.39.0",
+    "socket.io-client": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/lodash.isequal": "^4.5.6",
+    "@types/node": "^14.6.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "4.3.2"
+  }
+}

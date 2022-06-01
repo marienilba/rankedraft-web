@@ -1,0 +1,31 @@
+{
+  "no_match": "Aucun match",
+  "add_new": "Ajouter une draft",
+  "stats": "Statistique",
+  "composition": "Composition",
+  "compo": "composition",
+  "include_filters": "Inclure les filtres",
+  "respect_order": "Respecter l'ordre",
+  "respect_compo": "Utilisé ma/leur compo",
+  "breed": "Classe {{b}}",
+  "map": "Map",
+  "tags": "Tags",
+  "result": "Résultat",
+  "win": "Victoire",
+  "lose": "Défaite",
+  "erase": "Éffacer",
+  "date": "Date",
+  "date_format": "JJ/MM/AAAA",
+  "module": {
+    "new_draft": "Nouvelle draft",
+    "paste_link": "Coller le lien de la draft",
+    "open_link": "Ouvrir le lien",
+    "opponent": "Adversaire",
+    "picks": "Picks",
+    "bans": "Bans",
+    "mode": "mode",
+    "remaining_breeds": "Classes restantes",
+    "comments": "Commentaires",
+    "your_comments": "Vos commentaires..."
+  }
+}

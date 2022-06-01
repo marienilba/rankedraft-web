@@ -1,0 +1,21 @@
+{
+  "draft_history": "Draft History",
+  "add_3_clicks": "Add your drafts in 3 clicks",
+  "search_in": "Search in your drafts",
+  "ranked_matchs": "Ranked Matches",
+  "search_opp": "Search Opponent",
+  "classement": "Rating-based ranking",
+  "tips": {
+    "title": "Tips & Tricks",
+    "auto-detect-bold": "Auto-detect letter",
+    "auto-detect-text": "Adding your KTA nickname or KTA team name will auto-fill the letter when adding draft",
+    "import-bold": "Import your google sheet or excel",
+    "import-text": "Download your spreadsheet in .tsv format, and import it in Options, enter the associated indexes, test then transfer",
+    "share-bold": "Share your history",
+    "share-text": "Create a team in Teams then copy the invitation link, send it to the people you want to share the history with. When adding a draft, select the team",
+    "seizure-bold": "Multiple grabbed",
+    "seizure-text": "When grabbing an opponent or tagging with a \",\" in order to grab multiple",
+    "show-comments-bold": "Show Comments",
+    "show-comments-text": "show all comments in the history preview"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "page": {
+    "home": "Accueil",
+    "ranked": "Ranked",
+    "history": "Historique",
+    "teams": "Équipes",
+    "profile": "Profil",
+    "more": "Plus",
+    "settings": "Paramètres",
+    "moderation": "Modération",
+    "cgu_policy": "CGU et Politique",
+    "contribute": "Contribuer",
+    "stats": "Statistique"
+  },
+  "username": "Pseudo",
+  "team": "équipe",
+  "login": "Se connecter",
+  "logout": "Se déconnecter",
+  "linking": {
+    "or": "ou",
+    "to": "au"
+  },
+  "pronoun": {
+    "my": "Ma",
+    "their": "Leur"
+  },
+  "delete": "Supprimer",
+  "quit": "Quitter",
+  "save": "Sauvegarder",
+  "search": "Rechercher",
+  "confirm": "Confirmer",
+  "edit": "Modifier",
+  "loading": "Chargement..",
+  "no_more_load": "Plus rien à charger",
+  "all": "Tout",
+  "yes": "Oui",
+  "no": "Non"
+}

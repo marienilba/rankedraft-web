@@ -1,0 +1,54 @@
+{
+  "deprecated": "The ranked module is deprecated on mobile.",
+  "ladder": {
+    "title": "Ladder",
+    "rank": "Rank",
+    "username": "Nickname",
+    "elo": "Elo",
+    "strikes": "Consecutive",
+    "no_player": "No player"
+  },
+  "lobbies": {
+    "tooltip": "View current lobbies",
+    "title": "Draft in progress",
+    "time_ago": "{{time}} ago"
+  },
+  "module": {
+    "title": "Ranked Draft",
+    "register": "Register",
+    "looking_for": "Looking for opponent",
+    "opponent_find": "Opponent found!",
+    "accept": "Accept",
+    "refuse": "Refuse",
+    "refuse_warning_title": "Are you sure you want to refuse?",
+    "refuse_warning_message": "Refusal may result in penalties and warnings if it is frequent or abused.",
+    "forfeit": "Abandon",
+    "report": "Report",
+    "report_modal": {
+      "title": "Report {{username}}",
+      "toxic": "Targeted toxic behavior",
+      "AFK": "AFK Frequently",
+      "unrespect": "Disrespects rules of conduct"
+    },
+    "confirm_refuse": "Yes, refuse",
+    "send_link": "Send invite link",
+    "waiting_link": "Waiting for a link from {{username}}",
+    "link_tooltip": "KTA link to create a draft",
+    "invalid_link": "Invalid link",
+    "start_link": "Start draft via {{username}}'s link",
+    "result_match": "Match result for {{username}}",
+    "waiting_result": "Waiting for opponent's result.",
+    "respect_rules": "Please respect the rules",
+    "rules": {
+      "title": "Conduct of ranked drafts.",
+      "1": "— Ranked drafts work because of player fair play.",
+      "2": "— The abuse of false reported results is subject to warnings, sanctions if repeated.",
+      "3": "— The forfeit is however not sanctioned."
+    },
+    "won": "Won",
+    "lost": "Lost",
+    "already_in": "An instance is already in progress on the account",
+    "logout": "Logout",
+    "opponent_left": "Opponent has left the lobby."
+  }
+}
