@@ -13,20 +13,16 @@ export function useSocket() {
       upgrade: false,
     });
     setSocket(socket);
-
     return () => {
       socket.off();
       socket.disconnect();
     };
   }, []);
 
-  const handleSocket = useCallback(
-    (uuid: string, force: boolean) => {
-      if (!socket && !force) return;
-      socket.emit(PROTOCOL.REGISTER, { uuid });
-    },
-    [socket]
-  );
+  const handleSocket = (uuid: string, force: boolean) => {
+    if (!socket && !force) return;
+    socket.emit(PROTOCOL.REGISTER, { uuid });
+  };
 
   return [
     socket,
