@@ -150,7 +150,6 @@ export const ModalDraft = forwardRef(
         let text = typeof e === "string" ? e : e.target.value;
         if (text.includes("draft.ktarena.com/draft/room/")) {
           const data = await fetchDraft(text);
-          console.log(data);
           if (!data) return;
           const { draft, match } = data;
           if (Settings) {
