@@ -9,7 +9,7 @@ export const MapPreview = ({ map }: { map: number }) => {
       <Box width={`${1920 / 6}px`} height={`${1080 / 6}px`}>
         <Image
           fit="contain"
-          src={`/maps/A${map > 0 && map < 30 ? map : 1}.jpeg`}
+          src={`/maps/A${map > 0 && map < 30 ? map : 1}.png`}
           alt=""
           borderRadius={10}
         />
