@@ -82,9 +82,9 @@ export const AccountButton = ({ user, signOut }) => {
                 <>
                   <Avatar
                     size="md"
-                    bg="transparent"
+                    bg={theme[200]}
+                    icon={<span></span>}
                     src={useAvatarSrc(data.avatar)}
-                    ignoreFallback
                   />
                   {isScreen && (
                     <Heading

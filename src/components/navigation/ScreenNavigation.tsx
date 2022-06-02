@@ -47,7 +47,7 @@ export const ScreenNavigation = ({
 }) => {
   const { t } = useTranslation(["common"]);
   const { pathname } = useRouter();
-  const { user, userRole } = useUser();
+  const { user, userRole, userLoaded } = useUser();
   const { backgroundColor, color, theme } = useTheme();
   const { code } = useTheme({ invert: true });
   const { isPad } = useWindowSize();
@@ -161,27 +161,28 @@ export const ScreenNavigation = ({
         </Stack>
         <Spacer />
         <Divider />
-        {user ? (
-          <>
+        {userLoaded &&
+          (user ? (
+            <>
+              <Flex
+                w="100%"
+                justifyContent="center"
+                alignItems="center"
+                direction="column"
+              >
+                <AccountButton user={user} signOut={signOut} />
+              </Flex>
+            </>
+          ) : (
             <Flex
               w="100%"
               justifyContent="center"
               alignItems="center"
               direction="column"
             >
-              <AccountButton user={user} signOut={signOut} />
+              <Login signIn={signIn} />
             </Flex>
-          </>
-        ) : (
-          <Flex
-            w="100%"
-            justifyContent="center"
-            alignItems="center"
-            direction="column"
-          >
-            <Login signIn={signIn} />
-          </Flex>
-        )}
+          ))}
       </Stack>
     </Flex>
   );
