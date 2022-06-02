@@ -19,6 +19,7 @@ import {
   useDisclosure,
   useOutsideClick,
   Flex,
+  Select,
 } from "@chakra-ui/react";
 import { useCallback, useEffect, useRef } from "react";
 import { useBreeds } from "../../hooks/useBreeds";
@@ -147,6 +148,19 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
     if (isOpen) input.onChange("");
   }, [isOpen]);
 
+  if (isMobile) {
+    return (
+      <Select onChange={(e) => onSelect(e.target.value)}>
+        {breedsArr.map((b, i) => {
+          return (
+            <option value={b} key={`select-breed-${placeholder}-${b}`}>
+              {b === 0 ? placeholder : capitalizeFirstLetter(translate(b))}
+            </option>
+          );
+        })}
+      </Select>
+    );
+  }
   return (
     <Flex>
       <Popover
