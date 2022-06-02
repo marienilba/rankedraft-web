@@ -41,11 +41,12 @@ export const CardIntroduction = ({
       marginTop={marginTop}
       marginBottom={marginBottom}
       justifyContent="center"
+      alignItems="center"
     >
       <Flex justifyContent="center" alignItems="center" direction="column">
         <Heading ref={ref}>{heading}</Heading>
       </Flex>
-      <Flex maxWidth="50%">
+      <Flex maxWidth="50%" alignItems="center">
         <Fade in={isFade?.current || false}>
           <Img
             src={`/assets/${path}.${colorMode}.png`}
