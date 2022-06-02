@@ -33,6 +33,7 @@ const Index = () => {
         <Stack>
           <Heading fontSize="3xl">{t("suggests-bold")}</Heading>
           <Text textAlign="justify">{t("suggests-text")}</Text>
+          <Text textAlign="justify">{t("suggests-stats-text")}</Text>
         </Stack>
         <Stack>
           <Heading fontSize="3xl">{t("translation-bold")}</Heading>
@@ -44,7 +45,6 @@ const Index = () => {
             >
               github
             </Link>
-            .
           </Text>
         </Stack>
         <Stack>

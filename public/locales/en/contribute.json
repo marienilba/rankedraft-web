@@ -1,6 +1,7 @@
 {
   "suggests-bold": "Suggestions",
   "suggests-text": "If you have any suggestions for improvements, features or corrections, you can let me know via the various contact links. The possibility of a dedicated Discord will be studied according to the progress of the beta.",
+  "suggests-stats-text": "A page with detailed statistics already exists, however the library (nivo) is not up to date with React 18. A migration with vizx is planned. If you are a developer, you can find data type in the github components/stats and example data to create components.",
   "translation-bold": "Translations",
   "translation-text": "Currently there is only a French and English version, but you can contribute by submitting the translations for your language, all the texts used are on the",
   "monetization-bold": "Monetization",
