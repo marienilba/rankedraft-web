@@ -11,14 +11,17 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import NextLink from "next/link";
 import { PageHeading } from "../../components/PageHeading";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 const Index = () => {
   const { t } = useTranslation(["cgu"]);
+  const { isMobile } = useWindowSize();
+
   return (
     <Flex mt={10} direction="column" w="100%" paddingX={7}>
       <PageHeading>{t("cgu")}</PageHeading>
       <Divider margin={5} />
-      <Stack paddingX={7}>
+      <Stack paddingX={isMobile ? 2 : 7}>
         <Heading fontSize="3xl">{t("1")}</Heading>
         <Stack>
           <Heading fontSize="xl">1.1</Heading>

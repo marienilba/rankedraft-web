@@ -16,17 +16,18 @@ import { useTheme } from "../../hooks/useTheme";
 import { Logout } from "./Logout";
 import { useAvatarSrc } from "../../utils/AvatarIndex";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { ErrorButton } from "../ErrorButton";
 
 export const AccountButton = ({ user, signOut }) => {
   const { theme } = useTheme();
   const { isScreen, isMobile } = useWindowSize();
 
-  const { isLoading, data, isSuccess, isError } = useQuery(
+  const { isLoading, data, isSuccess, isError, refetch } = useQuery(
     ["profile", user.id],
     fetchLightProfile
   );
 
-  if (isError) return <></>;
+  if (isError) return <ErrorButton refetch={refetch} />;
 
   if (isMobile) {
     return (
@@ -50,7 +51,9 @@ export const AccountButton = ({ user, signOut }) => {
             </Heading>
           </Stack>
         ) : (
-          <> </>
+          <>
+            <Avatar size="md" bg={theme[200]} icon={<span></span>} src={""} />
+          </>
         )}
       </>
     );

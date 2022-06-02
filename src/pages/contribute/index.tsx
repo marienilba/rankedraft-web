@@ -18,15 +18,18 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { PageHeading } from "../../components/PageHeading";
 import { RiTwitterFill, RiDiscordFill } from "react-icons/ri";
 import { useCopyClipboard } from "../../hooks/useCopyClipboard";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 const Index = () => {
   const { t } = useTranslation(["contribute", "common"]);
-  const [isCopied, copy] = useCopyClipboard({ successDuration: 5000 });
+  const { isMobile } = useWindowSize();
+
+  const [isCopied, copy] = useCopyClipboard({ successDuration: 1000 });
   return (
-    <Flex mt={10} direction="column" w="100%" paddingX={7}>
+    <Flex marginY={10} direction="column" w="100%" paddingX={7}>
       <PageHeading>{t("page.contribute", { ns: "common" })}</PageHeading>
       <Divider margin={5} />
-      <Stack paddingX={7} spacing={8}>
+      <Stack paddingX={isMobile ? 2 : 7} spacing={8}>
         <Stack>
           <Heading fontSize="3xl">{t("suggests-bold")}</Heading>
           <Text textAlign="justify">{t("suggests-text")}</Text>
