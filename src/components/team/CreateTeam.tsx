@@ -14,9 +14,11 @@ import useInput from "../../hooks/useInput";
 import { useSpam } from "../../hooks/useSpam";
 import { useTripleToggle } from "../../hooks/useTripleToggle";
 import { useTranslation } from "next-i18next";
+import useIncrementation from "../../hooks/useIncrementation";
 
 export const CreateTeam = ({ onCreate }) => {
   const { t } = useTranslation(["teams", "common"]);
+  const [retry] = useIncrementation(0);
   const [teamName] = useInput();
   const [ktaLink] = useInput();
   const [ktaAvatar, setKtaAvatar] = useState("");
@@ -54,22 +56,19 @@ export const CreateTeam = ({ onCreate }) => {
       mutation.mutate({ team_name: teamName.value, kta_link: ktaLink.value });
   }, [teamName, ktaLink, isSpam]);
 
-  const handleAvatar = useCallback(
-    (exts: any) => {
-      if (verifyUrl(ktaLink.value)) {
-        let teamId = ktaLink.value;
-        if (teamId) {
-          let split = teamId.split("ktarena.com/fr/equipe/");
-          if (split && split.length === 2) teamId = split[1];
-        }
-        const ext = exts === 1 ? "jpg" : exts === 0 ? "jpeg" : "png";
-        setKtaAvatar(`https://ktarena.com/assets/img/teams/${teamId}.${ext}`);
-      } else {
-        setKtaAvatar((a) => a !== "" && a);
+  const handleAvatar = (exts: any) => {
+    if (verifyUrl(ktaLink.value)) {
+      let teamId = ktaLink.value;
+      if (teamId) {
+        let split = teamId.split("/");
+        if (split && split.length === 6) teamId = split[5];
       }
-    },
-    [ktaLink]
-  );
+      const ext = exts === 1 ? "jpg" : exts === 0 ? "jpeg" : "png";
+      setKtaAvatar(`https://ktarena.com/assets/img/teams/${teamId}.${ext}`);
+    } else {
+      setKtaAvatar((a) => a !== "" && a);
+    }
+  };
   useEffect(() => {
     mutation.status === "success" && onCreate();
   }, [mutation.status]);
@@ -83,7 +82,12 @@ export const CreateTeam = ({ onCreate }) => {
         <Avatar
           boxSize="4rem"
           src={ktaLink.value ? ktaAvatar : "/profile/placeholder.png"}
-          onError={() => toggleExtension(null)}
+          onError={() => {
+            if (retry.value < 4) {
+              retry.inc();
+              toggleExtension(null);
+            }
+          }}
           bg="transparent"
         />
       </Flex>

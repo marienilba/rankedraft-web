@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 
-export default function useIncrementation(initialValue: number) {
+export default function useIncrementation(
+  initialValue: number
+): { value: any; inc: () => void; dec: () => void; reset: () => void }[] {
   const [value, setValue] = useState<number>(initialValue);
   const inc = useCallback(() => {
     setValue((v) => v + 1);
