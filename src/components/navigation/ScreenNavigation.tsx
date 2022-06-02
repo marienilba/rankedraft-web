@@ -159,28 +159,27 @@ export const ScreenNavigation = ({
         </Stack>
         <Spacer />
         <Divider />
-        {userLoaded &&
-          (user ? (
-            <>
-              <Flex
-                w="100%"
-                justifyContent="center"
-                alignItems="center"
-                direction="column"
-              >
-                <AccountButton user={user} signOut={signOut} />
-              </Flex>
-            </>
-          ) : (
+        {user ? (
+          <>
             <Flex
               w="100%"
               justifyContent="center"
               alignItems="center"
               direction="column"
             >
-              <Login signIn={signIn} />
+              <AccountButton user={user} signOut={signOut} />
             </Flex>
-          ))}
+          </>
+        ) : (
+          <Flex
+            w="100%"
+            justifyContent="center"
+            alignItems="center"
+            direction="column"
+          >
+            <Login signIn={signIn} />
+          </Flex>
+        )}
       </Stack>
     </Flex>
   );
