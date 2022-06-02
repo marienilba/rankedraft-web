@@ -36,6 +36,7 @@ import NextLink from "next/link";
 import { useUser } from "../../hooks/useUser";
 import { MdOutlinePrivacyTip, MdPolicy } from "react-icons/md";
 import { useTranslation } from "next-i18next";
+import { useCountRenders } from "../../hooks/useCountRenders";
 
 export const ScreenNavigation = ({
   signIn,
@@ -50,6 +51,7 @@ export const ScreenNavigation = ({
   const { backgroundColor, color, theme } = useTheme();
   const { code } = useTheme({ invert: true });
   const { isPad } = useWindowSize();
+  useCountRenders("screen");
   return (
     <Flex
       sx={{ position: "sticky", top: "0", ...zIndexPriority.Navigation }}

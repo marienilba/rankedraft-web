@@ -12,6 +12,7 @@ export const UserContextProvider = (props) => {
   const [userRole, setUserRole] = useState(null);
   const [subscription, setSubscription] = useState(null);
   const [lastEvent, setLastEvent] = useState(null);
+  const [isFetchingUser, setIsFetchingUser] = useState(true);
   const router = useRouter();
   const queryClient = useQueryClient();
 
@@ -55,6 +56,7 @@ export const UserContextProvider = (props) => {
         setUserLoaded(true);
       });
     }
+    setIsFetchingUser(false);
   }, [user]);
 
   const value = {
@@ -62,15 +64,21 @@ export const UserContextProvider = (props) => {
     user,
     userRole,
     userLoaded,
+    isFetchingUser,
     subscription,
-    signIn: () =>
-      supabase.auth.signIn({
-        provider: "google",
-      }),
-    signUp: () =>
-      supabase.auth.signUp({
-        provider: "google",
-      }),
+    signIn: () => {
+      return supabase.auth.signIn(
+        {
+          provider: "google",
+        },
+        {
+          redirectTo:
+            process.env.NODE_ENV === "production"
+              ? "https://rankedraft-maelnilba.vercel.app/"
+              : "http://localhost:3000",
+        }
+      );
+    },
     signOut: async () => {
       router.push("/");
       await fetch("/api/auth/remove", {

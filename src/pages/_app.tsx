@@ -8,7 +8,6 @@ import { useState } from "react";
 import { UserContextProvider } from "../hooks/useUser";
 import { Navigation } from "../components/navigation/Navigation";
 import { Container } from "../components/Container";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(

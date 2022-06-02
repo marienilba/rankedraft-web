@@ -35,7 +35,13 @@ import { MobileBar } from "./MobileBar";
 import { NavIconWrapper } from "./NavIconWrapper";
 import { NavigationMenuLink } from "./NavigationMenuLink";
 
-export const MobileNavigation = ({ signIn, signOut }) => {
+export const MobileNavigation = ({
+  signIn,
+  signOut,
+}: {
+  signIn: (p) => void;
+  signOut: () => void;
+}) => {
   const { user, userRole } = useUser();
   const { t } = useTranslation(["common"]);
 
