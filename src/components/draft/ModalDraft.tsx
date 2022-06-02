@@ -26,7 +26,7 @@ import {
   Payload as payloadDraft,
   postHistory,
 } from "../../queries/History";
-import useCompo, { Draft } from "../../hooks/useCompo";
+import useCompo from "../../hooks/useCompo";
 import useInput from "../../hooks/useInput";
 import { Team } from "../../hooks/useTeam";
 import { useTripleToggle } from "../../hooks/useTripleToggle";
