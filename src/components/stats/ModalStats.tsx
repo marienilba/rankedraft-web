@@ -1,5 +1,4 @@
 import {
-  Flex,
   Heading,
   Spacer,
   Stack,
@@ -16,17 +15,19 @@ import {
   Th,
   Thead,
   Tr,
+  Wrap,
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useQuery } from "react-query";
 import { useBreeds } from "../../hooks/useBreeds";
 import { fetchStats } from "../../queries/Stats";
 import { Breeds } from "../../utils/BreedIndex";
+import { ErrorButton } from "../ErrorButton";
 import { LoadingTopBar } from "../LoadingTopBar";
 
 export const ModalStats = ({ options, search }) => {
   const { t } = useTranslation(["stats"]);
-  const { isLoading, data, isSuccess, isError } = useQuery(
+  const { isLoading, data, isSuccess, isError, refetch } = useQuery(
     [
       "stats",
       options.pseudo,
@@ -44,33 +45,39 @@ export const ModalStats = ({ options, search }) => {
     () => fetchStats({ options, search })
   );
 
+  if (isError) {
+    <ErrorButton refetch={refetch} />;
+  }
+
   if (isLoading || !data) {
     return <LoadingTopBar />;
   }
 
   const { Globale, Lettre, MyPicks, TheirPicks, Maps, Opponents } = data;
   return (
-    <Tabs isFitted variant="line" isLazy marginX="3" marginY="2">
+    <Tabs isFitted variant="line" isLazy marginX={3} marginY={2}>
       <TabList mb="1em">
         <Tab>{t("tabs.globale")}</Tab>
         <Tab>{t("tabs.letter")}</Tab>
         <Tab>{t("tabs.picks")}</Tab>
         <Tab>{t("tabs.opponents")}</Tab>
       </TabList>
-      <TabPanels>
-        <TabPanel>
-          <GlobaleTable globale={Globale} />
-        </TabPanel>
-        <TabPanel>
-          <LettreTable lettre={Lettre} />
-        </TabPanel>
-        <TabPanel>
-          <PicksTables myPicks={MyPicks} theirPicks={TheirPicks} />
-        </TabPanel>
-        <TabPanel>
-          <OpponentsTable opponents={Opponents} />
-        </TabPanel>
-      </TabPanels>
+      {isSuccess && (
+        <TabPanels>
+          <TabPanel>
+            <GlobaleTable globale={Globale} />
+          </TabPanel>
+          <TabPanel>
+            <LettreTable lettre={Lettre} />
+          </TabPanel>
+          <TabPanel>
+            <PicksTables myPicks={MyPicks} theirPicks={TheirPicks} />
+          </TabPanel>
+          <TabPanel>
+            <OpponentsTable opponents={Opponents} />
+          </TabPanel>
+        </TabPanels>
+      )}
     </Tabs>
   );
 };
@@ -133,7 +140,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
   };
 
   return (
-    <Stack direction="row" alignItems="center">
+    <Wrap alignItems="center">
       <Spacer />
       <Stack>
         <Heading textAlign="center" fontSize="md">
@@ -228,7 +235,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
       </Stack>
 
       <Spacer />
-    </Stack>
+    </Wrap>
   );
 };
 

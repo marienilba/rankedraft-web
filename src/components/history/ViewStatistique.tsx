@@ -68,7 +68,6 @@ export const ViewStatistique = ({
         closeOnOverlayClick={true}
         isOpen={isOpen}
         onClose={onClose}
-        isCentered
         motionPreset="scale"
         size="full"
       >
