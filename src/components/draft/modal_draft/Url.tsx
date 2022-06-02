@@ -66,7 +66,7 @@ export const Url = ({
                 fontSize={"xs"}
                 as="samp"
               >
-                {t("open_link")}
+                {t("module.open_link")}
               </Button>
             </Link>
           )}
