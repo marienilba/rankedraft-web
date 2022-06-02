@@ -91,7 +91,7 @@ export const Profile = ({
             direction="column"
             flex="s"
             {...zIndexPriority.ProfileOverlap}
-            justifyContent="space-around"
+            justifyContent="center"
             maxWidth={
               isMobile ? "100%" : dimensions && dimensions.borderBox.width
             }

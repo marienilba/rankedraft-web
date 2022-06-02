@@ -34,12 +34,19 @@ export const CreateTeam = ({ onCreate }) => {
     },
   });
 
+  const verifyUrl = useCallback((url: string) => {
+    if (url.includes("ktarena.com/fr/equipe/")) return true;
+    if (url.includes("ktarena.com/en/team/")) return true;
+    if (url.includes("ktarena.com/es/equipo/")) return true;
+    return false;
+  }, []);
+
   const handleCreate = useCallback(() => {
     if (
       !teamName.value ||
       teamName.value.length > 30 ||
       ktaLink.value.length > 70 ||
-      (ktaLink.value && !ktaLink.value.includes("ktarena.com/fr/equipe/"))
+      (ktaLink.value && !verifyUrl(ktaLink.value))
     )
       return;
     handleSpam();
@@ -49,7 +56,7 @@ export const CreateTeam = ({ onCreate }) => {
 
   const handleAvatar = useCallback(
     (exts: any) => {
-      if (ktaLink.value.includes("ktarena.com/fr/equipe/")) {
+      if (verifyUrl(ktaLink.value)) {
         let teamId = ktaLink.value;
         if (teamId) {
           let split = teamId.split("ktarena.com/fr/equipe/");
