@@ -1,4 +1,5 @@
 import { request } from "../utils/axios-utils";
+import { API_URL } from "../utils/Constants";
 
 interface Draft {
   data: Array<number | string>[];
@@ -39,6 +40,7 @@ interface Match {
 export interface Data {
   match: Match;
   draft: Draft;
+  error: string;
 }
 
 interface DraftLight {
@@ -55,7 +57,7 @@ interface DraftLight {
 export const fetchDraft = async (link: string): Promise<Data | null> => {
   let response;
   try {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/draft/${link}`);
+    const req = await fetch(`${API_URL}/draft/${link}`);
     const data = await req.json();
     response = data.message;
   } catch (error) {
