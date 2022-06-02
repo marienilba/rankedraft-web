@@ -6,11 +6,11 @@ import { ScreenNavigation } from "./ScreenNavigation";
 import { MobileNavigation } from "./MobileNavigation";
 import { GlobalBackground } from "./GlobalBackground";
 import { Title } from "../Title";
-import { useCountRenders } from "../../hooks/useCountRenders";
 import { Loading } from "../Loading";
+import { OverflowY } from "./OverflowY";
 
 export const Navigation = () => {
-  const { isFetchingUser, user, signIn, signOut } = useUser();
+  const { isFetchingUser, signIn, signOut } = useUser();
   const handleOAuthSignIn = useCallback(async (provider) => {
     const { error } = await signIn({ provider });
   }, []);
@@ -18,7 +18,6 @@ export const Navigation = () => {
   const { isMobile } = useWindowSize();
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  useCountRenders("navigation");
   return (
     <Flex height="auto">
       <GlobalBackground isDark={isDark} />
@@ -27,6 +26,7 @@ export const Navigation = () => {
         <Loading />
       ) : (
         <>
+          <OverflowY />
           {isMobile ? (
             <MobileNavigation signIn={handleOAuthSignIn} signOut={signOut} />
           ) : (

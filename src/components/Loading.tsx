@@ -1,6 +1,7 @@
 import { Flex, Img } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useTheme } from "../hooks/useTheme";
+import { OverflowY } from "./navigation/OverflowY";
 
 export const Loading = () => {
   const { backgroundColor, code, isDark } = useTheme();
@@ -14,11 +15,7 @@ export const Loading = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <style jsx global>{`
-        html {
-          overflow-y: hidden;
-        }
-      `}</style>
+      <OverflowY isDisable />
       <motion.div
         animate={{
           padding: ["2rem", "0.75rem", "2rem"],

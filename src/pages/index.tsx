@@ -5,11 +5,9 @@ import { Header } from "../components/home/Header";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { PageHeading } from "../components/PageHeading";
-import { useCountRenders } from "../hooks/useCountRenders";
 
 const Index = () => {
   const { t } = useTranslation(["home"]);
-  useCountRenders("index");
   return (
     <Flex mt={10} direction="column" w="100%" paddingX={7}>
       <PageHeading> </PageHeading>
