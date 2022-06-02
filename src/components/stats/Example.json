@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "b517ed95-3de0-4a2f-93dd-e1619c3adca1",
+    "result": "W",
+    "date": 1648929600,
+    "opp_name": "Kura",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 18, 15, 17],
+        "B": [11, 13, 16, 8]
+      }
+    },
+    "map_id": 22,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "8d6c4be0-ca2d-4535-80d6-9576133fa9f5",
+    "result": "W",
+    "date": 1648935960,
+    "opp_name": "Qdam",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 13, 4, 17],
+        "B": [11, 15, 2, 12]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "da84cd45-bb44-45d9-b851-263a837cbe05",
+    "result": "W",
+    "date": 1649014260,
+    "opp_name": "okeey3",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [4, 10, 14, 17],
+        "B": [11, 9, 13, 5]
+      }
+    },
+    "map_id": 13,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "30d96182-4da7-42e6-bc72-b722560a0146",
+    "result": "W",
+    "date": 1649018940,
+    "opp_name": "Gruglok-xs",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [11, 6, 13, 17],
+        "B": [16, 2, 9, 8]
+      }
+    },
+    "map_id": 14,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "f43c3668-753b-4b15-a84e-8129665b67a2",
+    "result": "L",
+    "date": 1649091600,
+    "opp_name": "Dgt-Ruzeuze-X",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [10, 9, 6, 12],
+        "B": [16, 13, 2, 3]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "e1c846eb-bd48-4f0b-99aa-81a7294b9cc2",
+    "result": "W",
+    "date": 1649093520,
+    "opp_name": "Flandre",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 3, 12, 17],
+        "B": [11, 13, 15, 5]
+      }
+    },
+    "map_id": 8,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "9bac8d4d-1741-4313-bd9c-242aed7579b9",
+    "result": "W",
+    "date": 1649096580,
+    "opp_name": "Akysis",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 16, 17, 18],
+        "B": [11, 5, 2, 8]
+      }
+    },
+    "map_id": 24,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "91da2721-f597-4f5a-9ae1-e7113044681b",
+    "result": "W",
+    "date": 1649103660,
+    "opp_name": "Stratosfurique",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 10, 5, 17],
+        "B": [11, 15, 13, 8]
+      }
+    },
+    "map_id": 18,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "f3918261-3a4b-4bc6-8896-87d450d2ea91",
+    "result": "L",
+    "date": 1649106240,
+    "opp_name": "Swatchel",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 15, 2, 18],
+        "B": [11, 13, 10, 8]
+      }
+    },
+    "map_id": 25,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "7ee98544-e256-4b88-b7b0-749862339fd1",
+    "result": "L",
+    "date": 1649188200,
+    "opp_name": "Poolpi",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 16, 13, 8],
+        "B": [17, 2, 12, 10]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "4b2f5bb9-4bca-4ba1-9ff1-94147f1cd4ad",
+    "result": "W",
+    "date": 1649191140,
+    "opp_name": "Toum",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 13, 5, 8],
+        "B": [11, 15, 2, 14]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "81ac897a-165b-4685-890e-3171c8813590",
+    "result": "W",
+    "date": 1649252040,
+    "opp_name": "white-test",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 16, 15, 8],
+        "B": [18, 10, 13, 17]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "d4b77aea-7c01-4d4c-b0cf-42a36fd3f990",
+    "result": "W",
+    "date": 1649261760,
+    "opp_name": "Blue-Infy",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [4, 15, 6, 14],
+        "B": [11, 13, 5, 2]
+      }
+    },
+    "map_id": 16,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "c4cdf3ed-21f1-4828-9b40-6deb8c17bbd1",
+    "result": "L",
+    "date": 1649263260,
+    "opp_name": "Mouns",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 16, 15, 18],
+        "B": [2, 13, 10, 17]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "eb6e2c9d-c815-424e-b235-396e774ff12c",
+    "result": "L",
+    "date": 1649267700,
+    "opp_name": "Davideend",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 15, 9, 17],
+        "B": [16, 10, 13, 3]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "d110ba39-9de6-40d0-a1f7-e8be01083045",
+    "result": "W",
+    "date": 1649341020,
+    "opp_name": "Stunted",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 12, 16, 17],
+        "B": [11, 15, 9, 5]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "0ad31823-5d2a-4ac5-95ad-3ee8adc90687",
+    "result": "W",
+    "date": 1649343660,
+    "opp_name": "Yorv",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 9, 8, 14],
+        "B": [11, 15, 5, 17]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "396b0a57-b9fe-4d31-a640-8438e04a8b15",
+    "result": "L",
+    "date": 1649517600,
+    "opp_name": "Snaf",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 15, 13, 8],
+        "B": [16, 10, 17, 5]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "5e9e9b69-779b-4d3d-a2e8-1c5737aa4bae",
+    "result": "W",
+    "date": 1649520600,
+    "opp_name": "Akysis",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 10, 4, 12],
+        "B": [11, 13, 9, 5]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "d97f696b-1207-42bb-a1cb-74d21c4f0073",
+    "result": "W",
+    "date": 1649523840,
+    "opp_name": "Akysis",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 6, 2, 5],
+        "B": [11, 10, 12, 8]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "d4c8a701-83f2-41b0-a9c7-e2c4809ed657",
+    "result": "W",
+    "date": 1649532900,
+    "opp_name": "Shindobato",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 14, 8],
+        "B": [2, 10, 6, 5]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "09338be9-19bc-4c13-a438-94625b70a5c4",
+    "result": "L",
+    "date": 1649536140,
+    "opp_name": "Beubar2",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 9, 15, 12],
+        "B": [6, 13, 5, 17]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "f1a3004d-bee7-4c10-a67b-d7f6b733ef2c",
+    "result": "W",
+    "date": 1649696700,
+    "opp_name": "Silver-drunks",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 6, 5],
+        "B": [10, 17, 9, 7]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "85e69eef-ca46-444a-92d6-6e90858c903b",
+    "result": "W",
+    "date": 1649703840,
+    "opp_name": "Pyrasux",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 9, 2],
+        "B": [13, 10, 6, 12]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "48a5ccf1-b749-4150-bcce-61d4105a7dbb",
+    "result": "L",
+    "date": 1649354880,
+    "opp_name": "Berserker",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 16, 8, 3],
+        "B": [11, 9, 15, 18]
+      }
+    },
+    "map_id": 15,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "93aa52bd-8d20-454b-ba13-d6cdaa5f161f",
+    "result": "L",
+    "date": 1649705640,
+    "opp_name": "Syrhenna",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 10, 6, 5],
+        "B": [17, 9, 15, 8]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "3c3d4096-886a-4c2f-b9ae-3e4e8802a972",
+    "result": "L",
+    "date": 1649707320,
+    "opp_name": "Orii",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 9, 15, 17],
+        "B": [16, 10, 12, 5]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "2c4feb16-47ee-49f1-973f-47d3008b275a",
+    "result": "W",
+    "date": 1649713260,
+    "opp_name": "Robocow",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 13, 17],
+        "B": [11, 10, 3, 2]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "0e9235d7-71a4-4530-ac40-edc3383cc25d",
+    "result": "W",
+    "date": 1649774520,
+    "opp_name": "Midl",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 10, 15, 17],
+        "B": [6, 2, 13, 8]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "44bc955f-205c-4552-8e59-d601933fdaf1",
+    "result": "W",
+    "date": 1649776740,
+    "opp_name": "lagtcham",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [11, 13, 15, 8],
+        "B": [16, 10, 5, 9]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "f579fa91-7ebf-4a96-801d-a971f161c350",
+    "result": "W",
+    "date": 1649806740,
+    "opp_name": "Haruspex",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 12, 18, 8],
+        "B": [16, 10, 15, 5]
+      }
+    },
+    "map_id": 24,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "554a7ffa-9cd0-4da3-bcde-f472ac76894e",
+    "result": "W",
+    "date": 1649959620,
+    "opp_name": "Chenchou1",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 14,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 10, 6, 12],
+        "B": [11, 9, 17, 5]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "8a6456ac-10c7-4390-bebf-26a31e6a43a9",
+    "result": "W",
+    "date": 1649962140,
+    "opp_name": "Midl",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 2, 14],
+        "B": [6, 10, 12, 5]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "19bd981b-f31d-4526-9824-e34b366cf5c5",
+    "result": "W",
+    "date": 1649787180,
+    "opp_name": "No Spoilers",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 13, 15, 2],
+        "B": [4, 18, 9, 5]
+      }
+    },
+    "map_id": 11,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "ff27f2f7-2739-4f09-a12c-dcdaff46382c",
+    "result": "W",
+    "date": 1649967540,
+    "opp_name": "Taural",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 13, 15, 8],
+        "B": [6, 10, 17, 12]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "0ae00710-c219-4835-a39a-7fc74fd7b7b6",
+    "result": "W",
+    "date": 1649969880,
+    "opp_name": "Reevolt",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 10, 12, 8],
+        "B": [11, 4, 5, 14]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "d8f0f030-2f64-484d-bc23-a2ac47280156",
+    "result": "W",
+    "date": 1649973180,
+    "opp_name": "Srami",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 10, 5, 14],
+        "B": [11, 17, 15, 8]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "a875993f-7683-4b59-936d-fad88c315b12",
+    "result": "W",
+    "date": 1650130200,
+    "opp_name": "Veldas",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 14, 13, 2],
+        "B": [16, 10, 15, 5]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "c5aece92-be6c-4d37-bc08-b06809729cc3",
+    "result": "L",
+    "date": 1650203880,
+    "opp_name": "Midl",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 3,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 4, 13, 14],
+        "B": [6, 2, 12, 17]
+      }
+    },
+    "map_id": 10,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "f7d9223b-98b5-41df-85ee-4a9fbecc7a21",
+    "result": "W",
+    "date": 1650225780,
+    "opp_name": "Unknown",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 9, 2],
+        "B": [6, 10, 5, 17]
+      }
+    },
+    "map_id": 10,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "3c81e11c-3843-4712-8c47-4661dbef9228",
+    "result": "W",
+    "date": 1650391740,
+    "opp_name": "La Smala",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 6,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 9, 14],
+        "B": [11, 12, 10, 2]
+      }
+    },
+    "map_id": 4,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "c393f53f-8865-43af-8def-d26a0866eef9",
+    "result": "W",
+    "date": 1650218760,
+    "opp_name": "exiliuM -",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 9, 15, 8],
+        "B": [6, 10, 13, 5]
+      }
+    },
+    "map_id": 18,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "5d9f71d2-6fdf-407c-afb4-e0999cb833b7",
+    "result": "L",
+    "date": 1650211560,
+    "opp_name": "Next-level",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 17,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 10, 15, 5],
+        "B": [16, 9, 14, 18]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "2f16a8d7-63f4-439a-8195-ace7d1aea824",
+    "result": "W",
+    "date": 1650398940,
+    "opp_name": "Incondescant",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 15, 6, 3],
+        "B": [17, 10, 13, 5]
+      }
+    },
+    "map_id": 8,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "895c895a-3c86-4083-aa23-7a66ebd3c7f4",
+    "result": "L",
+    "date": 1648938600,
+    "opp_name": "petchop",
+    "letter": "B",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 1,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [11, 6, 18, 17],
+        "B": [4, 13, 9, 5]
+      }
+    },
+    "map_id": 5,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "3989f714-56e9-4ccf-a7d2-46163f5a6e8c",
+    "result": "L",
+    "date": 1648942200,
+    "opp_name": "Deathx",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 2,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 16,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 15, 9, 8],
+        "B": [11, 13, 18, 17]
+      }
+    },
+    "map_id": 21,
+    "initiative": 1,
+    "team_id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+    "team": {
+      "id": "b38f2d7f-af54-4d84-a675-589f75490c5e",
+      "team_name": "Nib"
+    }
+  },
+  {
+    "id": "2c59e804-6a83-43bd-9feb-3f3329a5f3d8",
+    "result": "W",
+    "date": 1649794020,
+    "opp_name": "Error 404",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 9,
+            "mode": ""
+          },
+          {
+            "breed": 7,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 15,
+            "mode": ""
+          },
+          {
+            "breed": 13,
+            "mode": ""
+          },
+          {
+            "breed": 5,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [16, 6, 12, 14],
+        "B": [11, 8, 10, 2]
+      }
+    },
+    "map_id": 3,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  },
+  {
+    "id": "d9d253cd-279a-48a9-a1be-43321710220c",
+    "result": "W",
+    "date": 1649362440,
+    "opp_name": "rafale telecommunication",
+    "letter": "A",
+    "draft": {
+      "picks": {
+        "A": [
+          {
+            "breed": 11,
+            "mode": ""
+          },
+          {
+            "breed": 8,
+            "mode": ""
+          },
+          {
+            "breed": 18,
+            "mode": ""
+          }
+        ],
+        "B": [
+          {
+            "breed": 4,
+            "mode": ""
+          },
+          {
+            "breed": 10,
+            "mode": ""
+          },
+          {
+            "breed": 12,
+            "mode": ""
+          }
+        ]
+      },
+      "bans": {
+        "A": [6, 15, 2, 1],
+        "B": [16, 13, 9, 5]
+      }
+    },
+    "map_id": 16,
+    "initiative": 1,
+    "team_id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+    "team": {
+      "id": "c25f75e0-b064-4cee-85eb-b3071893765b",
+      "team_name": "Arcane"
+    }
+  }
+]
