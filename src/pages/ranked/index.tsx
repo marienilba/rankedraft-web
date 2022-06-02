@@ -6,7 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useDevice } from "../../hooks/useDevice";
 
-const Index = () => {
+const Index = ({ ip }) => {
   const { t } = useTranslation(["ranked", "common"]);
   const { isMobile } = useDevice();
   return (
@@ -16,7 +16,7 @@ const Index = () => {
           {t("deprecated")}
         </Heading>
       ) : (
-        <RankedModule />
+        <RankedModule ip={ip} />
       )}
 
       <Divider margin={5} />
@@ -30,11 +30,13 @@ const Index = () => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ req, locale }) {
+  const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
   return {
     props: {
+      ip,
       ...(await serverSideTranslations(locale, ["common", "ranked"])),
-    },
+    }, // will be passed to the page component as props
   };
 }
 

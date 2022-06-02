@@ -17,15 +17,15 @@ export function useSocket() {
     };
   }, []);
 
-  const handleSocket = (uuid: string, force: boolean) => {
+  const handleSocket = (uuid: string, ip: string, force: boolean) => {
     if (!socket && !force) return;
-    socket.emit(PROTOCOL.REGISTER, { uuid });
+    socket.emit(PROTOCOL.REGISTER, { uuid, ip });
   };
 
   return [
     socket,
-    (u: string, f: boolean) => {
-      handleSocket(u, f);
+    (u: string, ip: string, f: boolean) => {
+      handleSocket(u, ip, f);
     },
   ] as const;
 }

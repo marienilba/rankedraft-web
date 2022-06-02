@@ -23,7 +23,8 @@ type Handler = {
 };
 
 export function useRanked(
-  user: User
+  user: User,
+  ip: string
 ): [
   Handler,
   ProtocolStep,
@@ -78,7 +79,7 @@ export function useRanked(
   const handleSocket = useCallback(() => {
     if (!user) return;
     if (!socket.connected) socket.connect();
-    launchSocket(user.id, false);
+    launchSocket(user.id, ip, false);
   }, [user, socket, launchSocket]);
 
   const handleConfirm = useCallback(
@@ -262,7 +263,7 @@ export function useRanked(
       !isSfxDisabled && onPlay543();
       handleReset();
       if (user) return;
-      launchSocket(user.id, true);
+      launchSocket(user.id, ip, true);
     });
 
     socket.on(PROTOCOL.FORCED_DISCONNECTION, () => {
