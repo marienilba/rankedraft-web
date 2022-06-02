@@ -35,9 +35,9 @@ export const AccountButton = ({ user, signOut }) => {
           <Stack direction="row" alignItems="center">
             <Avatar
               size="md"
-              bg="transparent"
+              bg={theme[200]}
+              icon={<span></span>}
               src={useAvatarSrc(data.avatar)}
-              ignoreFallback
             />
 
             <Heading
