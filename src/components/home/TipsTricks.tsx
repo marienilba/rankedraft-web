@@ -1,4 +1,4 @@
-import { Heading, Stack, Flex, Text, Kbd } from "@chakra-ui/react";
+import { Heading, Stack, Flex, Text, Kbd, Link } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 
 export const TipsTricks = () => {
@@ -20,7 +20,10 @@ export const TipsTricks = () => {
         <Text>
           <span style={{ fontWeight: "bold" }}>{t("tips.import-bold")}</span>
           {": "}
-          {t("tips.import-text")}
+          {t("tips.import-text")} -{" "}
+          <Link isExternal href="https://youtu.be/lBlzKmqN0f4">
+            [Tutoriel]
+          </Link>
         </Text>
         <Text>
           <span style={{ fontWeight: "bold" }}>{t("tips.share-bold")}</span>
