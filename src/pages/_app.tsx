@@ -1,3 +1,4 @@
+import "@fontsource/roboto/500.css";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { appWithTranslation } from "next-i18next";
