@@ -1,8 +1,15 @@
-import { Stack, Heading, Divider } from "@chakra-ui/react";
+import {
+  Stack,
+  Heading,
+  Divider,
+  AvatarGroup,
+  Avatar,
+  Flex,
+} from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { Draft } from "../../hooks/useCompo";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { BreedBan } from "./BreedBan";
+import { useBreedAvatar } from "../../utils/BreedIndex";
 import { BreedPick } from "./BreedPick";
 
 type CompositionsProps = {
@@ -44,17 +51,24 @@ export const Compositions = ({
             />
           );
         })}
-        <Divider />
         <Heading textAlign="center" fontSize="md" mb={3}>
           {t("module.bans")}
         </Heading>
-        <Stack direction="row" justifyContent="center" spacing={0}>
-          {bans[myLetter].map((b: number, idx) => {
-            return <BreedBan ban={b} key={`compo_breed_pick_${b}-${idx}`} />;
-          })}
-        </Stack>
+        <Flex justifyContent="center">
+          <AvatarGroup size="md" max={4}>
+            {bans[myLetter].map((b: number, idx) => {
+              return (
+                <Avatar
+                  borderRadius="full"
+                  src={useBreedAvatar(b)}
+                  key={`compo_breed_pick_${b}-${idx}`}
+                />
+              );
+            })}
+          </AvatarGroup>
+        </Flex>
       </Stack>
-      <Divider orientation="vertical" />
+      <Divider />
       <Stack minW="50%">
         <Heading textAlign="center" fontSize="md" mb={3}>
           {`${t("pronoun.their", { ns: "common" })} ${t("compo")}`}
@@ -70,15 +84,22 @@ export const Compositions = ({
             />
           );
         })}
-        <Divider />
         <Heading textAlign="center" fontSize="md" mb={3}>
           {t("module.bans")}
         </Heading>
-        <Stack direction="row" justifyContent="center" spacing={0}>
-          {bans[otherLetter].map((b: number, idx) => {
-            return <BreedBan ban={b} key={`compo_breed_pick_${b}-${idx}`} />;
-          })}
-        </Stack>
+        <Flex justifyContent="center">
+          <AvatarGroup size="md" max={4}>
+            {bans[otherLetter].map((b: number, idx) => {
+              return (
+                <Avatar
+                  borderRadius="full"
+                  src={useBreedAvatar(b)}
+                  key={`compo_breed_pick_${b}-${idx}`}
+                />
+              );
+            })}
+          </AvatarGroup>
+        </Flex>
       </Stack>
     </Stack>
   );

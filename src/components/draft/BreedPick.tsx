@@ -2,12 +2,14 @@ import {
   useControllableState,
   Flex,
   Stack,
-  Button,
+  Text,
   Input,
   Image,
+  Avatar,
 } from "@chakra-ui/react";
 import { ChangeEvent, useCallback, useState } from "react";
 import { useBreeds } from "../../hooks/useBreeds";
+import { useTheme } from "../../hooks/useTheme";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Breeds, useBreedAvatar } from "../../utils/BreedIndex";
 
@@ -26,6 +28,7 @@ type BreedPickProps = {
 };
 
 export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
+  const { backgroundColor, invert } = useTheme({ variant: "secondary" });
   const { isScreen, isPad } = useWindowSize();
   const { translate } = useBreeds();
 
@@ -51,21 +54,28 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
   return (
     <Flex>
       <Stack alignItems="center" spacing={2} direction="row">
-        <Image
-          boxSize="2.5rem"
-          borderRadius="full"
+        <Avatar
+          boxSize="3.2rem"
+          borderColor={invert[200]}
+          borderWidth="1px"
           src={useBreedAvatar(pick.breed)}
-          alt={`breed-${pick.breed}`}
-          mr="12px"
+          mr={1}
         />
         {(isScreen || isPad) && (
-          <Flex as={Button}>
-            {path === "placeholder"
-              ? ""
-              : capitalizeFirstLetter(translate(pick.breed))}
+          <Flex
+            w="16rem"
+            justifyContent="center"
+            {...backgroundColor}
+            padding={2}
+            borderRadius={5}
+          >
+            <Text fontWeight={600}>
+              {path === "placeholder"
+                ? ""
+                : capitalizeFirstLetter(translate(pick.breed))}
+            </Text>
           </Flex>
         )}
-
         <Flex>
           <Input
             placeholder="Mode"

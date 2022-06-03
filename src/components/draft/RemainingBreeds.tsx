@@ -1,4 +1,12 @@
-import { Stack, Image, Heading, Wrap } from "@chakra-ui/react";
+import {
+  Stack,
+  Image,
+  Heading,
+  Wrap,
+  Flex,
+  AvatarGroup,
+  Avatar,
+} from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { memo } from "react";
 import { Draft } from "../../hooks/useCompo";
@@ -24,17 +32,19 @@ export const RemainingBreeds = memo(({ draft }: { draft: Draft }) => {
       {remaining.length === 4 && (
         <>
           <Heading fontSize="md">{t("module.remaining_breeds")}</Heading>
-          <Stack direction="row">
-            {remaining.map((b, idx) => (
-              <Image
-                key={`remaining-${b}-${idx}`}
-                boxSize="2.5rem"
-                borderRadius="full"
-                src={useBreedAvatar(b)}
-                alt={`breed-${b}`}
-              />
-            ))}
-          </Stack>
+          <Flex justifyContent="center">
+            <AvatarGroup size="md" max={4}>
+              {remaining.map((b: number, idx) => {
+                return (
+                  <Avatar
+                    borderRadius="full"
+                    src={useBreedAvatar(b)}
+                    key={`remaining-${b}-${idx}`}
+                  />
+                );
+              })}
+            </AvatarGroup>
+          </Flex>
         </>
       )}
     </Wrap>
