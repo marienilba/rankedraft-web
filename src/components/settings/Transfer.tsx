@@ -197,7 +197,9 @@ export const Transfer = ({
 
     if (Icomments !== -1) {
       if (_draft.length >= Icomments) {
-        payload.comments = _draft[Icomments];
+        const cm = _draft[Icomments];
+        if (cm.replace(/(\r\n|\n|\r)/gm, "") === "") payload.comments = "";
+        else payload.comments = _draft[Icomments];
       }
     }
 
