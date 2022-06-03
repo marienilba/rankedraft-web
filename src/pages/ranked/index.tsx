@@ -38,17 +38,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-// export const getServerSideProps: CustomGetServerSideProps = async ({
-//   req,
-//   locale,
-// }) => {
-//   const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
-//   return {
-//     props: {
-//       ip,
-//       ...(await serverSideTranslations(locale, ["common", "ranked"])),
-//     },
-//   };
-// };
-
 export default Index;

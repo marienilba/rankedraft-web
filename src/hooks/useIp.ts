@@ -16,7 +16,7 @@ export function useIp() {
 
 const fetchMyIp = async (): Promise<string> => {
   try {
-    const res = await axios.get("https://geolocation-db.com/json/");
+    const res = await axios.get("api/ip"); // "https://geolocation-db.com/json/"
     return res.data.IPv4 as string;
   } catch (error) {
     return;
