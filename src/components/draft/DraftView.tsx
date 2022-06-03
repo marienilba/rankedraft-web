@@ -108,7 +108,7 @@ export const DraftView = ({
                 </Button>
                 <Button
                   variant="solid"
-                  colorScheme="pink"
+                  colorScheme="red"
                   onClick={handleDelete}
                 >
                   {confirmation.value < 1

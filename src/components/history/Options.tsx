@@ -420,7 +420,7 @@ export const Options = ({
           <Button
             onClick={toggleInitiative}
             colorScheme={
-              initiative === 0 ? "purple" : initiative === 1 ? null : "pink"
+              initiative === 0 ? "purple" : initiative === 1 ? null : "red"
             }
           >
             {initiative === 0

@@ -362,7 +362,7 @@ export const ModalDraft = forwardRef(
                 </Button>
                 <Button
                   size="lg"
-                  colorScheme={result === "L" ? "pink" : "gray"}
+                  colorScheme={result === "L" ? "red" : "gray"}
                   onClick={() => setResult((r) => (r === "L" ? "" : "L"))}
                 >
                   💀 {t("lose")}

@@ -358,7 +358,7 @@ export const Transfer = ({
           <Progress
             value={progression}
             size="xs"
-            colorScheme={progression >= 100 ? "green" : "pink"}
+            colorScheme={progression >= 100 ? "green" : "red"}
             hasStripe={progression >= 100 ? true : false}
           />
           <Heading fontSize="md">{progression}%</Heading>
