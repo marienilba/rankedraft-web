@@ -14,11 +14,13 @@ import {
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useDevice } from "../../hooks/useDevice";
 import useInput from "../../hooks/useInput";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 export const AutoCompleteSettings = () => {
   const { t } = useTranslation(["settings", "common"]);
+  const { isMobile } = useDevice();
   const [pseudo] = useInput();
   const [Settings, setSettings] = useLocalStorage("user-settings", null);
   const [pseudos, setPseudos] = useState([]);
@@ -99,7 +101,16 @@ export const AutoCompleteSettings = () => {
         <Divider orientation="vertical" />
         <Wrap spacing={2} height="100%">
           {pseudos.map((p, idx) => {
-            return (
+            return isMobile ? (
+              <WrapItem
+                key={`pseudo-${p}-${idx}`}
+                onMouseEnter={() => onMouseEnt(p)}
+                onMouseLeave={onMouseLef}
+              >
+                <Heading fontSize="lg">{p}</Heading>
+                <CloseButton size="sm" onClick={() => RemovePseudo(p)} />
+              </WrapItem>
+            ) : (
               <WrapItem
                 key={`pseudo-${p}-${idx}`}
                 onMouseEnter={() => onMouseEnt(p)}
