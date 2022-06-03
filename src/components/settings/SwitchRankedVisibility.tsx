@@ -1,13 +1,5 @@
-import {
-  Switch,
-  useBoolean,
-  Wrap,
-  WrapItem,
-  Text,
-  Flex,
-} from "@chakra-ui/react";
-import { useEffect } from "react";
-import { useMutation, useQuery } from "react-query";
+import { Switch, Wrap, WrapItem, Text, Flex } from "@chakra-ui/react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import {
   fetchProfileVisibility,
   updateProfileVisibility,
@@ -19,9 +11,9 @@ import { useTranslation } from "next-i18next";
 
 export const SwitchRankedVisibility = () => {
   const { t } = useTranslation(["settings", "common"]);
-  const [switchStatus, setSwitchStatus] = useBoolean(true);
+  const queryClient = useQueryClient();
   const { isLoading, data, isSuccess, isError, refetch } = useQuery(
-    ["ladder/visibility"],
+    ["visibility"],
     fetchProfileVisibility,
     {
       refetchOnReconnect: false,
@@ -35,8 +27,8 @@ export const SwitchRankedVisibility = () => {
   });
 
   const mutation = useMutation(updateProfileVisibility, {
-    onSuccess: (data) => {
-      setSwitchStatus.toggle();
+    onSuccess: (res) => {
+      queryClient.setQueryData(["visibility"], { visible: res });
     },
     onError: (error) => {
       console.log(error);
@@ -51,15 +43,9 @@ export const SwitchRankedVisibility = () => {
     handleSpam();
     if (isSpam) return;
 
-    mutation.mutate(!switchStatus);
+    mutation.mutate(!data.visible);
   };
 
-  useEffect(() => {
-    if (data) {
-      if (data.visible) setSwitchStatus.on();
-      else setSwitchStatus.off();
-    }
-  }, [data, isSuccess]);
   return (
     <>
       {(isLoading || mutation.isLoading) && <LoadingTopBar />}
@@ -74,7 +60,8 @@ export const SwitchRankedVisibility = () => {
             <Switch
               onChange={handleSwitch}
               isDisabled={isLoading || isError}
-              isChecked={switchStatus}
+              isChecked={data?.visible}
+              defaultChecked
               colorScheme="green"
               size="lg"
             />
