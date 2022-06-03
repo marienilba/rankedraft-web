@@ -150,7 +150,7 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
 
   if (isMobile) {
     return (
-      <Select onChange={(e) => onSelect(e.target.value)}>
+      <Select onChange={(e) => onSelect(e.target.value)} value={selected}>
         {breedsArr.map((b, i) => {
           return (
             <option value={b} key={`select-breed-${placeholder}-${b}`}>
