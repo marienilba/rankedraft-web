@@ -70,10 +70,6 @@ export const TeamActions = () => {
               initial={false}
               animate={{ width: !isJoinOpen ? 0 : "auto" }}
               transition={{ duration: 0.5 }}
-              style={{
-                overflow: "hidden",
-                showborder: true,
-              }}
             >
               <Input placeholder="Code d'invitation" {...invitation} />
             </motion.div>
