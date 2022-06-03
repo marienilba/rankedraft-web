@@ -26,7 +26,7 @@ import { Confirm } from "./ranked_module/Confirm";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useTranslation } from "next-i18next";
 
-export const RankedModule = ({ ip }) => {
+export const RankedModule = () => {
   const { user } = useUser();
   const { backgroundColor } = useTheme({ variant: "secondary" });
   const { isMobile } = useWindowSize();
@@ -43,7 +43,7 @@ export const RankedModule = ({ ip }) => {
     invalidURL,
     draftURL,
     shouldSend,
-  ] = useRanked(user, ip);
+  ] = useRanked(user);
 
   const refusalModal = useDisclosure();
 

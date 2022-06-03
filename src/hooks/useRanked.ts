@@ -9,6 +9,7 @@ import { useAudio } from "./useAudio";
 import useLocalStorage from "./useLocalStorage";
 import { useSocket } from "./useSocket";
 import { useTranslation } from "next-i18next";
+import { useIp } from "./useIp";
 
 type Handler = {
   Socket: () => void;
@@ -23,8 +24,7 @@ type Handler = {
 };
 
 export function useRanked(
-  user: User,
-  ip: string
+  user: User
 ): [
   Handler,
   ProtocolStep,
@@ -38,6 +38,7 @@ export function useRanked(
   boolean
 ] {
   const [socket, launchSocket] = useSocket();
+  const ip = useIp();
   const [packet, setPacket] = useState({ uuid: "" });
   const [step, setStep] = useState<ProtocolStep>(PROTOCOL.UNREGISTER);
   const [alreadyIn, setAlreadyIn] = useState<boolean>(false);
@@ -78,6 +79,7 @@ export function useRanked(
 
   const handleSocket = useCallback(() => {
     if (!user) return;
+    if (!ip) return;
     if (!socket.connected) socket.connect();
     launchSocket(user.id, ip, false);
   }, [user, socket, launchSocket]);

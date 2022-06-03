@@ -4,7 +4,6 @@ import { API_URL, PROTOCOL } from "../utils/Constants";
 
 export function useSocket() {
   const [socket, setSocket] = useState<Socket<any, any>>();
-
   useEffect(() => {
     const socket = io(API_URL, {
       transports: ["websocket"],
