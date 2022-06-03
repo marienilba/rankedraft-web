@@ -25,7 +25,7 @@ import { LobbyLine } from "./LobbyLine";
 import { useTranslation } from "next-i18next";
 
 export const Spectator = () => {
-  const { t } = useTranslation(["ranked"]);
+  const { t } = useTranslation(["common", "ranked"]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
@@ -108,7 +108,7 @@ export const Spectator = () => {
           </DrawerBody>
           <DrawerFooter>
             <Button variant="outline" mr={3} onClick={onClose}>
-              Fermer
+              {t("quit")}
             </Button>
           </DrawerFooter>
         </DrawerContent>

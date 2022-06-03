@@ -66,12 +66,6 @@ const Index = () => {
     [isSpam, avatarSelected, data, handleSpam]
   );
 
-  const av = {
-    onSelect: setAvatarSelected,
-    selected: avatarSelected,
-    avatars: data?.avatars,
-  };
-
   if (isLoading) {
     return <LoadingTopBar />;
   }
@@ -92,7 +86,13 @@ const Index = () => {
           isLoading={mutation.isLoading}
         />
         <Divider m={5} />
-        <GridAvatars av={av} />
+        <GridAvatars
+          av={{
+            onSelect: setAvatarSelected,
+            selected: avatarSelected,
+            avatars: data?.avatars,
+          }}
+        />
       </Flex>
     );
   }
