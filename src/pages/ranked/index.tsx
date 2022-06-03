@@ -60,7 +60,6 @@ export const getServerSideProps: CustomGetServerSideProps = async ({
   req,
   locale,
 }) => {
-  const fs = require("fs");
   const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
   return {
     props: {
