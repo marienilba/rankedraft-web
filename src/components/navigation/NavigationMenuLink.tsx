@@ -16,7 +16,7 @@ export const NavigationMenuLink = ({
   onClick?: () => void;
 }) => {
   const { backgroundColor } = useTheme({ variant: "secondary" });
-  const { isScreen, isPad, isMobile } = useWindowSize();
+  const { isScreen, isMobile } = useWindowSize();
 
   if (link) {
     return (

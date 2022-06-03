@@ -9,10 +9,10 @@ export const MobileBar = ({ onOpen }) => {
   const isDark = colorMode === "dark";
 
   return (
-    <Flex position="absolute" h="100%">
+    <Flex position="absolute">
       <Flex
         sx={{
-          position: "sticky",
+          position: "fixed",
           top: "0",
           ...zIndexPriority.MobileBarBackground,
         }}

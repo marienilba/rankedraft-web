@@ -25,6 +25,7 @@ export const TipsTricks = () => {
             [Tutoriel]
           </Link>
         </Text>
+
         <Text>
           <span style={{ fontWeight: "bold" }}>{t("tips.share-bold")}</span>
           {": "}

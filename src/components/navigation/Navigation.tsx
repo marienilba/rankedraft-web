@@ -7,7 +7,6 @@ import { MobileNavigation } from "./MobileNavigation";
 import { GlobalBackground } from "./GlobalBackground";
 import { Title } from "../Title";
 import { Loading } from "../Loading";
-import { OverflowY } from "./OverflowY";
 
 export const Navigation = () => {
   const { isFetchingUser, signIn, signOut } = useUser();
@@ -26,7 +25,6 @@ export const Navigation = () => {
         <Loading />
       ) : (
         <>
-          <OverflowY />
           {isMobile ? (
             <MobileNavigation signIn={handleOAuthSignIn} signOut={signOut} />
           ) : (
