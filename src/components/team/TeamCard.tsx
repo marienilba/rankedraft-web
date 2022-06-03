@@ -113,8 +113,8 @@ export const TeamCard = ({ team }: { team: Team }) => {
                     <Avatar
                       name={name}
                       src={useAvatarSrc(avatar)}
-                      bg="transparent"
-                      ignoreFallback
+                      bg={theme[100]}
+                      icon={<span></span>}
                     />
                   </Tooltip>
                 );
