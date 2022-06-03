@@ -74,7 +74,7 @@ export const UserContextProvider = (props) => {
         {
           redirectTo:
             process.env.NODE_ENV === "production"
-              ? "https://rankedraft.vercel.app/"
+              ? process.env.NEXT_PUBLIC_HOST
               : "http://localhost:3000",
         }
       );

@@ -22,6 +22,7 @@ const Index = () => {
     "team",
     getTeams
   );
+
   return (
     <Flex mt={10} direction="column" w="100%" paddingX={7}>
       <Stack>
