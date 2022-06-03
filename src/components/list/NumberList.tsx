@@ -30,7 +30,7 @@ export const NumberList = ({
   onSelect,
   range,
 }: NumberListProps) => {
-  const { invert } = useTheme();
+  const { code } = useTheme({ invert: true });
   const { isMobile } = useWindowSize();
 
   const ref: any = useRef();
@@ -84,7 +84,7 @@ export const NumberList = ({
                 width: "6px",
               },
               "&::-webkit-scrollbar-thumb": {
-                background: invert[100],
+                background: code[300],
                 borderRadius: "24px",
               },
             }}

@@ -29,104 +29,10 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 import { makeAvatarArray } from "../../utils/AvatarIndex";
 import { Breeds } from "../../utils/BreedIndex";
 
-interface NumberListProps {
-  selected: number;
-  onSelect: (t: any) => void;
-  placeholder: string;
-}
-
-export const BreedList = ({
-  selected,
-  onSelect,
-  placeholder,
-}: NumberListProps) => {
-  const { theme } = useTheme();
-
-  const [_, setIsOpen] = useBoolean(false);
-  const breed = Breeds[selected];
-  const capitalizeFirstLetter = useCallback((txt) => {
-    return txt.charAt(0).toUpperCase() + txt.slice(1);
-  }, []);
-  return (
-    <Stack direction="row" alignItems="center">
-      <Menu matchWidth onOpen={setIsOpen.on} onClose={setIsOpen.off}>
-        <MenuButton as={Button}>
-          <Stack direction="row" justifyContent="center" alignItems="center">
-            {selected !== 0 ? (
-              <>
-                <Image
-                  boxSize="2rem"
-                  borderRadius="full"
-                  src={`/profile/${breed}.png`}
-                  alt={`/profile/${breed}.png`}
-                />
-                <Heading fontWeight={600} fontSize="md">
-                  {capitalizeFirstLetter(breed)}
-                </Heading>
-              </>
-            ) : (
-              <>
-                <Image
-                  boxSize="2rem"
-                  borderRadius="full"
-                  src={`/profile/default.png`}
-                  alt={`/profile/default.png`}
-                />
-                <Heading fontWeight={600} fontSize="md">
-                  {placeholder}
-                </Heading>
-              </>
-            )}
-          </Stack>
-        </MenuButton>
-        <MenuList
-          maxHeight="40vh"
-          overflowY="auto"
-          css={{
-            "&::-webkit-scrollbar": {
-              width: "4px",
-            },
-            "&::-webkit-scrollbar-track": {
-              width: "6px",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              background: theme[300],
-              borderRadius: "24px",
-            },
-          }}
-        >
-          {makeAvatarArray([0, 18]).map((b, idx) => {
-            const breed = Breeds[b];
-            return (
-              <MenuItem
-                minH="32px"
-                key={`breeds-${breed}-${idx}`}
-                onClick={() => onSelect(b)}
-              >
-                <Image
-                  boxSize="2rem"
-                  borderRadius="full"
-                  src={`/profile/${breed}.png`}
-                  alt={`/profile/${breed}.png`}
-                  mr="12px"
-                />
-                {b !== 0 ? (
-                  <Text fontWeight={600}>{capitalizeFirstLetter(breed)}</Text>
-                ) : (
-                  <Text fontWeight={600}>{placeholder}</Text>
-                )}
-              </MenuItem>
-            );
-          })}
-        </MenuList>
-      </Menu>
-    </Stack>
-  );
-};
-
 export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
   const { isScreen, isPad, isMobile } = useWindowSize();
   const { backgroundColor, theme } = useTheme();
+  const { code } = useTheme({ invert: true });
   const { onOpen, onClose, isOpen } = useDisclosure();
   const { translate } = useBreeds();
   const ref: any = useRef();
@@ -248,7 +154,7 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
                   width: "6px",
                 },
                 "&::-webkit-scrollbar-thumb": {
-                  background: theme[700],
+                  background: code[300],
                   borderRadius: "24px",
                 },
               }}

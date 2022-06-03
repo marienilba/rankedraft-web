@@ -35,7 +35,7 @@ import { useSimpleCompo } from "../../hooks/useCompo";
 import useDateInput from "../../hooks/useDateInput";
 import useInput from "../../hooks/useInput";
 import { useTripleToggle } from "../../hooks/useTripleToggle";
-import { AutoCompleteBreed } from "../list/BreedList";
+import { AutoCompleteBreed } from "../list/AutoCompleteBreed";
 import { NumberList } from "../list/NumberList";
 import { Options as OptionsType } from "../../queries/History";
 import { AddHistorique } from "./AddHistorique";
