@@ -20,11 +20,7 @@ export const SwitchLocale = () => {
       <Heading fontSize="3xl">{t("language")}</Heading>
       <Stack pl={5}>
         <Flex maxWidth="10rem">
-          <Select
-            onChange={handleLocaleChange}
-            value={router.locale}
-            defaultValue={router.locale}
-          >
+          <Select onChange={handleLocaleChange} defaultValue={router.locale}>
             <option value="fr">Français</option>
             <option value="en">English</option>
           </Select>
