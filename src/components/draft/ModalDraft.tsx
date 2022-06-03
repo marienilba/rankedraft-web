@@ -55,8 +55,8 @@ export const ModalDraft = forwardRef(
       },
       {
         onSuccess: () => {
-          queryClient.invalidateQueries(["history", predraft.id]);
-          queryClient.invalidateQueries(["history"]);
+          queryClient.invalidateQueries(["draft", predraft.id]);
+          queryClient.invalidateQueries("history");
         },
       }
     );

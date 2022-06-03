@@ -38,7 +38,7 @@ export const DraftView = ({
 
   const queryClient = useQueryClient();
   const { isLoading, data, isSuccess, isError } = useQuery(
-    ["history", draft.id],
+    ["draft", draft.id],
     () => fetchHistory(draft.id)
   );
 
