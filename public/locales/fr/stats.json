@@ -8,12 +8,12 @@
   "caption": {
     "globale": "Statistique globale sur {{nb}} matchs",
     "letter": "Statistique en fonction de la lettre sur {{nb}} matchs",
-    "opponents": "Statistique contre chaque adversaires",
+    "opponents": "Statistique contre chaque adversaire",
     "my_picks": "Mes picks",
     "opp_picks": "Picks adverses"
   },
   "th": {
-    "result": "Resultat",
+    "result": "Résultat",
     "number": "Nombre",
     "winrate": "Winrate",
     "letter": "Lettre",

@@ -15,19 +15,19 @@
   },
   "module": {
     "title": "Ranked Draft",
-    "register": "S'inscire",
+    "register": "S'inscrire",
     "looking_for": "En recherche d'adversaire",
     "opponent_find": "Adversaire trouvé !",
     "accept": "Accepter",
     "refuse": "Refuser",
     "refuse_warning_title": "Êtes-vous sur de vouloir refuser ?",
-    "refuse_warning_message": "Le refus peut-être sanctionner par des pénalitées et avertissements s'il est occassioné de manière fréquentes ou pratiquant un abus.",
+    "refuse_warning_message": "Le refus peut-être sanctionné par des pénalités et avertissements s'il est occassioné de manière fréquente ou pratiquant un abus.",
     "forfeit": "Abandonner",
     "report": "Signaler",
     "report_modal": {
       "title": "Signaler {{username}}",
       "toxic": "Comportement toxique ciblé",
-      "AFK": "AFK Fréquement",
+      "AFK": "AFK Fréquemment",
       "unrespect": "Ne respecte pas les règles de conduite"
     },
     "confirm_refuse": "Oui, refuser",
@@ -41,14 +41,14 @@
     "respect_rules": "Veuillez respecter le règlement",
     "rules": {
       "title": "Conduite des drafts ranked.",
-      "1": "— Les drafts ranked fonctionne grâce au fair-play des joueurs.",
+      "1": "— Les drafts ranked fonctionnent grâce au fair-play des joueurs.",
       "2": "— L'abus de faux résultat rapporté est soumis à avertissements, sanctions si récidive.",
-      "3": "— Le forfait est cependant pas sanctionné."
+      "3": "— Le forfait n'est cependant pas sanctionné."
     },
     "won": "Gagné",
     "lost": "Perdu",
     "already_in": "Une instance est déjà en cours sur le compte",
     "logout": "Déconnecter",
-    "opponent_left": "L'adversaire a quitter le lobby."
+    "opponent_left": "L'adversaire a quitté le lobby."
   }
 }
