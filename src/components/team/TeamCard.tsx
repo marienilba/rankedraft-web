@@ -109,7 +109,7 @@ export const TeamCard = ({ team }: { team: Team }) => {
               mates.length > 0 &&
               mates.map(({ id, name, avatar }, index) => {
                 return (
-                  <Tooltip key={`member-${id}-${team_name}`} label={name}>
+                  <Tooltip key={`member-${index}-${team_name}`} label={name}>
                     <Avatar
                       name={name}
                       src={useAvatarSrc(avatar)}
