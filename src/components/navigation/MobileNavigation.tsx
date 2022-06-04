@@ -68,10 +68,10 @@ export const MobileNavigation = ({
             <Stack>
               <NavigationMenuLink
                 title={t("page.home")}
-                link="/"
+                link="/home"
                 onClick={onClose}
               >
-                <NavIconWrapper pathname={pathname} match="/">
+                <NavIconWrapper pathname={pathname} match="/home">
                   <AiFillHome size="24px" {...color} />
                   <AiOutlineHome size="24px" {...color} />
                 </NavIconWrapper>

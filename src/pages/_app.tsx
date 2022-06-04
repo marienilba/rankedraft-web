@@ -30,10 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <UserContextProvider>
           <Hydrate state={pageProps.dehydratedState}>
             <Container>
-              <Flex>
-                <Navigation />
-                <Component {...pageProps} />
-              </Flex>
+              <Component {...pageProps} />
             </Container>
           </Hydrate>
         </UserContextProvider>

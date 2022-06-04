@@ -71,8 +71,8 @@ export const ScreenNavigation = ({
         >
           <LogoButton />
           <Stack>
-            <NavigationMenuLink title={t("page.home")} link="/">
-              <NavIconWrapper pathname={pathname} match="/">
+            <NavigationMenuLink title={t("page.home")} link="/home">
+              <NavIconWrapper pathname={pathname} match="/home">
                 <AiFillHome size="24px" {...color} />
                 <AiOutlineHome size="24px" {...color} />
               </NavIconWrapper>

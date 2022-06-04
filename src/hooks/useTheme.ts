@@ -72,7 +72,7 @@ export function useTheme(options?: Options) {
       if (options?.variant === "secondary")
         return colorMode !== "dark" ? "brand.600" : "brand.200";
       if (options?.variant === "info")
-        return colorMode === "dark" ? "brand.600" : "brand.300";
+        return colorMode === "dark" ? "brand.300" : "brand.600";
       return colorMode !== "dark" ? "brand.700" : "brand.100";
     }
   }, [colorMode, options]);

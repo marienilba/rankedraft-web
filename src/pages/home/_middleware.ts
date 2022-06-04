@@ -1,10 +1,13 @@
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { paramsToObject } from "../../utils/HelpersFunction";
 
 export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   //The line below isn't working as expected, see README.tx
   //   let authResult = await supabase.auth.api.getUserByCookie(req)
-  let authResult = await getUser(req, ["admin", "moderator"]);
+
+  let authResult = await getUser(req);
+
   if (authResult.error) {
     return NextResponse.redirect(req.nextUrl.origin);
   } else if (!authResult.user) {
@@ -14,10 +17,7 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   }
 }
 
-async function getUser(
-  req: NextRequest,
-  role_required: string[]
-): Promise<any> {
+async function getUser(req: NextRequest): Promise<any> {
   let token = req.cookies["sb-access-token"];
   if (!token) {
     return {
@@ -44,18 +44,10 @@ async function getUser(
       error: `Supabase auth returned ${authRequestResult.status}. See logs for details`,
     };
   } else if (result.aud === "authenticated") {
-    if (role_required?.includes(result.app_metadata?.role)) {
-      return {
-        user: result,
-        data: result,
-        error: null,
-      };
-    } else {
-      return {
-        user: null,
-        data: null,
-        error: `Supabase auth returned ${authRequestResult.status} but ${role_required} is not confirmed. See logs for details`,
-      };
-    }
+    return {
+      user: result,
+      data: result,
+      error: null,
+    };
   }
 }

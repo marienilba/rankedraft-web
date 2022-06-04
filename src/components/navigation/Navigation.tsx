@@ -15,11 +15,9 @@ export const Navigation = () => {
   }, []);
 
   const { isMobile } = useWindowSize();
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === "dark";
   return (
     <Flex height="auto">
-      <GlobalBackground isDark={isDark} />
+      <GlobalBackground />
       <Title></Title>
       {isFetchingUser ? (
         <Loading />

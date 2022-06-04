@@ -1,7 +1,6 @@
+import { useRouter } from "next/router";
 import { useEffect, useState, createContext, useContext } from "react";
 import { supabase } from "../utils/supabaseClient";
-import { useRouter } from "next/router";
-import { useQueryClient } from "react-query";
 
 export const UserContext = createContext<any>(undefined);
 
@@ -11,27 +10,28 @@ export const UserContextProvider = (props) => {
   const [user, setUser] = useState(null);
   const [userRole, setUserRole] = useState(null);
   const [subscription, setSubscription] = useState(null);
-  const [lastEvent, setLastEvent] = useState(null);
   const [isFetchingUser, setIsFetchingUser] = useState(true);
   const router = useRouter();
-  const queryClient = useQueryClient();
-
   useEffect(() => {
     const session = supabase.auth.session();
     setSession(session);
     setUser(session?.user ?? null);
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        if (event !== lastEvent) {
-          await fetch("/api/auth/set", {
-            method: "POST",
-            headers: new Headers({ "Content-Type": "application/json" }),
-            credentials: "same-origin",
-            body: JSON.stringify({ event, session }),
-          });
-          setLastEvent(event);
-        }
+        await fetch("/api/auth/set", {
+          method: "POST",
+          headers: new Headers({ "Content-Type": "application/json" }),
+          credentials: "same-origin",
+          body: JSON.stringify({ event, session }),
+        });
 
+        if (event === "SIGNED_IN" && router.pathname === "/")
+          router.push("/home");
+
+        if (event === "SIGNED_OUT") router.push("/");
+        if (event === "PASSWORD_RECOVERY") {
+          console.log(event);
+        }
         setSession(session);
         setUser(session?.user ?? null);
       }
@@ -66,6 +66,40 @@ export const UserContextProvider = (props) => {
     userLoaded,
     isFetchingUser,
     subscription,
+    signUpWithEmail: async ({ email, password, username }) =>
+      supabase.auth.signUp(
+        { email, password },
+        {
+          data: { name: username },
+          redirectTo:
+            process.env.NODE_ENV === "production"
+              ? process.env.NEXT_PUBLIC_HOST
+              : "http://localhost:3000",
+        }
+      ),
+    signInWithEmail: async ({ email, password }) =>
+      supabase.auth.signIn(
+        { email, password },
+        {
+          redirectTo:
+            process.env.NODE_ENV === "production"
+              ? process.env.NEXT_PUBLIC_HOST
+              : "http://localhost:3000/home",
+        }
+      ),
+    signInWithProvider: async (provider: "google" | "discord") =>
+      supabase.auth.signIn(
+        {
+          provider,
+        },
+        {
+          redirectTo:
+            process.env.NODE_ENV === "production"
+              ? process.env.NEXT_PUBLIC_HOST
+              : "http://localhost:3000/home",
+        }
+      ),
+
     signIn: () => {
       return supabase.auth.signIn(
         {
@@ -80,16 +114,23 @@ export const UserContextProvider = (props) => {
       );
     },
     signOut: async () => {
-      router.push("/");
+      setUserRole(null);
+      setSubscription(null);
       await fetch("/api/auth/remove", {
         method: "GET",
         credentials: "same-origin",
       });
-      queryClient.clear();
-      setUserRole(null);
-      setSubscription(null);
       return supabase.auth.signOut();
     },
+    recoverPassword: async (email: string) =>
+      supabase.auth.api.resetPasswordForEmail(email, {
+        redirectTo:
+          process.env.NODE_ENV === "production"
+            ? `${process.env.NEXT_PUBLIC_HOST}/account/reset`
+            : "http://localhost:3000/account/reset",
+      }),
+    resetPassword: async (token: string, password: string) =>
+      supabase.auth.api.updateUser(token, { password: password }),
   };
 
   return <UserContext.Provider value={value} {...props} />;

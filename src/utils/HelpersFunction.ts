@@ -1,3 +1,4 @@
+import isEmpty from "lodash.isempty";
 export function romanToInt(s: string): number {
   const romanHash = {
     I: 1,
@@ -181,7 +182,7 @@ export function timeSince(date: Date): string {
   return Math.floor(seconds) + " seconds";
 }
 
-function ObjectToParams(entries: Object) {
+export function ObjectToParams(entries: Object) {
   const result = {};
   for (const key in entries) {
     if (entries[key] === null) continue;
@@ -190,11 +191,11 @@ function ObjectToParams(entries: Object) {
   return new URLSearchParams(result);
 }
 
-function paramsToObject(query: string) {
+export function paramsToObject(query: string): { [key: string]: any } {
   const entries = new URLSearchParams(query);
   const result = {};
   for (const [key, value] of entries) {
-    result[key] = JSON.parse(value);
+    result[key] = isEmpty(value) ? null : JSON.parse(JSON.stringify(value));
   }
   return result;
 }
