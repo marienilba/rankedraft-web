@@ -42,7 +42,10 @@ export const UserContextProvider = (props) => {
           router.pathname = "/home"; // Otherwise, because callback don't have any deps, so never change, so pathname is not updated, and user would go back to home each time he refocus the window
         }
 
-        if (event === "SIGNED_OUT") router.push("/");
+        if (event === "SIGNED_OUT") {
+          router.push("/");
+          router.pathname = "/";
+        }
         if (event === "PASSWORD_RECOVERY") {
           console.log(event);
         }

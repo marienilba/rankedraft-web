@@ -19,7 +19,11 @@ import { RecoverPasswordForEmail } from "../components/sign/RecoverPasswordForEm
 import { SignInWithProvider } from "../components/sign/SignInWithProvider";
 import { useTheme } from "../hooks/useTheme";
 
-export const Sign = () => {
+export const Sign = ({
+  borderTopLeftRadius,
+}: {
+  borderTopLeftRadius?: number | string;
+}) => {
   const { t } = useTranslation(["home"]);
   const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure();
   const [hidden, setHidden] = useState(!isOpen);
@@ -31,7 +35,7 @@ export const Sign = () => {
       flex={1}
       direction="column"
       padding={8}
-      borderTopLeftRadius="xl"
+      borderTopLeftRadius={borderTopLeftRadius}
     >
       <Header />
       <Divider w="100%" marginY={5} />
@@ -48,8 +52,8 @@ export const Sign = () => {
 
       <div>
         {hidden && (
-          <Stack>
-            <Heading fontSize="lg">Vous n'avez pas de compte ?</Heading>
+          <Stack width="100%">
+            <Heading fontSize="2vmax">Vous n'avez pas de compte ?</Heading>
             <Button
               borderRadius="full"
               variant="outline"
@@ -66,7 +70,10 @@ export const Sign = () => {
           initial={false}
           onAnimationStart={() => setHidden(false)}
           onAnimationComplete={() => setHidden(!isOpen)}
-          animate={{ left: isOpen ? 0 : "100%", opacity: isOpen ? 1 : 0.2 }}
+          animate={{
+            left: isOpen ? 0 : "100%",
+            opacity: isOpen ? 1 : 0.2,
+          }}
           transition={{ type: "tween", duration: 0.4 }}
           style={{
             position: "relative",
@@ -78,15 +85,15 @@ export const Sign = () => {
             opacity: 1,
           }}
         >
-          <Flex marginBottom={4}>
+          <Flex marginBottom={4} alignItems="center">
             <IconButton
-              icon={<ArrowBackIcon fontSize="2xl" />}
+              icon={<ArrowBackIcon />}
               aria-label="back"
               variant="ghost"
               mr={6}
               {...getButtonProps()}
             />
-            <Heading>Créer votre compte</Heading>
+            <Heading size="lg">Créer votre compte</Heading>
           </Flex>
           <SignInWithProvider method="signUp" />
           <FormSignUp />

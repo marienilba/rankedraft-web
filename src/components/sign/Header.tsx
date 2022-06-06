@@ -25,7 +25,7 @@ export const Header = () => {
         textShadow="dark-lg"
         bgClip="text"
       >
-        <Heading fontSize="7xl">RankeDraft</Heading>
+        <Heading fontSize="7vmax">RankeDraft</Heading>
       </Flex>
     </>
   );

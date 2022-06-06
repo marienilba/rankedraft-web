@@ -2,7 +2,6 @@ import { Divider, Heading } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { CardIntroduction } from "../components/showing/CardIntroduction";
 import { Header } from "../components/showing/Header";
-import { PageHeading } from "../components/PageHeading";
 import { Container } from "./Container";
 
 export const Showing = () => {
@@ -10,7 +9,6 @@ export const Showing = () => {
 
   return (
     <Container>
-      <PageHeading> </PageHeading>
       <Header />
       <Divider marginTop={5} marginBottom="16" />
       <Heading textAlign="center">{t("draft_history")}</Heading>
@@ -45,8 +43,6 @@ export const Showing = () => {
         marginTop={5}
         direction="column"
       />
-
-      <Divider marginTop={5} marginBottom="16" />
     </Container>
   );
 };

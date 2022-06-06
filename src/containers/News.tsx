@@ -3,23 +3,26 @@ import { useState } from "react";
 import { ChangelogCard } from "../components/news/ChangelogCard";
 import { DevblogCard } from "../components/news/DevblogCard";
 import { NewCard } from "../components/news/NewCard";
+import { useWindowSize } from "../hooks/useWindowSize";
 import { NewsData, ChangelogsData, DevblogsData } from "../pages/home/Data";
 
 export const News = () => {
+  const { isMobile } = useWindowSize();
   const [tabIndex, setTabIndex] = useState(0);
   const news = NewsData;
   const changelogs = ChangelogsData;
   const devblogs = DevblogsData;
   return (
-    <Flex>
+    <Flex direction={isMobile ? "column" : "row"}>
       <Flex flex={0.5} justifyContent="flex-end">
         <Stack
+          direction={isMobile ? "row" : "column"}
           spacing={2}
           marginRight={7}
           position="sticky"
           top="40px"
-          height="200px"
-          marginTop={12}
+          height={isMobile ? "auto" : "200px"}
+          marginTop={isMobile ? 4 : 12}
         >
           <Heading
             fontSize="2xl"
@@ -52,7 +55,7 @@ export const News = () => {
 
         <Divider orientation="vertical" />
       </Flex>
-      <Flex flex={1} justifyContent="center">
+      <Flex flex={1.5} justifyContent="center">
         <Stack padding={7} width="100%">
           {tabIndex === 0 && (
             <>

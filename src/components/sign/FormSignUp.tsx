@@ -14,7 +14,11 @@ import {
   InputRightElement,
   IconButton,
   Button,
+  Link,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { Formik, Form, Field } from "formik";
 import { useState, useId } from "react";
 import { RiUser3Line, RiKeyLine } from "react-icons/ri";
@@ -31,9 +35,7 @@ export const FormSignUp = () => {
   const username_id = useId();
   const email_id = useId();
   const password_id = useId();
-
   const { signUpWithEmail } = useUser();
-
   const [isSuccess, setIsSuccess] = useState(false);
 
   function validateRequired(value: string): string {
@@ -216,10 +218,20 @@ export const FormSignUp = () => {
             >
               S'inscrire
             </Button>
-            <Text fontSize="xs">
-              En vous inscrivant, vous acceptez nos Conditions et notre
-              Politique de confidentialité.
-            </Text>
+            <Wrap fontSize="xs">
+              <Text>En vous inscrivant, vous acceptez nos</Text>
+              <NextLink href="/tos" passHref>
+                <Link color="twitter.700" isExternal>
+                  Conditions d'utilisation
+                </Link>
+              </NextLink>
+              <Text>et notre</Text>
+              <NextLink href="/privacy" passHref>
+                <Link color="twitter.700" isExternal>
+                  Politique de confidentialité
+                </Link>
+              </NextLink>
+            </Wrap>
           </Stack>
         </Form>
       )}

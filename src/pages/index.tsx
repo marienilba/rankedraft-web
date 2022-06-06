@@ -12,10 +12,12 @@ import { Loading } from "../components/Loading";
 import { Background } from "../components/sign/Background";
 import { Sign } from "../containers/Sign";
 import { Showing } from "../containers/Showing";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 const Index = () => {
   const { t } = useTranslation(["home"]);
   const { backgroundColor } = useTheme({ invert: true, variant: "info" });
+  const { isMobile, isPad, isScreen } = useWindowSize();
   const { isDark, theme } = useTheme();
   const [isRedirect, setIsRedirect] = useState(false);
 
@@ -36,10 +38,16 @@ const Index = () => {
       <Flex width="100%" height="100vh" {...backgroundColor}>
         <GlobalBackground />
         {isRedirect && <Loading />}
-        <Flex bgColor={isDark ? theme[500] : theme[700]} flex={0.9}>
-          <Background />
-        </Flex>
-        <Sign />
+        {(isScreen || isPad || !isMobile) && (
+          <Flex
+            bgColor={isDark ? theme[500] : theme[700]}
+            flex={isPad ? 0.4 : 0.9}
+          >
+            <Background />
+          </Flex>
+        )}
+
+        <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>
       <Showing />
     </>

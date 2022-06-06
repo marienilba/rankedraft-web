@@ -1,4 +1,4 @@
-import { Stack, Button, Flex, Divider, Heading } from "@chakra-ui/react";
+import { Stack, Button, Flex, Divider, Heading, Wrap } from "@chakra-ui/react";
 import { FaDiscord } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useUser } from "../../hooks/useUser";
@@ -8,7 +8,7 @@ export const SignInWithProvider = ({ method }) => {
 
   return (
     <Stack alignItems="center">
-      <Stack direction="row">
+      <Wrap justify="center">
         <Button
           onClick={async () => {
             return await signInWithProvider("google");
@@ -43,7 +43,7 @@ export const SignInWithProvider = ({ method }) => {
             ? "Se connecter avec Discord"
             : "S'inscrire avec Discord"}
         </Button>
-      </Stack>
+      </Wrap>
       <Flex alignItems="center" width="100%">
         <Divider />
         <Heading marginX={6} fontSize="lg">

@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <Flex>
       <Navigation />
-      <Flex direction="column" width="100%">
+      <Flex direction="column" width="100%" marginTop={2}>
         <Flex width="100%" alignItems="center" direction="column">
           <Flex
             position="relative"
