@@ -4,10 +4,10 @@ import { Hero } from "./Hero";
 export const Header = () => {
   return (
     <Stack>
-      <Flex direction="column">
-        <Hero title="RankeDraft" />
-        <Flex justifyContent="center" alignItems="center">
-          <Heading as="sup" fontSize="xl" textAlign="left" width="50.5%">
+      <Flex justifyContent="center" alignItems="center" direction="column">
+        <Flex direction="column">
+          <Hero title="RankeDraft" />
+          <Heading as="sup" fontSize="xl" textAlign="left">
             Beta
           </Heading>
         </Flex>

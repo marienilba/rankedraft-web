@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "./Constants";
+import { API_URL } from "../utils/Constants";
 import { supabase } from "./supabaseClient";
 
 const client = axios.create({ baseURL: API_URL });

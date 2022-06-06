@@ -1,6 +1,12 @@
 import { useRouter } from "next/router";
-import { useEffect, useState, createContext, useContext } from "react";
-import { supabase } from "../utils/supabaseClient";
+import {
+  useEffect,
+  useState,
+  createContext,
+  useContext,
+  useCallback,
+} from "react";
+import { supabase } from "../lib/supabaseClient";
 
 export const UserContext = createContext<any>(undefined);
 
@@ -12,6 +18,7 @@ export const UserContextProvider = (props) => {
   const [subscription, setSubscription] = useState(null);
   const [isFetchingUser, setIsFetchingUser] = useState(true);
   const router = useRouter();
+
   useEffect(() => {
     const session = supabase.auth.session();
     setSession(session);
@@ -25,8 +32,15 @@ export const UserContextProvider = (props) => {
           body: JSON.stringify({ event, session }),
         });
 
-        if (event === "SIGNED_IN" && router.pathname === "/")
-          router.push("/home");
+        if (
+          event === "SIGNED_IN" &&
+          router.pathname === "/" &&
+          typeof window !== "undefined"
+        ) {
+          // this is here because provider don't success to redirect to /home
+          router.push({ pathname: "/home" });
+          router.pathname = "/home"; // Otherwise, because callback don't have any deps, so never change, so pathname is not updated, and user would go back to home each time he refocus the window
+        }
 
         if (event === "SIGNED_OUT") router.push("/");
         if (event === "PASSWORD_RECOVERY") {
@@ -100,19 +114,6 @@ export const UserContextProvider = (props) => {
         }
       ),
 
-    signIn: () => {
-      return supabase.auth.signIn(
-        {
-          provider: "google",
-        },
-        {
-          redirectTo:
-            process.env.NODE_ENV === "production"
-              ? process.env.NEXT_PUBLIC_HOST
-              : "http://localhost:3000",
-        }
-      );
-    },
     signOut: async () => {
       setUserRole(null);
       setSubscription(null);

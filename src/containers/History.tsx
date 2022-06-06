@@ -205,7 +205,7 @@ export const History = () => {
             </Button>
             <Spacer />
             <IconButton
-              hidden={UpButtonInView}
+              hidden={data?.pages[0]?.histories?.length ? UpButtonInView : true}
               colorScheme="green"
               aria-label="Remonter haut de page"
               icon={<ArrowUpIcon />}

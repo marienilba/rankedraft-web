@@ -39,10 +39,6 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
     [letter, index, pick]
   );
 
-  const capitalizeFirstLetter = useCallback((txt) => {
-    return txt.charAt(0).toUpperCase() + txt.slice(1);
-  }, []);
-
   const [value, setValue] = useState(pick.mode);
 
   const [internalValue, setInternalValue] = useControllableState({
@@ -69,10 +65,8 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
             padding={2}
             borderRadius={5}
           >
-            <Text fontWeight={600}>
-              {path === "placeholder"
-                ? ""
-                : capitalizeFirstLetter(translate(pick.breed))}
+            <Text fontWeight={600} textTransform="capitalize">
+              {path === "placeholder" ? "" : translate(pick.breed)}
             </Text>
           </Flex>
         )}

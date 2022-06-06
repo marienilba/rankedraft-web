@@ -1,4 +1,4 @@
-import { request } from "../utils/axios-utils";
+import { request } from "../lib/axios-utils";
 import { API_URL } from "../utils/Constants";
 
 interface Draft {

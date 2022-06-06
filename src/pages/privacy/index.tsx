@@ -1,13 +1,11 @@
 import { Flex } from "@chakra-ui/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Navigation } from "../../components/navigation/Navigation";
-import { Cgu } from "../../containers/Cgu";
+import { Privacy } from "../../containers/Privacy";
 
 const Index = () => {
   return (
     <Flex>
-      <Navigation />
-      <Cgu />
+      <Privacy />
     </Flex>
   );
 };
@@ -15,7 +13,7 @@ const Index = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "cgu"])),
+      ...(await serverSideTranslations(locale, ["common", "tos"])),
     },
   };
 }

@@ -32,7 +32,15 @@ export const CardIntroduction = ({
   const { code } = useTheme({ invert: true });
   const isFade: any = useRef(null);
   useEffect(() => {
-    if (!isFade?.current) isFade.current = true;
+    if (!isFade?.current) {
+      const time = setTimeout(() => {
+        isFade.current = true;
+      }, 500);
+
+      return () => {
+        clearTimeout(time);
+      };
+    }
   }, [inView]);
   return (
     <Stack
@@ -42,9 +50,10 @@ export const CardIntroduction = ({
       marginBottom={marginBottom}
       justifyContent="center"
       alignItems="center"
+      ref={ref}
     >
       <Flex justifyContent="center" alignItems="center" direction="column">
-        <Heading ref={ref}>{heading}</Heading>
+        <Heading>{heading}</Heading>
       </Flex>
       <Flex maxWidth="50%" alignItems="center">
         <Fade in={isFade?.current || false}>

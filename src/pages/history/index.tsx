@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from "react-query";
 import { Flex } from "@chakra-ui/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Navigation } from "../../components/navigation/Navigation";
+import { Navigation } from "../../containers/Navigation";
 import { History } from "../../containers/History";
 
 const Index = () => {

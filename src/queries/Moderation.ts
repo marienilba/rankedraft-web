@@ -1,4 +1,4 @@
-import { request } from "../utils/axios-utils";
+import { request } from "../lib/axios-utils";
 
 export const fetchProfiles = async (key: any): Promise<any[]> => {
   const { queryKey } = key;

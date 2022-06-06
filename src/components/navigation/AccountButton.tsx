@@ -8,6 +8,7 @@ import {
   Heading,
   Spacer,
   MenuList,
+  Img,
 } from "@chakra-ui/react";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { useQuery } from "react-query";
@@ -16,23 +17,22 @@ import { useTheme } from "../../hooks/useTheme";
 import { Logout } from "./Logout";
 import { useAvatarSrc } from "../../utils/AvatarIndex";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { ErrorButton } from "../ErrorButton";
+import { memo, useEffect } from "react";
+import { useUser } from "../../hooks/useUser";
 
-export const AccountButton = ({ user, signOut }) => {
+export const AccountButton = memo(() => {
   const { theme } = useTheme();
   const { isScreen, isMobile } = useWindowSize();
-
+  const { signOut, user } = useUser();
   const { isLoading, data, isSuccess, isError, refetch } = useQuery(
-    ["profile", user.id],
+    ["profile", user?.id],
     fetchLightProfile
   );
-
-  if (isError) return <ErrorButton refetch={refetch} />;
 
   if (isMobile) {
     return (
       <>
-        {isSuccess && data ? (
+        {data ? (
           <Stack direction="row" alignItems="center">
             <Avatar
               size="md"
@@ -81,12 +81,11 @@ export const AccountButton = ({ user, signOut }) => {
               justifyContent="center"
               minH="7vh"
             >
-              {isSuccess && data ? (
+              {data ? (
                 <>
-                  <Avatar
-                    size="md"
-                    bg={theme[200]}
-                    icon={<span></span>}
+                  <Img
+                    width="3.5rem"
+                    borderRadius="full"
                     src={useAvatarSrc(data.avatar)}
                   />
                   {isScreen && (
@@ -122,4 +121,4 @@ export const AccountButton = ({ user, signOut }) => {
       </Menu>
     </Flex>
   );
-};
+});

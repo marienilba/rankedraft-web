@@ -135,9 +135,6 @@ const PicksTables = ({ myPicks, theirPicks }) => {
   const { repartitions: myRepartitions } = myPicks;
   const { repartitions: theirRepartitions } = theirPicks;
   const { translate } = useBreeds();
-  const capitalizeFirstLetter = (txt: string): string => {
-    return txt.charAt(0).toUpperCase() + txt.slice(1);
-  };
 
   return (
     <Wrap alignItems="center">
@@ -175,7 +172,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
                 if (wins + looses > 0)
                   return (
                     <Tr key={`picks_m-${idx}`}>
-                      <Td>{capitalizeFirstLetter(translate(idx + 1))}</Td>
+                      <Td textTransform="capitalize">{translate(idx + 1)}</Td>
                       <Td>{wins + looses}</Td>
                       <Td isNumeric>{percent.toFixed(2)}%</Td>
                     </Tr>
@@ -222,7 +219,7 @@ const PicksTables = ({ myPicks, theirPicks }) => {
                   if (wins + looses > 0)
                     return (
                       <Tr key={`picks_t-${idx}`}>
-                        <Td>{capitalizeFirstLetter(Breeds[idx + 1])}</Td>
+                        <Td textTransform="capitalize">{Breeds[idx + 1]}</Td>
                         <Td>{wins + looses}</Td>
                         <Td isNumeric>{percent.toFixed(2)}%</Td>
                       </Tr>

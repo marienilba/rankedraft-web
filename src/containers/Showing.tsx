@@ -1,12 +1,11 @@
 import { Divider, Heading } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
-import { CardIntroduction } from "../components/home/CardIntroduction";
-import { Header } from "../components/home/Header";
-import { TipsTricks } from "../components/home/TipsTricks";
+import { CardIntroduction } from "../components/showing/CardIntroduction";
+import { Header } from "../components/showing/Header";
 import { PageHeading } from "../components/PageHeading";
 import { Container } from "./Container";
 
-export const Home = () => {
+export const Showing = () => {
   const { t } = useTranslation(["home"]);
 
   return (
@@ -48,7 +47,6 @@ export const Home = () => {
       />
 
       <Divider marginTop={5} marginBottom="16" />
-      <TipsTricks />
     </Container>
   );
 };

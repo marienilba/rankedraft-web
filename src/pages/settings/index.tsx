@@ -9,7 +9,7 @@ import { SwitchRankedSfx } from "../../components/settings/SwitchRankedSfx";
 import { PageHeading } from "../../components/PageHeading";
 import { SwitchLocale } from "../../components/settings/SwitchLocale";
 import { useTranslation } from "next-i18next";
-import { Navigation } from "../../components/navigation/Navigation";
+import { Navigation } from "../../containers/Navigation";
 import { Settings } from "../../containers/Settings";
 
 const Index = () => {

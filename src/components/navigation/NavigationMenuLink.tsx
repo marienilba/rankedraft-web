@@ -1,5 +1,6 @@
 import { Flex, Stack, Box, Heading, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -17,6 +18,7 @@ export const NavigationMenuLink = ({
 }) => {
   const { backgroundColor } = useTheme({ variant: "secondary" });
   const { isScreen, isMobile } = useWindowSize();
+  const { pathname } = useRouter();
 
   if (link) {
     return (
@@ -35,7 +37,11 @@ export const NavigationMenuLink = ({
             >
               <Box>{children}</Box>
               {(isScreen || isMobile) && (
-                <Heading fontWeight={500} size="md">
+                <Heading
+                  fontWeight={pathname === link ? 700 : 400}
+                  letterSpacing={pathname === link ? -0.9 : 0}
+                  size="md"
+                >
                   {title}
                 </Heading>
               )}
@@ -52,7 +58,10 @@ export const NavigationMenuLink = ({
         direction="row"
         alignItems="center"
         borderRadius={50}
-        _hover={{ ...backgroundColor, cursor: "pointer" }}
+        _hover={{
+          ...backgroundColor,
+          cursor: "pointer",
+        }}
         justifyContent="flex-start"
         paddingX={4}
         paddingY={2}
@@ -60,7 +69,7 @@ export const NavigationMenuLink = ({
       >
         <Box>{children}</Box>
         {(isScreen || isMobile) && (
-          <Heading fontWeight={500} size="md">
+          <Heading fontWeight={400} size="md">
             {title}
           </Heading>
         )}

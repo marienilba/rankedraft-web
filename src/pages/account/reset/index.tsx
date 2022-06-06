@@ -19,7 +19,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { RiKeyLine } from "react-icons/ri";
 import { PasswordEvaluationBar } from "../..";
-import { Navigation } from "../../../components/navigation/Navigation";
+import { Navigation } from "../../../containers/Navigation";
 import { useUser } from "../../../hooks/useUser";
 import { paramsToObject } from "../../../utils/HelpersFunction";
 

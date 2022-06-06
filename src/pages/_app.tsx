@@ -7,7 +7,7 @@ import theme from "../theme/theme";
 import App, { AppContext, AppProps } from "next/app";
 import { useState } from "react";
 import { UserContextProvider } from "../hooks/useUser";
-import { Navigation } from "../components/navigation/Navigation";
+import { Navigation } from "../containers/Navigation";
 import { Container } from "../components/Container";
 
 function MyApp({ Component, pageProps }: AppProps) {

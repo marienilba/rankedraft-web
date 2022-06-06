@@ -20,9 +20,9 @@ export const Title = memo(() => {
         return t("page.profile");
       case "/settings":
         return t("page.settings");
-      case "/cgu":
+      case "/tos":
         return t("page.cgu_policy");
-      case "/confidentialite":
+      case "/privacy":
         return t("page.cgu_policy");
       case "/moderation":
         return t("page.moderation");

@@ -129,10 +129,12 @@ export function AutoCompleteBreed({ placeholder, onSelect, selected }) {
                   alt={`/profile/${breed}.png`}
                 />
                 {(isScreen || isPad) && (
-                  <Heading fontWeight={600} fontSize="md">
-                    {selected === 0
-                      ? placeholder
-                      : capitalizeFirstLetter(translate(selected))}
+                  <Heading
+                    fontWeight={600}
+                    fontSize="md"
+                    textTransform="capitalize"
+                  >
+                    {selected === 0 ? placeholder : translate(selected)}
                   </Heading>
                 )}
               </Stack>

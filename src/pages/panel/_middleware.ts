@@ -1,6 +1,6 @@
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { supabase } from "../../utils/supabaseClient";
+import { supabase } from "../../lib/supabaseClient";
 
 export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   //The line below isn't working as expected, see README.tx
