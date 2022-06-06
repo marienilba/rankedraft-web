@@ -27,8 +27,10 @@ import {
   PasswordEvaluation,
   PasswordEvaluationBar,
 } from "./PasswordEvaluationBar";
+import { useTranslation } from "next-i18next";
 
 export const FormSignUp = () => {
+  const { t } = useTranslation(["sign"]);
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [passwordEval, setPasswordEval] = useState<PasswordEvaluation>(null);
@@ -40,7 +42,7 @@ export const FormSignUp = () => {
 
   function validateRequired(value: string): string {
     let err: string;
-    if (!value) err = `Champs requis`;
+    if (!value) err = t("error.Required");
     return err;
   }
 
@@ -54,7 +56,7 @@ export const FormSignUp = () => {
     };
     if (!value) {
       setPasswordEval(null);
-      return `Champs requis`;
+      return t("error.Required");
     }
 
     if (value.length > 6) pe.size = true;
@@ -81,11 +83,12 @@ export const FormSignUp = () => {
           </Box>
         </Flex>
         <Flex alignItems="center" direction="column">
-          <Flex direction="column">
-            <Heading fontSize="xl">
-              Confirmer votre adresse email en vous rendant sur le lien envoyé
-            </Heading>
-            <Text>Peut arrivé dans les spams</Text>
+          <Flex direction="column" alignItems="center">
+            <Wrap justify="center">
+              <Heading size="sm">{t("ConfirmEmail1")} </Heading>
+              <Heading size="sm">{t("ConfirmEmail2")}</Heading>
+            </Wrap>
+            <Text>{t("CheckSpam")}</Text>
           </Flex>
         </Flex>
       </Stack>
@@ -98,22 +101,19 @@ export const FormSignUp = () => {
         const { username, email, password } = values;
         let fieldError = false;
         if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-          actions.setFieldError(
-            "email",
-            "You have entered an invalid email address"
-          );
+          actions.setFieldError("email", t("error.InvalidEmail"));
           fieldError = true;
         }
         if (username.length < 2) {
-          actions.setFieldError("username", "Username is too short");
+          actions.setFieldError("username", t("error.UsernameTooShort"));
           fieldError = true;
         }
         if (username.length > 12) {
-          actions.setFieldError("username", "Username is too long");
+          actions.setFieldError("username", t("error.UsernameTooLong"));
           fieldError = true;
         }
         if (password.length < 6) {
-          actions.setFieldError("password", "Password is too short");
+          actions.setFieldError("password", t("error.PasswordTooShort"));
           fieldError = true;
         }
         if (fieldError) {
@@ -129,7 +129,7 @@ export const FormSignUp = () => {
         if (error) {
           switch (error.message) {
             case "User already registered":
-              actions.setFieldError("email", error.message);
+              actions.setFieldError("email", t("error.AlreadyUser"));
               actions.setSubmitting(false);
               return;
             default:
@@ -150,7 +150,7 @@ export const FormSignUp = () => {
               <FormControl
                 isInvalid={form.errors.username && form.touched.username}
               >
-                <FormLabel htmlFor={username_id}>Username</FormLabel>
+                <FormLabel htmlFor={username_id}>{t("Username")}</FormLabel>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
@@ -165,7 +165,7 @@ export const FormSignUp = () => {
           <Field name="email" validate={validateRequired}>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.email && form.touched.email}>
-                <FormLabel htmlFor={email_id}>Email</FormLabel>
+                <FormLabel htmlFor={email_id}>{t("Email")}</FormLabel>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
@@ -182,7 +182,7 @@ export const FormSignUp = () => {
               <FormControl
                 isInvalid={form.errors.password && form.touched.password}
               >
-                <FormLabel htmlFor={password_id}>Mot de passe</FormLabel>
+                <FormLabel htmlFor={password_id}>{t("Password")}</FormLabel>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
@@ -216,19 +216,19 @@ export const FormSignUp = () => {
               w="100%"
               borderRadius="full"
             >
-              S'inscrire
+              {t("SignUp")}
             </Button>
             <Wrap fontSize="xs">
-              <Text>En vous inscrivant, vous acceptez nos</Text>
+              <Text>{t("SignUpAgree")}</Text>
               <NextLink href="/tos" passHref>
                 <Link color="twitter.700" isExternal>
-                  Conditions d'utilisation
+                  {t("TermOfUse")}
                 </Link>
               </NextLink>
-              <Text>et notre</Text>
+              <Text>{t("AndOur")}</Text>
               <NextLink href="/privacy" passHref>
                 <Link color="twitter.700" isExternal>
-                  Politique de confidentialité
+                  {t("PrivacyPolicy")}
                 </Link>
               </NextLink>
             </Wrap>

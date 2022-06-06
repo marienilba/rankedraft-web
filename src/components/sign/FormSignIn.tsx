@@ -12,11 +12,14 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
+import { useTranslation } from "next-i18next";
 import { useState, useId } from "react";
 import { RiKeyLine } from "react-icons/ri";
 import { useUser } from "../../hooks/useUser";
 
 export const FormSignIn = () => {
+  const { t } = useTranslation(["sign"]);
+
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [isRedirect, setIsRedirect] = useState(false);
@@ -32,22 +35,19 @@ export const FormSignIn = () => {
         const { email, password } = values;
         let fieldError = false;
         if (password === "") {
-          actions.setFieldError("password", "Champ requis");
+          actions.setFieldError("password", t("error.Required"));
           fieldError = true;
         } else if (password.length < 6) {
-          actions.setFieldError("password", "Password too short");
+          actions.setFieldError("password", t("error.PasswordTooShort"));
           fieldError = true;
         }
         if (email === "") {
-          actions.setFieldError("email", "Champ requis");
+          actions.setFieldError("email", t("error.Required"));
           fieldError = true;
         } else if (
           !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
         ) {
-          actions.setFieldError(
-            "email",
-            "You have entered an invalid email address"
-          );
+          actions.setFieldError("email", t("error.InvalidEmail"));
           fieldError = true;
         }
 
@@ -64,11 +64,11 @@ export const FormSignIn = () => {
         if (error) {
           switch (error.message) {
             case "Email not confirmed":
-              actions.setFieldError("email", error.message);
+              actions.setFieldError("email", t("error.EmailNotConfirmed"));
               actions.setSubmitting(false);
               return;
             case "Invalid login credentials":
-              actions.setFieldError("password", error.message);
+              actions.setFieldError("password", t("error.InvalidLogin"));
               actions.setSubmitting(false);
               return;
             default:
@@ -86,7 +86,7 @@ export const FormSignIn = () => {
           <Field name="email">
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.email && form.touched.email}>
-                <FormLabel htmlFor={email_id}>Email</FormLabel>
+                <FormLabel htmlFor={email_id}>{t("Email")}</FormLabel>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
@@ -103,7 +103,7 @@ export const FormSignIn = () => {
               <FormControl
                 isInvalid={form.errors.password && form.touched.password}
               >
-                <FormLabel htmlFor={password_id}>Mot de passe</FormLabel>
+                <FormLabel htmlFor={password_id}>{t("Password")}</FormLabel>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
@@ -134,7 +134,7 @@ export const FormSignIn = () => {
               w="100%"
               borderRadius="full"
             >
-              Se connecter
+              {t("SignIn")}
             </Button>
           </Flex>
         </Form>

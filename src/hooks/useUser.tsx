@@ -6,6 +6,7 @@ import {
   useContext,
   useCallback,
 } from "react";
+import { useQueryClient } from "react-query";
 import { supabase } from "../lib/supabaseClient";
 
 export const UserContext = createContext<any>(undefined);
@@ -17,6 +18,7 @@ export const UserContextProvider = (props) => {
   const [userRole, setUserRole] = useState(null);
   const [subscription, setSubscription] = useState(null);
   const [isFetchingUser, setIsFetchingUser] = useState(true);
+  const queryClient = useQueryClient();
   const router = useRouter();
 
   useEffect(() => {
@@ -38,13 +40,18 @@ export const UserContextProvider = (props) => {
           typeof window !== "undefined"
         ) {
           // this is here because provider don't success to redirect to /home
-          router.push({ pathname: "/home" });
+          await router.push(
+            `${router.locale === "fr" ? "" : "/" + router.locale}/home`
+          );
           router.pathname = "/home"; // Otherwise, because callback don't have any deps, so never change, so pathname is not updated, and user would go back to home each time he refocus the window
         }
 
         if (event === "SIGNED_OUT") {
-          router.push("/");
+          await router.push(
+            `${router.locale === "fr" ? "" : "/" + router.locale}`
+          );
           router.pathname = "/";
+          queryClient.clear();
         }
         if (event === "PASSWORD_RECOVERY") {
           console.log(event);

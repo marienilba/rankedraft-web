@@ -16,7 +16,7 @@ export type Log = {
 export type News = Array<New>;
 
 export type New = {
-  title: string;
+  title: { fr?: string; en?: string };
   imageUri?: string;
   created_at: Date;
   creator: string;
@@ -26,7 +26,7 @@ export type New = {
 export type Devblogs = Array<Devblog>;
 
 export type Devblog = {
-  title: string;
+  title: { fr?: string; en?: string };
   imageUri?: string;
   created_at: Date;
   creator: string;

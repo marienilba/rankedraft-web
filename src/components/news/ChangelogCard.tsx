@@ -31,7 +31,6 @@ export const ChangelogCard = ({ version, created_at, logs }: Changelog) => {
       <Heading p={2} textTransform="uppercase">
         màj: {version}
         <Box
-          color="gray.500"
           fontWeight="semibold"
           letterSpacing="wide"
           fontSize="xs"
@@ -44,18 +43,20 @@ export const ChangelogCard = ({ version, created_at, logs }: Changelog) => {
       <Divider />
       <Box p="3">
         {[addedLogs, fixedLogs, removedLogs].map(({ type, logs }) => (
-          <Fragment key={`${type}-logs-${version}`}>
-            <Heading fontSize="md" textTransform="capitalize">
-              {type}
-            </Heading>
+          <Box key={`${type}-logs-${version}`} mb="4">
+            {logs.length > 0 && (
+              <Heading fontSize="md" textTransform="capitalize">
+                {type}
+              </Heading>
+            )}
             <UnorderedList spacing={1}>
-              {logs.map(({ content }, index) => (
-                <Fragment key={`log-list-${index}-${type}-${version}`}>
+              {(logs.length ? logs : []).map(({ content }, index) => (
+                <Box key={`log-list-${index}-${type}-${version}`}>
                   {content(null)}
-                </Fragment>
+                </Box>
               ))}
             </UnorderedList>
-          </Fragment>
+          </Box>
         ))}
       </Box>
     </Box>

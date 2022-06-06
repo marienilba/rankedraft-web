@@ -66,7 +66,11 @@ export async function getServerSideProps({ locale, req, res }) {
   }
   return {
     props: {
-      ...(await serverSideTranslations(locale as string, ["common", "home"])),
+      ...(await serverSideTranslations(locale as string, [
+        "common",
+        "home",
+        "sign",
+      ])),
     },
   };
 }

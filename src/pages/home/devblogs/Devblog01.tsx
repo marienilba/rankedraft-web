@@ -3,7 +3,7 @@ import { Devblog } from "../Types";
 import { Text } from "@chakra-ui/react";
 
 export const Devblog1: Devblog = {
-  title: "Devblog1",
+  title: { fr: "Devblog1", en: "Devblog One" },
   created_at: new Date(),
   imageUri:
     "http://staticns.ankama.com/comm/news/dofus/www/06_2011/news-goultarminator3.jpg",

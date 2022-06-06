@@ -24,7 +24,7 @@ export const Sign = ({
 }: {
   borderTopLeftRadius?: number | string;
 }) => {
-  const { t } = useTranslation(["home"]);
+  const { t } = useTranslation(["sign"]);
   const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure();
   const [hidden, setHidden] = useState(!isOpen);
   const { isDark, theme } = useTheme();
@@ -53,14 +53,14 @@ export const Sign = ({
       <div>
         {hidden && (
           <Stack width="100%">
-            <Heading fontSize="2vmax">Vous n'avez pas de compte ?</Heading>
+            <Heading fontSize="2vmax">{t("NotAccount")}</Heading>
             <Button
               borderRadius="full"
               variant="outline"
               w="100%"
               {...getButtonProps()}
             >
-              S'inscrire
+              {t("SignUp")}
             </Button>
           </Stack>
         )}
@@ -93,7 +93,7 @@ export const Sign = ({
               mr={6}
               {...getButtonProps()}
             />
-            <Heading size="lg">Créer votre compte</Heading>
+            <Heading size="lg">{t("CreateAccount")}</Heading>
           </Flex>
           <SignInWithProvider method="signUp" />
           <FormSignUp />

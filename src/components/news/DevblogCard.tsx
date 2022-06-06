@@ -11,6 +11,7 @@ import {
   Link,
   Image,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { Devblog } from "../../pages/home/Types";
@@ -23,6 +24,7 @@ export const DevblogCard = ({
   creator,
   imageUri,
 }: Devblog) => {
+  const { locale } = useRouter();
   const { backgroundColor } = useTheme({ variant: "info" });
   const { backgroundColor: bg } = useTheme({ variant: "secondary" });
   const [show, setShow] = useState(false);
@@ -45,7 +47,7 @@ export const DevblogCard = ({
         )}
 
         <Heading p={2} textTransform="capitalize">
-          {title}
+          {title[locale] !== undefined ? title[locale] : title["fr"]}
         </Heading>
         <Box display="flex" alignItems="baseline" p="2">
           {Math.floor(new Date().valueOf() / 1000) - 604800 <

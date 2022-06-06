@@ -3,7 +3,7 @@ import { Text } from "@chakra-ui/react";
 import { New } from "../Types";
 
 export const New01: New = {
-  title: "Sorti de la beta !1",
+  title: { fr: "Sorti de la beta !1", en: "Beta is comming out" },
   created_at: new Date(),
   imageUri:
     "http://staticns.ankama.com/comm/news/dofus/www/06_2011/news-goultarminator3.jpg",

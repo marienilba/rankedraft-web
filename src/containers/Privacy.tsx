@@ -114,7 +114,7 @@ export const Privacy = () => {
           >
             <Heading
               color="brand.100"
-              fontSize={isPad ? "3.2vmax" : "5.3vmax"}
+              size="3xl"
               textShadow="2px 0 12px rgba(0,0,0,0.1), -2px 0 12px rgba(0,0,0,0.1), 0 2px 12px rgba(0,0,0,0.1), 0 -2px 12px rgba(0,0,0,0.1), 1px 1px 12px rgba(0,0,0,0.1), -1px -1px 12px rgba(0,0,0,0.1), 1px -1px 12px rgba(0,0,0,0.1), -1px 1px 12px rgba(0,0,0,0.1)"
             >
               {t("policy")}

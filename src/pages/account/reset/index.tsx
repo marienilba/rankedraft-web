@@ -1,4 +1,4 @@
-import { AtSignIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import {
   Button,
   Flex,
@@ -14,27 +14,36 @@ import {
   useId,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { RiKeyLine } from "react-icons/ri";
-import { PasswordEvaluationBar } from "../..";
+import { PasswordEvaluationBar } from "../../../components/sign/PasswordEvaluationBar";
 import { Navigation } from "../../../containers/Navigation";
 import { useUser } from "../../../hooks/useUser";
 import { paramsToObject } from "../../../utils/HelpersFunction";
 
 const Index = () => {
   const [token, setToken] = useState<string>(null);
-  const { asPath } = useRouter();
+  const { asPath, replace } = useRouter();
 
   useEffect(() => {
     try {
       const params = paramsToObject(asPath.split("#")[1]);
       if (params) {
         const { access_token } = params;
-        access_token && setToken(access_token);
+        if (access_token !== undefined) {
+          setToken(access_token);
+        } else {
+          replace("/");
+        }
+      } else {
+        replace("/");
       }
-    } catch (error) {}
+    } catch (error) {
+      replace("/");
+    }
   }, []);
 
   return (
@@ -55,6 +64,8 @@ type PasswordEvaluation = {
 };
 
 const UpdatePassword = ({ token }) => {
+  const { t } = useTranslation(["sign"]);
+
   const password_id = useId();
   const confirmation_id = useId();
 
@@ -75,7 +86,7 @@ const UpdatePassword = ({ token }) => {
     };
     if (!value) {
       setPasswordEval(null);
-      return `Champs requis`;
+      return t("error.Required");
     }
 
     if (value.length > 6) pe.size = true;
@@ -91,7 +102,7 @@ const UpdatePassword = ({ token }) => {
 
   return (
     <Flex direction="column" padding={6}>
-      <Heading>Réinitialiser mon mot de passe</Heading>
+      <Heading>{t("ResetMyPassword")}</Heading>
       <Formik
         initialValues={{ password: "", confirmation: "" }}
         onSubmit={async (values, actions) => {
@@ -99,12 +110,12 @@ const UpdatePassword = ({ token }) => {
           let fieldError = false;
 
           if (password.length < 6) {
-            actions.setFieldError("password", "Password is too short");
+            actions.setFieldError("password", t("error.PasswordTooShort"));
             fieldError = true;
           }
 
           if (password !== confirmation) {
-            actions.setFieldError("confirmation", "Passwords need to be same.");
+            actions.setFieldError("confirmation", t("error.PasswordSame"));
 
             fieldError = true;
           }
@@ -135,7 +146,9 @@ const UpdatePassword = ({ token }) => {
                 <FormControl
                   isInvalid={form.errors.password && form.touched.password}
                 >
-                  <FormLabel htmlFor={password_id}>Mot de passe</FormLabel>
+                  <FormLabel htmlFor={password_id}>
+                    {t("NewPassword")}
+                  </FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -170,7 +183,7 @@ const UpdatePassword = ({ token }) => {
                   }
                 >
                   <FormLabel htmlFor={confirmation_id}>
-                    Confirmer le mot de passe
+                    {t("ConfirmPassword")}
                   </FormLabel>
                   <InputGroup>
                     <InputLeftElement
@@ -205,7 +218,7 @@ const UpdatePassword = ({ token }) => {
                 borderRadius="full"
                 type="submit"
               >
-                Réinitialiser
+                {t("Reset")}
               </Button>
             </Flex>
           </Form>
@@ -218,7 +231,7 @@ const UpdatePassword = ({ token }) => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "home"])),
+      ...(await serverSideTranslations(locale, ["common", "sign"])),
     },
   };
 }

@@ -1,14 +1,16 @@
 import { Stack, Button, Flex, Divider, Heading, Wrap } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 import { FaDiscord } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useUser } from "../../hooks/useUser";
 
 export const SignInWithProvider = ({ method }) => {
+  const { t } = useTranslation(["sign", "common"]);
   const { signInWithProvider } = useUser();
 
   return (
     <Stack alignItems="center">
-      <Wrap justify="center">
+      <Wrap justify="center" padding={1}>
         <Button
           onClick={async () => {
             return await signInWithProvider("google");
@@ -23,8 +25,8 @@ export const SignInWithProvider = ({ method }) => {
           _active={{ backgroundColor: "#D4D4D4" }}
         >
           {method === "signIn"
-            ? "Se connecter avec Google"
-            : "S'inscrire avec Google"}
+            ? t("SignInWithProvider", { provider: "Google" })
+            : t("SignUpWithProvider", { provider: "Google" })}
         </Button>
         <Button
           onClick={async () => {
@@ -40,14 +42,14 @@ export const SignInWithProvider = ({ method }) => {
           _active={{ backgroundColor: "#181A1C" }}
         >
           {method === "signIn"
-            ? "Se connecter avec Discord"
-            : "S'inscrire avec Discord"}
+            ? t("SignInWithProvider", { provider: "Discord" })
+            : t("SignUpWithProvider", { provider: "Discord" })}
         </Button>
       </Wrap>
       <Flex alignItems="center" width="100%">
         <Divider />
         <Heading marginX={6} fontSize="lg">
-          ou
+          {t("linking.or", { ns: "common" })}
         </Heading>
         <Divider />
       </Flex>

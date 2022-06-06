@@ -17,10 +17,12 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
+import { useTranslation } from "next-i18next";
 import { useId, useRef } from "react";
 import { useUser } from "../../hooks/useUser";
 
 export const RecoverPasswordForEmail = () => {
+  const { t } = useTranslation(["sign"]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const email_id = useId();
   const initialRef = useRef(null);
@@ -28,7 +30,7 @@ export const RecoverPasswordForEmail = () => {
   return (
     <>
       <Button borderRadius="full" variant="outline" w="100%" onClick={onOpen}>
-        Mot de passe oublié ?
+        {t("ForgotPassword")}
       </Button>
 
       <Modal
@@ -41,7 +43,7 @@ export const RecoverPasswordForEmail = () => {
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalHeader>Récupération de compte</ModalHeader>
+          <ModalHeader>{t("AccountRecovery")}</ModalHeader>
           <ModalBody>
             <Formik
               initialValues={{ email: "" }}
@@ -51,10 +53,7 @@ export const RecoverPasswordForEmail = () => {
                 if (
                   !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                 ) {
-                  actions.setFieldError(
-                    "email",
-                    "You have entered an invalid email address"
-                  );
+                  actions.setFieldError("email", t("error.InvalidEmail"));
                   fieldError = true;
                 }
 
@@ -66,11 +65,11 @@ export const RecoverPasswordForEmail = () => {
                 if (error) {
                   switch (error.message) {
                     case "User not found":
-                      actions.setFieldError("email", error.message);
+                      actions.setFieldError("email", t("error.UserNotFound"));
                       actions.setSubmitting(false);
                       return;
-                    case "or security purposes, you can only request this once every 60 seconds":
-                      actions.setFieldError("email", error.message);
+                    case "for security purposes, you can only request this once every 60 seconds":
+                      actions.setFieldError("email", t("error.MaxRequest"));
                       actions.setSubmitting(false);
                       return;
                     default:
@@ -90,7 +89,7 @@ export const RecoverPasswordForEmail = () => {
                       <FormControl
                         isInvalid={form.errors.email && form.touched.email}
                       >
-                        <FormLabel htmlFor={email_id}>Email</FormLabel>
+                        <FormLabel htmlFor={email_id}>{t("Email")}</FormLabel>
                         <InputGroup>
                           <InputLeftElement
                             pointerEvents="none"
@@ -109,7 +108,7 @@ export const RecoverPasswordForEmail = () => {
                       borderRadius="full"
                       type="submit"
                     >
-                      Envoyer
+                      {t("Send")}
                     </Button>
                   </Flex>
                 </Form>

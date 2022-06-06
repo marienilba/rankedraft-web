@@ -9,6 +9,7 @@ import {
   Image,
   Link,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { New } from "../../pages/home/Types";
@@ -21,6 +22,7 @@ export const NewCard = ({
   creator,
   imageUri,
 }: New) => {
+  const { locale } = useRouter();
   const { backgroundColor } = useTheme({ variant: "info" });
   const { backgroundColor: bg, theme } = useTheme({ variant: "secondary" });
 
@@ -46,7 +48,7 @@ export const NewCard = ({
         <Box h="80px" w="100%" {...backgroundColor}></Box>
       )}
       <Heading p={2} textTransform="uppercase">
-        {title}
+        {title[locale] !== undefined ? title[locale] : title["fr"]}
       </Heading>
       <Box display="flex" alignItems="baseline" p="2">
         {Math.floor(new Date().valueOf() / 1000) - 604800 <
