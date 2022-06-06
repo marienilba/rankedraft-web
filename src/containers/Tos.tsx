@@ -18,11 +18,12 @@ import { useScroll } from "../hooks/useScroll";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { LogoButton } from "../components/navigation/LogoButton";
+import { motion } from "framer-motion";
 
 export const Tos = () => {
   const { t } = useTranslation(["tos"]);
-  const { isMobile } = useWindowSize();
-  const { backgroundColor } = useTheme();
+  const { isMobile, isPad, isScreen } = useWindowSize();
+  const { code } = useTheme();
   const [readPart, setReadPart] = useState<number>(1);
   const [ref1, scrollTo1] = useScroll({ offsetTop: 80 });
   const [ref2, scrollTo2] = useScroll({ offsetTop: 80 });
@@ -38,6 +39,9 @@ export const Tos = () => {
   const { ref: inViewRef3, inView: inView3 } = useInView();
   const { ref: inViewRef4, inView: inView4 } = useInView();
   const { ref: inViewRef5, inView: inView5 } = useInView();
+  const { ref: ImageInViewRef, inView: ImageInView } = useInView({
+    initialInView: true,
+  });
 
   useEffect(() => {
     if (inView5) {
@@ -62,37 +66,66 @@ export const Tos = () => {
       setReadPart(1);
     }
   }, [inView1, inView2, inView3, inView4, inView5]);
+
   return (
     <Flex direction="column" width="100%">
       <Flex direction="column">
-        <Stack
-          {...backgroundColor}
-          direction="row"
-          paddingX={14}
-          paddingTop={10}
-          paddingBottom={6}
-          position="fixed"
-          width="100%"
-          top={0}
-          sx={{ zIndex: 2 }}
-          alignItems="center"
+        <Box
+          style={{
+            display: "flex",
+            top: 0,
+            position: "fixed",
+            width: "100%",
+            backgroundColor: code[100],
+            paddingLeft: "4vw",
+            paddingTop: "0.8rem",
+            paddingBottom: "1rem",
+            alignItems: "center",
+            zIndex: 2,
+          }}
         >
-          <LogoButton />
-          <Heading fontSize="2xl">{t("tos")}</Heading>
-        </Stack>
+          <motion.div
+            initial={false}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "1.8rem",
+            }}
+            animate={
+              isScreen
+                ? {
+                    marginTop: "1.8rem",
+                  }
+                : {
+                    marginTop: !ImageInView ? "0rem" : "1.8rem",
+                  }
+            }
+            transition={{ type: "tween", duration: 0.4 }}
+          >
+            <LogoButton />
+            <Heading ml="1" fontSize={isMobile ? "1rem" : "2xl"}>
+              {t("tos")}
+            </Heading>
+          </motion.div>
+        </Box>
+
         <Box paddingTop={10} paddingBottom={6} visibility="hidden">
           <Box height="2rem"></Box>
         </Box>
-        <Box position="relative">
+        <Box position="relative" ref={ImageInViewRef}>
           <Box>
-            <AspectRatio maxW="100vw" ratio={400 / 93}>
+            <AspectRatio maxW="100vw" ratio={isMobile ? 400 / 279 : 400 / 93}>
               <Img src="/assets/tos.jpeg" alt="Tos banner" objectFit="cover" />
             </AspectRatio>
           </Box>
-          <Box position="absolute" top="50%" left="2.5rem">
+          <Box
+            position="absolute"
+            top="50%"
+            left={isMobile ? "0.5rem" : "2.5rem"}
+          >
             <Heading
               color="brand.100"
-              fontSize="6vw"
+              fontSize={isPad ? "4vmax" : "5.3vmax"}
               textShadow="2px 0 12px rgba(0,0,0,0.1), -2px 0 12px rgba(0,0,0,0.1), 0 2px 12px rgba(0,0,0,0.1), 0 -2px 12px rgba(0,0,0,0.1), 1px 1px 12px rgba(0,0,0,0.1), -1px -1px 12px rgba(0,0,0,0.1), 1px -1px 12px rgba(0,0,0,0.1), -1px 1px 12px rgba(0,0,0,0.1)"
             >
               {t("tos")}
@@ -101,59 +134,61 @@ export const Tos = () => {
         </Box>
       </Flex>
       <Flex marginTop={10}>
-        <Flex flex={0.5} justifyContent="flex-end">
-          <Stack
-            spacing={2}
-            marginRight={7}
-            position="sticky"
-            top="140px"
-            height="200px"
-          >
-            <Heading
-              fontSize="lg"
-              cursor="pointer"
-              onClick={scrollTo1}
-              as={readPart === 1 ? "u" : null}
+        {!isMobile && (
+          <Flex flex={isPad ? 1 : 0.5} justifyContent="flex-end">
+            <Stack
+              spacing={2}
+              marginRight={7}
+              position="sticky"
+              top="140px"
+              height="200px"
             >
-              1. {t("1")}
-            </Heading>
-            <Heading
-              fontSize="lg"
-              cursor="pointer"
-              onClick={scrollTo2}
-              as={readPart === 2 ? "u" : null}
-            >
-              2. {t("2")}
-            </Heading>
-            <Heading
-              fontSize="lg"
-              cursor="pointer"
-              onClick={scrollTo3}
-              as={readPart === 3 ? "u" : null}
-            >
-              3. {t("3")}
-            </Heading>
-            <Heading
-              fontSize="lg"
-              cursor="pointer"
-              onClick={scrollTo4}
-              as={readPart === 4 ? "u" : null}
-            >
-              4. {t("4")}
-            </Heading>{" "}
-            <Heading
-              fontSize="lg"
-              cursor="pointer"
-              onClick={scrollTo5}
-              as={readPart === 5 ? "u" : null}
-            >
-              5. {t("5")}
-            </Heading>
-          </Stack>
-          <Divider orientation="vertical" />
-        </Flex>
+              <Heading
+                fontSize="lg"
+                cursor="pointer"
+                onClick={scrollTo1}
+                as={readPart === 1 ? "u" : null}
+              >
+                1. {t("1")}
+              </Heading>
+              <Heading
+                fontSize="lg"
+                cursor="pointer"
+                onClick={scrollTo2}
+                as={readPart === 2 ? "u" : null}
+              >
+                2. {t("2")}
+              </Heading>
+              <Heading
+                fontSize="lg"
+                cursor="pointer"
+                onClick={scrollTo3}
+                as={readPart === 3 ? "u" : null}
+              >
+                3. {t("3")}
+              </Heading>
+              <Heading
+                fontSize="lg"
+                cursor="pointer"
+                onClick={scrollTo4}
+                as={readPart === 4 ? "u" : null}
+              >
+                4. {t("4")}
+              </Heading>{" "}
+              <Heading
+                fontSize="lg"
+                cursor="pointer"
+                onClick={scrollTo5}
+                as={readPart === 5 ? "u" : null}
+              >
+                5. {t("5")}
+              </Heading>
+            </Stack>
+            <Divider orientation="vertical" />
+          </Flex>
+        )}
         <Flex flex={1.5} justifyContent="center">
-          <Flex paddingX={isMobile ? 2 : 7} width="100%" direction="column">
+          <Flex paddingX={isMobile ? 4 : 7} width="100%" direction="column">
             <Box ref={inViewRef1} marginBottom={8}>
               <Heading fontSize="5xl" marginBottom={6}>
                 {t("1")}
