@@ -37,5 +37,5 @@ const NewContentTemplate = () => {
     if (typeof lastProperty === "object") return key;
     return lastProperty;
   }
-  return <Text>{t("text")}</Text>;
+  return <Text textAlign="justify">{t("text")}</Text>;
 };

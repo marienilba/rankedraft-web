@@ -22,7 +22,7 @@ export const NewCard = ({
   imageUri,
 }: New) => {
   const { backgroundColor } = useTheme({ variant: "info" });
-  const { backgroundColor: bg } = useTheme({ variant: "secondary" });
+  const { backgroundColor: bg, theme } = useTheme({ variant: "secondary" });
 
   const [show, setShow] = useState(false);
 
@@ -31,6 +31,8 @@ export const NewCard = ({
   return (
     <Box
       width="100%"
+      borderColor={theme[200]}
+      boxShadow="base"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
@@ -54,7 +56,6 @@ export const NewCard = ({
           </Badge>
         )}
         <Box
-          color="gray.500"
           fontWeight="semibold"
           letterSpacing="wide"
           fontSize="xs"

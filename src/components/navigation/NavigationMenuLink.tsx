@@ -10,10 +10,12 @@ export const NavigationMenuLink = ({
   title,
   link,
   onClick,
+  isExternal,
 }: {
   children: ReactNode;
   title: string;
   link?: string;
+  isExternal?: boolean;
   onClick?: () => void;
 }) => {
   const { backgroundColor } = useTheme({ variant: "secondary" });
@@ -24,7 +26,11 @@ export const NavigationMenuLink = ({
     return (
       <Flex>
         <NextLink href={link} passHref>
-          <Link style={{ textDecoration: "none" }} onClick={onClick}>
+          <Link
+            style={{ textDecoration: "none" }}
+            onClick={onClick}
+            isExternal={isExternal}
+          >
             <Stack
               direction="row"
               alignItems="center"

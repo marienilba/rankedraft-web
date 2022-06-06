@@ -40,8 +40,6 @@ export const Tos = () => {
   const { ref: inViewRef5, inView: inView5 } = useInView();
 
   useEffect(() => {
-    console.log(inView1);
-
     if (inView5) {
       setReadPart(5);
       return;
@@ -65,7 +63,7 @@ export const Tos = () => {
     }
   }, [inView1, inView2, inView3, inView4, inView5]);
   return (
-    <Flex direction="column">
+    <Flex direction="column" width="100%">
       <Flex direction="column">
         <Stack
           {...backgroundColor}

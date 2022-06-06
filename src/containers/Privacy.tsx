@@ -9,7 +9,10 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { LogoButton } from "../components/navigation/LogoButton";
+import { useScroll } from "../hooks/useScroll";
 import { useTheme } from "../hooks/useTheme";
 import { useWindowSize } from "../hooks/useWindowSize";
 
@@ -18,8 +21,36 @@ export const Privacy = () => {
   const { isMobile } = useWindowSize();
   const { backgroundColor } = useTheme();
 
+  const [readPart, setReadPart] = useState<number>(1);
+  const [ref1, scrollTo1] = useScroll({ offsetTop: 80 });
+  const [ref2, scrollTo2] = useScroll({ offsetTop: 80 });
+  const [ref3, scrollTo3] = useScroll({ offsetTop: 80 });
+  const { ref: inViewRef1, inView: inView1 } = useInView({
+    initialInView: true,
+  });
+  const { ref: inViewRef2, inView: inView2 } = useInView({
+    initialInView: true,
+  });
+  const { ref: inViewRef3, inView: inView3 } = useInView();
+
+  useEffect(() => {
+    if (inView3) {
+      setReadPart(3);
+      return;
+    }
+    if (readPart === 1 && !inView1) {
+      setReadPart(2);
+    } else if (readPart === 2 && !inView2) {
+      setReadPart(3);
+    } else if (readPart === 3 && inView2) {
+      setReadPart(2);
+    } else if (readPart === 2 && inView1) {
+      setReadPart(1);
+    }
+  }, [inView1, inView2, inView3]);
+
   return (
-    <Flex direction="column">
+    <Flex direction="column" width="100% marginBottom={6}">
       <Flex direction="column">
         <Stack
           {...backgroundColor}
@@ -60,25 +91,73 @@ export const Privacy = () => {
           </Box>
         </Box>
       </Flex>
-      <Flex direction="column" paddingX={isMobile ? 2 : 7} marginTop={10}>
-        <Box marginBottom={8}>
-          <Heading fontSize="5xl">{t("confidentialite.1")}</Heading>
-          <Stack>
-            <Text textAlign="justify">{t("confidentialite.1-1")}</Text>
+      <Flex marginTop={10}>
+        <Flex flex={0.5} justifyContent="flex-end">
+          <Stack
+            spacing={2}
+            marginRight={7}
+            position="sticky"
+            top="140px"
+            height="200px"
+          >
+            <Heading
+              fontSize="lg"
+              cursor="pointer"
+              onClick={scrollTo1}
+              as={readPart === 1 ? "u" : null}
+            >
+              1. {t("confidentialite.1")}
+            </Heading>
+            <Heading
+              fontSize="lg"
+              cursor="pointer"
+              onClick={scrollTo2}
+              as={readPart === 2 ? "u" : null}
+            >
+              2. {t("confidentialite.2")}
+            </Heading>
+            <Heading
+              fontSize="lg"
+              cursor="pointer"
+              onClick={scrollTo3}
+              as={readPart === 3 ? "u" : null}
+            >
+              3. {t("confidentialite.3")}
+            </Heading>
           </Stack>
-        </Box>
-        <Box marginY={8}>
-          <Heading fontSize="5xl">{t("confidentialite.2")}</Heading>
-          <Stack>
-            <Text textAlign="justify">{t("confidentialite.2-1")}</Text>
-          </Stack>
-        </Box>
-        <Box marginY={8}>
-          <Heading fontSize="5xl">{t("confidentialite.3")}</Heading>
-          <Stack>
-            <Text textAlign="justify">{t("confidentialite.3-1")}</Text>
-          </Stack>
-        </Box>
+          <Divider orientation="vertical" />
+        </Flex>
+        <Flex flex={1.5} justifyContent="center">
+          <Flex paddingX={isMobile ? 2 : 7} width="100%" direction="column">
+            <Box marginBottom={8} ref={inViewRef1}>
+              <Heading fontSize="5xl" marginBottom={6}>
+                {t("confidentialite.1")}
+              </Heading>
+              <Stack ref={ref1}>
+                <Text textAlign="justify">{t("confidentialite.1-1")}</Text>
+              </Stack>
+            </Box>
+            <Box marginY={8} ref={inViewRef2}>
+              <Heading fontSize="5xl" marginBottom={6}>
+                {t("confidentialite.2")}
+              </Heading>
+              <Stack ref={ref2}>
+                <Text textAlign="justify">{t("confidentialite.2-1")}</Text>
+              </Stack>
+            </Box>
+            <Box marginY={8}>
+              <Heading fontSize="5xl" marginBottom={6}>
+                {t("confidentialite.3")}
+              </Heading>
+              <Stack ref={ref3}>
+                <Text textAlign="justify">{t("confidentialite.3-1")}</Text>
+              </Stack>
+            </Box>
+            <Box marginTop={14}>
+              <Box ref={inViewRef3}></Box>
+            </Box>
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
   );

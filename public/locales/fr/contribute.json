@@ -1,11 +1,15 @@
 {
-  "suggests-bold": "Suggestions",
-  "suggests-text": "Si vous avez des suggestions d'amélioration, de features ou de corrections, vous pouvez m'en faire part via les différents liens de contacts. La possibilité d'un Discord dédié sera à étudié selon le déroulement de la beta.",
+  "contribute": "Apporter votre contribution",
+  "suggests": "Suggestions",
+  "suggests-text": "Si vous avez des suggestions d'amélioration, de features ou de corrections, vous pouvez m'en faire part via les différents liens de contacts.",
   "suggests-stats-text": "Une page avec des statistiques détaillées existe déjà, cependant la librairie (nivo) n'est pas à jour avec React 18. Une migration avec visx est prévue. Si vous êtes développeur, vous pouvez trouver le type des données sur le github components/stats et des données d'exemple afin de créer des composants.",
-  "translation-bold": "Traductions",
+  "translation": "Traductions",
   "translation-text": "Actuellement il y a uniquement une version française et anglaise, mais vous pouvez contribuer en me soumettant les traductions pour votre langague, tous les textes utilisés sont sur le",
-  "monetization-bold": "Monétisation",
-  "monetization-text": "Il n'y a pas et n'aura pas de monétisation lors de la beta, puisque tous les services tiers utilisent des free plans. Cependant si la situation oblige à des frais, la question entre publicités et dons sera envisagée.",
+  "monetization": "Monétisation",
+  "monetization-text": "Il n'y a pas et n'aura pas de monétisation lors de la beta, puisque tous les services tiers utilisent des free plans. Cependant si la situation oblige à des frais, la question de la publicités sera envisagée.",
+  "monetization-donation": "Vous pouvez contribuer en faisant un don si vous le souhaitez ici",
   "contacts": "Contacts",
+  "contacts-text": "La possibilité d'un Discord dédié sera à étudié selon le déroulement de la beta.",
+  "contacts-social-text": "Vous pouvez me contacter directement sur  ",
   "copied": "Copié !"
 }

@@ -1,12 +1,10 @@
 import { Flex } from "@chakra-ui/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Navigation } from "../../containers/Navigation";
 import { Contribute } from "../../containers/Contribute";
 
 const Index = () => {
   return (
     <Flex>
-      <Navigation />
       <Contribute />
     </Flex>
   );

@@ -148,14 +148,14 @@ export const ScreenNavigation = ({ signOut }: { signOut: () => void }) => {
                 </MenuButton>
                 <MenuList boxShadow="xl">
                   <NextLink href="/contribute" passHref>
-                    <Link style={{ textDecoration: "none" }}>
+                    <Link style={{ textDecoration: "none" }} isExternal>
                       <MenuItem icon={<RiHeart3Fill />}>
                         {t("page.contribute")}
                       </MenuItem>
                     </Link>
                   </NextLink>
                   <NextLink href="/tos" passHref>
-                    <Link style={{ textDecoration: "none" }}>
+                    <Link style={{ textDecoration: "none" }} isExternal>
                       <MenuItem icon={<MdOutlinePrivacyTip />}>
                         {t("page.cgu_policy")}
                       </MenuItem>
@@ -296,6 +296,7 @@ export const MobileNavigation = ({ signOut }: { signOut: () => void }) => {
               <NavigationMenuLink
                 title={t("page.contribute")}
                 link="/contribute"
+                isExternal
                 onClick={onClose}
               >
                 <NavIconWrapper pathname={pathname} match="/">
@@ -305,6 +306,7 @@ export const MobileNavigation = ({ signOut }: { signOut: () => void }) => {
               <NavigationMenuLink
                 title={t("page.cgu_policy")}
                 link="/tos"
+                isExternal
                 onClick={onClose}
               >
                 <NavIconWrapper pathname={pathname} match="/tos">
