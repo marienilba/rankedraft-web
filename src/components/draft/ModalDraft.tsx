@@ -151,7 +151,7 @@ export const ModalDraft = forwardRef(
         if (text.includes("draft.ktarena.com/draft/room/")) {
           const data = await fetchDraft(text);
           if (!data) return;
-          if (data.error === "Invalid link.") return;
+          if (data.error) return;
 
           const { draft, match } = data;
           if (Settings) {

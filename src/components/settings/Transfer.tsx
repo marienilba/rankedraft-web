@@ -111,7 +111,7 @@ export const Transfer = ({
       return;
     }
     if (!data) return;
-    if (data.error === "Invalid link.") return;
+    if (data.error) return;
     if (!data.draft) return;
     if (!data.match) return;
 

@@ -1,5 +1,6 @@
+import axios from "axios";
+import isEmpty from "lodash.isempty";
 import { request } from "../lib/axios-utils";
-import { API_URL } from "../utils/Constants";
 
 interface Draft {
   data: Array<number | string>[];
@@ -23,11 +24,6 @@ export interface Auth {
   name: string;
 }
 
-interface AuthLight {
-  name: string;
-  logo: string;
-}
-
 interface Match {
   auth_A: Auth;
   auth_B: Auth;
@@ -43,26 +39,19 @@ export interface Data {
   error: string;
 }
 
-interface DraftLight {
-  picks: {
-    A: { breed: number; mode: string }[];
-    B: { breed: number; mode: string }[];
-  };
-  bans: {
-    A: number[];
-    B: number[];
-  };
-}
-
 export const fetchDraft = async (link: string): Promise<Data | null> => {
-  let response;
   try {
-    const req = await fetch(`${API_URL}/draft/${link}`);
-    const data = await req.json();
-    response = data.message;
-  } catch (error) {
-    console.log(error);
-  }
+    const res = await axios.get("api/draft/get/?link=" + link);
+    if (res.status === 405)
+      throw new Error(`fetchDraft ended with ${res.status} statusCode`);
+    if (isEmpty(res.data)) throw new Error(`fetchDraft object is empty`);
 
-  return response;
+    return res.data.message;
+  } catch (error) {
+    return {
+      match: null,
+      draft: null,
+      error: "Invalid Link.",
+    };
+  }
 };
