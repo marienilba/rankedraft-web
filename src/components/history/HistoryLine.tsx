@@ -112,7 +112,7 @@ export const HistoryLine = ({
             <Box w="4px" {...backgroundColor} borderRadius="full"></Box>
           </Flex>
         )}
-        {isFullwidth ? (
+        {isFullwidth && comments ? (
           <Flex w="27rem">
             <Textarea
               fontWeight={400}
