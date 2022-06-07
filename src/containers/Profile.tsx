@@ -29,33 +29,23 @@ export const Profile = () => {
   const [avatarSelected, setAvatarSelected] = useState<number>(data?.avatar);
 
   const onSave = useCallback(
-    (username, kta_team) => {
+    (username) => {
       handleSpam();
       if (isSpam) return;
       if (
         (avatarSelected === data.avatar || avatarSelected === undefined) &&
-        username === data.name &&
-        (kta_team === data.kta_team ||
-          kta_team === undefined ||
-          kta_team === null ||
-          kta_team === "")
+        username === data.name
       )
         return;
       try {
         const payload = {
           name: username !== data.name ? username : null,
-          kta_team: kta_team !== data.kta_team ? kta_team : null,
           avatar: avatarSelected !== data.avatar ? avatarSelected : null,
         };
 
         if (username.length < 2) return;
         if (username.length > 12) return;
-        if (
-          payload.name === null &&
-          payload.kta_team === null &&
-          payload.avatar === null
-        )
-          return;
+        if (payload.name === null && payload.avatar === null) return;
 
         mutation.mutate(payload);
       } catch (e) {

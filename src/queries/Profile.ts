@@ -2,7 +2,6 @@ import { request } from "../lib/axios-utils";
 
 interface Payload {
   name: string;
-  kta_team: string;
   avatar: number;
 }
 
@@ -15,7 +14,6 @@ export interface ProfileResponse extends LightProfileResponse {
 interface LightProfileResponse {
   id: string;
   name: string;
-  kta_team: string;
   role: number;
   avatar: number;
   elo: number;

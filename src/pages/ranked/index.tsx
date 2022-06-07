@@ -2,13 +2,14 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Flex } from "@chakra-ui/react";
 import { Navigation } from "../../containers/Navigation";
 import { Ranked } from "../../containers/Ranked";
+import { Layout } from "../../components/Layout";
 
 const Index = () => {
   return (
-    <Flex>
+    <Layout>
       <Navigation />
       <Ranked />
-    </Flex>
+    </Layout>
   );
 };
 

@@ -13,6 +13,7 @@ import { Background } from "../components/sign/Background";
 import { Sign } from "../containers/Sign";
 import { Showing } from "../containers/Showing";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { Layout } from "../components/Layout";
 
 const Index = () => {
   const { t } = useTranslation(["home"]);
@@ -34,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <>
+    <Layout direction="column">
       <Flex width="100%" height="100vh" {...backgroundColor}>
         <GlobalBackground />
         {isRedirect && <Loading />}
@@ -50,19 +51,21 @@ const Index = () => {
         <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>
       <Showing />
-    </>
+    </Layout>
   );
 };
 
 export async function getServerSideProps({ locale, req, res }) {
   const { user } = await supabase.auth.api.getUserByCookie(req);
   if (user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/home",
-      },
-    };
+    if (user.aud === "authenticated") {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/home",
+        },
+      };
+    }
   }
   return {
     props: {

@@ -4,10 +4,11 @@ import { Navigation } from "../../containers/Navigation";
 import { Header } from "../../components/showing/Header";
 import { SVG } from "../../components/sign/Background";
 import { News } from "../../containers/News";
+import { Layout } from "../../components/Layout";
 
 const Index = () => {
   return (
-    <Flex>
+    <Layout>
       <Navigation />
       <Flex direction="column" width="100%" marginTop={2}>
         <Flex width="100%" alignItems="center" direction="column">
@@ -32,7 +33,7 @@ const Index = () => {
         </Flex>
         <News />
       </Flex>
-    </Flex>
+    </Layout>
   );
 };
 

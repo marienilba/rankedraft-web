@@ -14,6 +14,7 @@ import { FPWinrate } from "../../components/stats/nivo/FPWinrate";
 import { RepartitionsPicksBans } from "../../components/stats/nivo/RepartitionsPicksBans";
 import { PageHeading } from "../../components/PageHeading";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Layout } from "../../components/Layout";
 
 const Index = () => {
   // const { query } = useRouter();
@@ -67,8 +68,9 @@ const Index = () => {
   //   return <></>;
   // }
   return (
-    <Flex mt={10} direction="column" w="100%" paddingX={7}>
-      {/* <Stack marginY={5}>
+    <Layout>
+      <Flex mt={10} direction="column" w="100%" paddingX={7}>
+        {/* <Stack marginY={5}>
         <PageHeading>Statistiques détailées</PageHeading>
         <Heading fontSize="md" textAlign="center">
           ⚠️ La page des statistiques détailées est encore en évolution
@@ -255,7 +257,8 @@ const Index = () => {
         </Wrap>
         <Activities stats={data} />
       </> */}
-    </Flex>
+      </Flex>
+    </Layout>
   );
 };
 

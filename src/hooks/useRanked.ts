@@ -167,6 +167,7 @@ export function useRanked(
         id: user.id,
       });
     }
+    setAlreadyIn(false);
   }, [socket, user, packet]);
 
   const handleReset = useCallback(() => {

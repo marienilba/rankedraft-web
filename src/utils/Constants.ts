@@ -4,6 +4,11 @@ export const API_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_API_URL
     : "http://localhost:4000";
+
+export const HOST =
+  process.env.NODE_ENV === "production"
+    ? process.env.NEXT_PUBLIC_HOST
+    : "http://localhost:3000";
 export const PROTOCOL: PROTOCOLType = {
   TO_CONFIRM: "toConfirm",
   TO_VALIDATE: "toValidate",

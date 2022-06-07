@@ -9,6 +9,7 @@ import { useState } from "react";
 import { UserContextProvider } from "../hooks/useUser";
 import { Navigation } from "../containers/Navigation";
 import { Container } from "../components/Container";
+import { TitleContextProvider } from "../hooks/useTitle";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -28,11 +29,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         <UserContextProvider>
-          <Hydrate state={pageProps.dehydratedState}>
-            <Container>
-              <Component {...pageProps} />
-            </Container>
-          </Hydrate>
+          <TitleContextProvider>
+            <Hydrate state={pageProps.dehydratedState}>
+              <Container>
+                <Component {...pageProps} />
+              </Container>
+            </Hydrate>
+          </TitleContextProvider>
         </UserContextProvider>
       </QueryClientProvider>
     </ChakraProvider>

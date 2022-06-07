@@ -1,13 +1,8 @@
 import { useRouter } from "next/router";
-import {
-  useEffect,
-  useState,
-  createContext,
-  useContext,
-  useCallback,
-} from "react";
+import { useEffect, useState, createContext, useContext } from "react";
 import { useQueryClient } from "react-query";
 import { supabase } from "../lib/supabaseClient";
+import { HOST } from "../utils/Constants";
 
 export const UserContext = createContext<any>(undefined);
 
@@ -51,10 +46,14 @@ export const UserContextProvider = (props) => {
             `${router.locale === "fr" ? "" : "/" + router.locale}`
           );
           router.pathname = "/";
-          queryClient.clear();
+          queryClient.clear(); // clear the cache
         }
         if (event === "PASSWORD_RECOVERY") {
-          console.log(event);
+          console.log(event, session);
+        }
+
+        if (event === "TOKEN_REFRESHED") {
+          console.log(event, session);
         }
         setSession(session);
         setUser(session?.user ?? null);
@@ -95,20 +94,14 @@ export const UserContextProvider = (props) => {
         { email, password },
         {
           data: { name: username },
-          redirectTo:
-            process.env.NODE_ENV === "production"
-              ? process.env.NEXT_PUBLIC_HOST
-              : "http://localhost:3000",
+          redirectTo: HOST,
         }
       ),
     signInWithEmail: async ({ email, password }) =>
       supabase.auth.signIn(
         { email, password },
         {
-          redirectTo:
-            process.env.NODE_ENV === "production"
-              ? process.env.NEXT_PUBLIC_HOST
-              : "http://localhost:3000/home",
+          redirectTo: HOST + "/home",
         }
       ),
     signInWithProvider: async (provider: "google" | "discord") =>
@@ -117,10 +110,7 @@ export const UserContextProvider = (props) => {
           provider,
         },
         {
-          redirectTo:
-            process.env.NODE_ENV === "production"
-              ? process.env.NEXT_PUBLIC_HOST
-              : "http://localhost:3000/home",
+          redirectTo: HOST + "/home",
         }
       ),
 
@@ -135,13 +125,10 @@ export const UserContextProvider = (props) => {
     },
     recoverPassword: async (email: string) =>
       supabase.auth.api.resetPasswordForEmail(email, {
-        redirectTo:
-          process.env.NODE_ENV === "production"
-            ? `${process.env.NEXT_PUBLIC_HOST}/account/reset`
-            : "http://localhost:3000/account/reset",
+        redirectTo: HOST + "/account/reset",
       }),
     resetPassword: async (token: string, password: string) =>
-      supabase.auth.api.updateUser(token, { password: password }),
+      supabase.auth.api.updateUser(token, { password }),
   };
 
   return <UserContext.Provider value={value} {...props} />;

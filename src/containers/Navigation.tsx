@@ -57,7 +57,6 @@ export const Navigation = () => {
   return (
     <Flex height="auto">
       <GlobalBackground />
-      <Title></Title>
       {isFetchingUser ? (
         <Loading />
       ) : (

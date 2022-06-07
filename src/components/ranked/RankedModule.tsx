@@ -93,7 +93,7 @@ export const RankedModule = () => {
               {alreadyIn && (
                 <AlreadyIn
                   onRetry={handlers.Socket}
-                  onForfeit={handlers.Forfeit}
+                  onForfeit={handlers.ForceQuit}
                   isAuth={!!user}
                 />
               )}

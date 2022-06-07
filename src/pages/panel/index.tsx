@@ -3,6 +3,7 @@ import { PanelList } from "../../components/panel/PanelList";
 import { fetchPanel } from "../../queries/Panel";
 import { useQuery } from "react-query";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Layout } from "../../components/Layout";
 
 const Index = () => {
   const { isLoading, data, isSuccess, isError } = useQuery("panel", fetchPanel);
@@ -14,9 +15,11 @@ const Index = () => {
   }
   const { queue, lobbies } = data;
   return (
-    <Flex width="90%" mt={5} alignItems="center" direction="column">
-      {data && <PanelList queue={queue} lobbies={lobbies} />}
-    </Flex>
+    <Layout>
+      <Flex width="90%" mt={5} alignItems="center" direction="column">
+        {data && <PanelList queue={queue} lobbies={lobbies} />}
+      </Flex>
+    </Layout>
   );
 };
 

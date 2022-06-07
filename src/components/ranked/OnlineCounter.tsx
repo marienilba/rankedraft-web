@@ -6,8 +6,8 @@ import { fetchQueueCount } from "../../queries/Matchmaking";
 export const OnlineCounter = ({ shouldIncrement }) => {
   const { t } = useTranslation(["ranked"]);
   const { data, isSuccess, isError } = useQuery("queue", fetchQueueCount, {
-    refetchOnWindowFocus: true,
-    staleTime: 2 * 60 * 1000,
+    refetchOnMount: "always",
+    staleTime: 5 * 60 * 1000,
   });
 
   return (

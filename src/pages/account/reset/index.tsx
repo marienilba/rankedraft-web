@@ -19,6 +19,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { RiKeyLine } from "react-icons/ri";
+import { Layout } from "../../../components/Layout";
 import { PasswordEvaluationBar } from "../../../components/sign/PasswordEvaluationBar";
 import { Navigation } from "../../../containers/Navigation";
 import { useUser } from "../../../hooks/useUser";
@@ -47,12 +48,12 @@ const Index = () => {
   }, []);
 
   return (
-    <Flex>
+    <Layout>
       <Navigation />
       <Flex width="100%" justifyContent="center">
         <UpdatePassword token={token} />
       </Flex>
-    </Flex>
+    </Layout>
   );
 };
 

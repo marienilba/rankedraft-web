@@ -1,12 +1,12 @@
-import { Flex } from "@chakra-ui/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Layout } from "../../components/Layout";
 import { Contribute } from "../../containers/Contribute";
 
 const Index = () => {
   return (
-    <Flex>
+    <Layout>
       <Contribute />
-    </Flex>
+    </Layout>
   );
 };
 
