@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import {
   useEffect,
-  useState,
   createContext,
   useContext,
   useCallback,
+  useReducer,
 } from "react";
 
 const Titles = {
@@ -44,43 +44,55 @@ const Titles = {
 
 export const TitleContext = createContext<any>(undefined);
 
+type State = {
+  title: string;
+  previous?: string;
+};
+
+type Action = {
+  type: "reset" | "edit" | "change" | "append" | "back";
+  value?: string;
+};
+function reducer(state: State, action: Action) {
+  switch (action.type) {
+    case "reset":
+      return { title: "RankeDraft" };
+    case "edit":
+      return { title: `${action.value} / RankeDraft` };
+    case "change":
+      return { title: action.value, previous: state.title };
+    case "append":
+      return { title: `${action.value} ${state.title} / RankeDraft` };
+    case "back":
+      return { title: state.previous ?? state.title, previous: null };
+    default:
+      throw new Error();
+  }
+}
+
 export const TitleContextProvider = (props) => {
-  const [title, setTitle] = useState<string>(null);
+  const [title, dispatch] = useReducer<(state: State, action: Action) => State>(
+    reducer,
+    { title: "RankeDraft", previous: null }
+  );
   const titles = Titles;
   const { locale, pathname } = useRouter();
 
-  const editTitle = useCallback((t: string) => {
-    setTitle(`${t} / RankeDraft`);
-  }, []);
-
-  const onFocus = () => {
-    handleTitle(locale, pathname);
-  };
-
-  useEffect(() => {
-    if (typeof window === undefined) return;
-    window.addEventListener("focus", onFocus);
-    return () => {
-      if (typeof window === undefined) return;
-      window.removeEventListener("focus", onFocus);
-    };
-  }, []);
-
   const handleTitle = useCallback((locale: string, pathname: string) => {
     if (!pathname || !locale) {
-      setTitle("RankeDraft");
+      dispatch({ type: "reset" });
       return;
     }
     if (pathname === "/") {
-      setTitle("RankeDraft");
+      dispatch({ type: "reset" });
       return;
     }
     const path_title = titles[locale][pathname];
     if (path_title === undefined) {
-      setTitle("RankeDraft");
+      dispatch({ type: "reset" });
       return;
     }
-    editTitle(path_title);
+    dispatch({ type: "edit", value: path_title });
   }, []);
 
   useEffect(() => {
@@ -90,13 +102,9 @@ export const TitleContextProvider = (props) => {
     };
   }, [locale, pathname]);
 
-  const append = useCallback((ap: string) => {
-    setTitle((t) => `${ap} ${t}`);
-  }, []);
-
   const value = {
-    title,
-    append,
+    title: title.title,
+    dispatch,
   };
 
   return <TitleContext.Provider value={value} {...props} />;

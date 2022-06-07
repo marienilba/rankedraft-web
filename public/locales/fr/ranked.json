@@ -50,6 +50,7 @@
     "already_in": "Une instance est déjà en cours sur le compte",
     "logout": "Déconnecter",
     "opponent_left": "L'adversaire a quitté le lobby.",
-    "online": "En ligne:"
+    "online": "En ligne:",
+    "opp_found": "Adversaire trouvé !"
   }
 }

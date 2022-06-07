@@ -10,6 +10,7 @@ import useLocalStorage from "./useLocalStorage";
 import { useSocket } from "./useSocket";
 import { useTranslation } from "next-i18next";
 import { useIp } from "./useIp";
+import { useTitle } from "./useTitle";
 
 type Handler = {
   Socket: () => void;
@@ -76,6 +77,7 @@ export function useRanked(
   } = useAudio("/sfx/Multimedia_583", { extension: "mp3", volume: 50 });
   const queryClient = useQueryClient();
   const { t } = useTranslation(["ranked"]);
+  const { title, dispatch } = useTitle();
 
   const handleSocket = useCallback(() => {
     if (!user) return;
@@ -183,6 +185,19 @@ export function useRanked(
     setInvalidURL(false);
   }, []);
 
+  const onFocus = () => {
+    dispatch({ type: "back" });
+  };
+
+  useEffect(() => {
+    if (typeof window === undefined) return;
+    window.addEventListener("focus", onFocus);
+    return () => {
+      if (typeof window === undefined) return;
+      window.removeEventListener("focus", onFocus);
+    };
+  }, []);
+
   useEffect(() => {
     if (!user && step !== PROTOCOL.UNREGISTER) {
       handleForfeit();
@@ -225,6 +240,9 @@ export function useRanked(
       setPlayers(p);
       setHasAccepted(false);
       setStep(PROTOCOL.ASK_CONFIRM);
+      if (typeof window === undefined) return;
+      if (document.hasFocus()) return;
+      dispatch({ type: "change", value: t("module.opp_found") });
     });
 
     socket.on(PROTOCOL.ASK_URL, (data) => {

@@ -50,6 +50,7 @@
     "already_in": "An instance is already in progress on the account",
     "logout": "Logout",
     "opponent_left": "Opponent has left the lobby.",
-    "online": "Online:"
+    "online": "Online:",
+    "opp_found": "Opponent found !"
   }
 }

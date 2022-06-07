@@ -8,17 +8,17 @@ import {
   IconButton,
   Link,
 } from "@chakra-ui/react";
-import { SpectatorLobby } from "../../queries/Ladder";
 import { useTheme } from "../../hooks/useTheme";
 import { useAvatarSrc } from "../../utils/AvatarIndex";
 import { timeSince } from "../../utils/HelpersFunction";
 import { useTranslation } from "next-i18next";
+import { Lobby } from "../../queries/Matchmaking";
 
 export const LobbyLine = ({
   lobby,
   position,
 }: {
-  lobby: SpectatorLobby;
+  lobby: Lobby;
   position: number;
 }) => {
   const { t } = useTranslation(["ranked"]);
