@@ -4,7 +4,7 @@ import { useTheme } from "../../hooks/useTheme";
 import NextLink from "next/link";
 export const Footer = () => {
   const { t } = useTranslation(["sign"]);
-  const { backgroundColor, color } = useTheme({
+  const { backgroundColor } = useTheme({
     invert: true,
   });
   return (

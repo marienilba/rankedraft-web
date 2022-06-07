@@ -22,6 +22,7 @@ export const UserContextProvider = (props) => {
     setUser(session?.user ?? null);
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        // console.log({ event }, { session }, { router });
         await fetch("/api/auth/set", {
           method: "POST",
           headers: new Headers({ "Content-Type": "application/json" }),
@@ -39,9 +40,7 @@ export const UserContextProvider = (props) => {
         }
 
         if (event === "SIGNED_OUT") {
-          await router.push(
-            `${router.locale === "fr" ? "" : "/" + router.locale}`
-          );
+          await router.push(`/${router.locale === "fr" ? "" : router.locale}`);
           router.pathname = "/";
           queryClient.clear(); // clear the cache
         }
