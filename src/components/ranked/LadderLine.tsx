@@ -11,7 +11,7 @@ export const LadderLine = ({
   player: LadderPlayer;
   position: number;
 }) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme({ variant: "secondary" });
   const { isMobile } = useWindowSize();
   const { consecutives, elo, profile } = player;
   const { avatar, name } = profile;
@@ -24,7 +24,7 @@ export const LadderLine = ({
   return (
     <Stack
       direction="row"
-      bgColor={position % 2 === 0 ? theme[200] : theme[300]}
+      bgColor={position % 2 === 0 ? theme[100] : theme[200]}
       borderRadius={5}
       boxShadow="base"
       spacing={5}

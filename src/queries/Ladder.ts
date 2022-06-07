@@ -12,19 +12,6 @@ export interface LadderPlayer {
   visible: boolean;
 }
 
-export interface SpectatorLobby {
-  id: string;
-  url: string;
-  created_at: Date;
-  last_update: Date;
-  players: {
-    id: string;
-    name: string;
-    elo: number;
-    avatar: number;
-  }[];
-}
-
 interface Rank {
   id: string;
   elo: number;
@@ -51,11 +38,4 @@ export const fetchLadder = async (key: any) => {
     url: `/ladder/?page=${pageParam || 0}`,
     method: "GET",
   }) as Promise<{ lines: LadderPlayer[]; nextId: number; previousId: number }>;
-};
-
-export const fetchSpectator = () => {
-  return request({
-    url: "/ladder/spectator/",
-    method: "GET",
-  }) as Promise<SpectatorLobby[]>;
 };

@@ -22,7 +22,7 @@ export const Profile = () => {
   });
   const [isSpam, handleSpam] = useSpam({
     duration: 60,
-    limit: 6,
+    limit: 15,
     waiting: 180,
   });
 

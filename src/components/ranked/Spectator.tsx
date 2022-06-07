@@ -15,7 +15,6 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
-import { fetchSpectator } from "../../queries/Ladder";
 import { useInView } from "react-intersection-observer";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import { RiEyeFill, RiEyeLine } from "react-icons/ri";
@@ -23,6 +22,7 @@ import { useRef } from "react";
 import { ErrorButton } from "../ErrorButton";
 import { LobbyLine } from "./LobbyLine";
 import { useTranslation } from "next-i18next";
+import { fetchLobbies } from "../../queries/Matchmaking";
 
 export const Spectator = () => {
   const { t } = useTranslation(["ranked", "common"]);
@@ -33,7 +33,7 @@ export const Spectator = () => {
   const { ref: UpButtonRef, inView: UpButtonInView } = useInView();
   const { isLoading, data, isSuccess, isError, refetch } = useQuery(
     "spectator",
-    fetchSpectator,
+    fetchLobbies,
     {
       enabled: false,
     }
@@ -73,7 +73,7 @@ export const Spectator = () => {
           <DrawerBody>
             {isError && <ErrorButton refetch={refetch} />}
             {/* {isLoading && <LoadingTopBar />} Dont work coz parent is relative */}
-            {isSuccess && (
+            {isSuccess && data && (
               <Flex alignItems="center">
                 <div ref={UpButtonRef}></div>
                 <Stack>

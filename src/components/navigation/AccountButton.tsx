@@ -84,7 +84,7 @@ export const AccountButton = memo(() => {
               {data ? (
                 <>
                   <Img
-                    width="3.5rem"
+                    width="3rem"
                     borderRadius="full"
                     src={useAvatarSrc(data.avatar)}
                   />
@@ -97,7 +97,7 @@ export const AccountButton = memo(() => {
                           ? 20
                           : 16
                       }
-                      noOfLines={0}
+                      noOfLines={1}
                     >
                       {data.name}
                     </Heading>

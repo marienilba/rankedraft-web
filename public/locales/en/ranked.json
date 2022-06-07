@@ -49,6 +49,7 @@
     "lost": "Lost",
     "already_in": "An instance is already in progress on the account",
     "logout": "Logout",
-    "opponent_left": "Opponent has left the lobby."
+    "opponent_left": "Opponent has left the lobby.",
+    "online": "Online:"
   }
 }

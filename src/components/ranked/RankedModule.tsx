@@ -25,6 +25,7 @@ import { AlreadyIn } from "./ranked_module/AlreadyIn";
 import { Confirm } from "./ranked_module/Confirm";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useTranslation } from "next-i18next";
+import { OnlineCounter } from "./OnlineCounter";
 
 export const RankedModule = () => {
   const { user } = useUser();
@@ -239,6 +240,7 @@ export const RankedModule = () => {
             </Stack>
           )}
         </Flex>
+        <OnlineCounter shouldIncrement={inQueue} />
       </Flex>
     </Flex>
   );
