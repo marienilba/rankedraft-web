@@ -61,7 +61,7 @@ export async function getServerSideProps({ locale, req, res }) {
       return {
         redirect: {
           permanent: false,
-          destination: "/home",
+          destination: `${locale === "fr" ? "" : "/" + locale}/home`,
         },
       };
     }
