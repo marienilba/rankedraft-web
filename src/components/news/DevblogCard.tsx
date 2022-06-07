@@ -11,6 +11,7 @@ import {
   Link,
   Image,
 } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
@@ -27,6 +28,7 @@ export const DevblogCard = ({
   imageUri,
 }: Devblog) => {
   const { locale } = useRouter();
+  const { t } = useTranslation(["home"]);
   const { backgroundColor } = useTheme({ variant: "info" });
   const { backgroundColor: bg } = useTheme({ variant: "secondary" });
   const [show, setShow] = useState(false);
@@ -56,7 +58,7 @@ export const DevblogCard = ({
           {Math.floor(new Date().valueOf() / 1000) - 604800 <
             Math.floor(created_at.valueOf() / 1000) && (
             <Badge borderRadius="full" px="2" colorScheme="twitter">
-              New
+              {t("new")}
             </Badge>
           )}
           <Box
@@ -67,7 +69,7 @@ export const DevblogCard = ({
             textTransform="uppercase"
             ml="2"
           >
-            Par {creator} &bull; {formatDate(created_at)}
+            {t("by")} {creator} &bull; {formatDate(created_at)}
           </Box>
         </Box>
       </Box>
@@ -79,7 +81,7 @@ export const DevblogCard = ({
           </Box>
         </Collapse>
         <Button size="sm" onClick={handleToggle} mt="1rem">
-          Show {show ? "Less" : "More"}
+          {show ? t("show_less") : t("show_more")}
         </Button>
       </Box>
     </Box>

@@ -8,6 +8,7 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
@@ -24,6 +25,7 @@ export const NewCard = ({
   imageUri,
 }: New) => {
   const { locale } = useRouter();
+  const { t } = useTranslation(["home"]);
   const { backgroundColor } = useTheme({ variant: "info" });
   const { backgroundColor: bg, theme } = useTheme({ variant: "secondary" });
 
@@ -56,7 +58,7 @@ export const NewCard = ({
         {Math.floor(new Date().valueOf() / 1000) - 604800 <
           Math.floor(created_at.valueOf() / 1000) && (
           <Badge borderRadius="full" px="2" colorScheme="twitter">
-            New
+            {t("new")}
           </Badge>
         )}
         <Box
@@ -66,20 +68,20 @@ export const NewCard = ({
           textTransform="uppercase"
           ml="2"
         >
-          Par {creator} &bull; {formatDate(created_at)}
+          {t("by")} {creator} &bull; {formatDate(created_at)}
         </Box>
       </Box>
       <Divider />
 
       <Box p="2" fontSize="xl">
-        <Collapse startingHeight={"95px"} in={show}>
+        <Collapse startingHeight={"120px"} in={show}>
           <Box textAlign="justify">
             <Parser locales={locales} content={content} />
           </Box>
         </Collapse>
 
         <Button size="sm" onClick={handleToggle} mt="1rem">
-          Show {show ? "Less" : "More"}
+          {show ? t("show_less") : t("show_more")}
         </Button>
       </Box>
     </Box>

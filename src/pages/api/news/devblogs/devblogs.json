@@ -1,19 +1,41 @@
 {
   "devblogs": [
     {
-      "title": { "fr": "devblog !1", "en": "devblog" },
+      "title": { "fr": "À propos du projet", "en": "About the project" },
       "created_at": "07-06-2022",
-      "imageUri": "http://staticns.ankama.com/comm/news/dofus/www/06_2011/news-goultarminator3.jpg",
+      "imageUri": "https://i.imgur.com/RW92GJQ.jpg",
       "creator": "Nib",
       "locales": {
         "fr": {
-          "text": "Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique. Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final."
+          "header": "Je vais détailler ici plus en détails comment devrait se dérouler normalement la beta, et la suite que j'imagine pour le projet.",
+          "q1": "Premièrement pourquoi j'appel cela une phase de beta ?",
+          "p1": "Je suis de nature à vouloir réaliser une idée dès que je l'ai, et j'en ai pas mal, donc si je met pas un temps mort je sais que l'application sortirais en même temps que Dofus Unity... Ensuite, je m'inspire des plus grands je pense, vous tester et remonter les bugs plutôt que moi = tout gérer. Sérieusement la tâche de tout tester est vraiment fastidieuse, j'ai fais de mon mieux pour le coté historique et çela devrait aller, peut-être des soucis avec les équipes (mais en en reparle après), par contre pour le module de parties classées c'est fort probable, tester du websocket tout seul on loupe toujours forcement certaines situations j'imagine.",
+          "q2": "Quand sera la fin de la beta ?",
+          "p2": "J'en ai pas vraiment d'idée, je pense qu'une fois tous les bugs résolus et qu'on pourra avancer sur de nouvelle features ça sera le moment de clotûrer cette phase de beta.",
+          "q3": "Donc quoi ensuite ?",
+          "p3": "Premièrement et prioritairement la partie statistique qui a du être retirer, pour expliquer elle est existe déjà, mais visuellement elle ne me convient pas, et la librairie utilisé est incompatible avec une autre, donc j'ai préfèrer tout mettre de côté et me concentrer sur d'autres choses. Finalement j'ai pas vraiment la motivation et j'espère un peu que la librarie ce mette à jour, sinon je pense utilisé Visx qui est visuellement très bien je trouve. Comme j'ai dis si je me lance dedans cela peut prendre beaucoup de temps vu le nombre de détails possible dans cette feature. Mais globalement pour donner une idée, il s'agit d'un affichage des résultats classes, classes contre classes, répartitions des picks, résultats classe sur maps, chemins des drafts, evolution du winrate, etc etc.",
+          "p4": "Pour le module de ranked cependant il n'y a pas vraiment d'évolution envisagé, peut-être des avatars en plus, j'en sais rien, à voir.",
+          "p5": "Le module d'équipes sera surement améliorer, avec des droits aux membres pour permettre des équipes \"vitrines\", car actuellement il n'est pas sécurisant d'inviter des membres sans confiance. Une idée de \"channel\" est une possibilité aussi, imaginons un channel KTA BRONZE SAISON 6 où quelqu'un gère le channel en le mettant à jour, et les gens peuvent faire des recherchent dedans.",
+          "p6": "Bien sur le système de compte sera améliore, un peu la flemme pour être honnête actuellement, mais permettre de changer son email/mot de passe, et rajouter un système d'identifiant à # semble obligatoire à faire.",
+          "p7": "Et d'autres choses que j'ai oublié que j'expliquerais surement dans d'autre devblogs.",
+          "footer": "Si vous souhaitez contribuer, une page y est dédié, merci et bonne journée UwU"
         },
         "en": {
-          "text": "Even though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of spaces in English.The most common lorem ipsum text reads as follows: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "header": "I will detail here in more detail how the beta should normally unfold, and the sequel I imagine for the project.",
+          "q1": "Firstly why do I call this a beta phase?",
+          "p1": "I'm likely to want to realize an idea as soon as I have it, and I have quite a few, so if I don't take a timeout I know that the application will be released at the same time as Dofus Unity ... Then, I am inspired by the greatest I think, test you and report bugs rather than me = manage everything Seriously the task of testing everything is really tedious, I did my best for the historical side and That should be fine, maybe problems with the teams (but we'll talk about it later), on the other hand for the module of ranked games it's very likely, testing websocket alone we always necessarily magnify certain situations I imagine. ",
+          "q2": "When will the beta end?",
+          "p2": "I don't really have any idea, I think that once all the bugs have been solved and we can move forward on new features, it will be time to close this beta phase.",
+          "q3": "So what next?",
+          "p3": "First and foremost the statistical part which had to be removed, to explain it already exists, but visually it does not suit me, and the library used is incompatible with another, so I preferred to change everything side and concentrate on other things. Finally I don't really have the motivation and I kinda hope that the library will update it, otherwise I think I'll use Visx which is visually very good I think. As I said if I get into it it can take a long time given the number of possible details in this feature. But overall to give an idea, it is a display of class results, classes against classes, distribution of picks, class results on maps, draft paths, winrate evolution, etc etc.",
+          "p4": "For the ranked module, however, there is no real evolution planned, maybe more avatars, I don't know, to see.",
+          "p5": "The teams module will probably be improved, with member rights to allow teams \"showcases\", because currently it is not safe to invite members without trust. An idea of \"channel\" is also a possibility, let's imagine a KTA BRONZE SEASON 6 channel where someone manages the channel by updating it, and people can search it.",
+          "p6": "Of course the account system will be improved, a bit lazy to be honest at the moment, but allowing you to change your email/password, and adding a username system to # seems mandatory to do.",
+          "p7": "And other things I forgot that I'll probably explain in other devblogs.",
+          "footer": "If you want to contribute, a page is dedicated to it, thank you and have a nice day UwU"
         }
       },
-      "content": "<p>@text@</p>"
+      "content": "<p>@header@</p></br><b>@q1@</b>@<p>@p1@</p></br><b>@q2@</b>@<p>@p2@</p></br><b>@q3@</b>@<p>@p3@</p></br><p>@p4@</p></br><p>@p5@</p></br><p>@p6@</p></br><p>@p7@</p></br><p>@footer@</p>"
     }
   ]
 }

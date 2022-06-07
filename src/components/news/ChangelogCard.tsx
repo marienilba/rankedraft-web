@@ -5,6 +5,7 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useTheme } from "../../hooks/useTheme";
 import { Changelog } from "../../pages/api/news/Types";
@@ -15,6 +16,7 @@ export const ChangelogCard = ({
   created_at: date,
   logs,
 }: Changelog) => {
+  const { t } = useTranslation(["home"]);
   const { backgroundColor: bg } = useTheme({ variant: "secondary" });
   const { locale } = useRouter();
   const addedLogs = {
@@ -40,7 +42,7 @@ export const ChangelogCard = ({
       {...bg}
     >
       <Heading p={2} textTransform="uppercase">
-        màj: {version}
+        {t("maj")}: {version}
         <Box
           fontWeight="semibold"
           letterSpacing="wide"
@@ -57,7 +59,7 @@ export const ChangelogCard = ({
           <Box key={`${type}-logs-${version}`} mb="4">
             {logs.length > 0 && (
               <Heading fontSize="md" textTransform="capitalize">
-                {type}
+                {t(type)}
               </Heading>
             )}
             <UnorderedList spacing={1}>

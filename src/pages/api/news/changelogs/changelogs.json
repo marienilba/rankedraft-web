@@ -6,19 +6,7 @@
       "logs": [
         {
           "type": "added",
-          "locales": { "fr": "Nouveau changement", "en": "New change" }
-        },
-        {
-          "type": "added",
-          "locales": { "fr": "Nouveau changement", "en": "New change" }
-        },
-        {
-          "type": "fixed",
-          "locales": { "fr": "Nouveau changement", "en": "New change" }
-        },
-        {
-          "type": "removed",
-          "locales": { "fr": "Nouveau changement", "en": "New change" }
+          "locales": { "fr": "Lancement de la bêta", "en": "Beta launch" }
         }
       ]
     }

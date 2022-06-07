@@ -1,19 +1,31 @@
 {
   "news": [
     {
-      "title": { "fr": "Sorti de la beta !1", "en": "Beta is comming out" },
+      "title": { "fr": "La bêta est arrivé !", "en": "Beta is released !" },
       "created_at": "07-06-2022",
-      "imageUri": "http://staticns.ankama.com/comm/news/dofus/www/06_2011/news-goultarminator3.jpg",
+      "imageUri": "https://i.imgur.com/i8O46xo.png",
       "creator": "Nib",
       "locales": {
         "fr": {
-          "text": "Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique. Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final."
+          "intro": "Voici après un petit mois de developpement, enfin terminé, et désormais, c'est pour vois le moment de tester RankeDraft !",
+          "header": "À quoi sert RankeDraft ?",
+          "p1": "RankeDraft est un site/application ayant pour but initial d'être tel un tableur pour les drafts KTA. Il est permet de sauvegarder facilement ses drafts rapidement sans que çela deviennent une tâche et qu'on finisse par ne plus penser à le faire car cela est chiant. Par la même occassion, il permet de rechercher parmis toutes ses drafts avec beaucoup plus de clareté qu'un tableur lamba le permet. Idéalement, il est censé nous donner une vue clair et simple, tout en étant complète, des statistiques de nos recherches (Ceci est en WIP, expliqué dans la page Contribuer).",
+          "p2": "Le deuxième but de l'application est de rajouter un intêret au train de match, en y ajoutant un système d'élo et une recherche automatique. Cela donne de la motivation, permet de s'entrainer contre des joueurs d'un niveau équivalent, et de ne pas avoir à se soucier en spammant les canaux en jeu.",
+          "p3": "Le module de parties classées fonctionne cependant à l'aide du fair-play des joueurs, bien que certaines mesures contre la triche sont prise, çela est impossible entiérement n'ayant pas le contrôle sur la verité des résultats, il est donc à ne pas considérer ce mode de jeu comme réellement représentable d'un \"niveau\", voici le un peu comme le Kolizéum.",
+          "p4": "Merci de bien vouloir me remonter les problèmes si vous en rencontrer sur le site (le module de parties classées n'est pas entiérement testé, donc il peut être désactivé pendant certaines périodes de réparation), et bon jeu !",
+          "footer": "Plus d'infos sur le devblog."
         },
         "en": {
-          "text": "Even though using \"lorem ipsum\" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. \"Lorem ipsum\" also approximates a typical distribution of spaces in English.The most common lorem ipsum text reads as follows: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "intro": "Here is after a short month of development, finally finished, and now it's time to test RankeDraft!",
+          "header": "What is RankeDraft for?",
+          "p1": "RankeDraft is a site/application whose initial purpose is to be like a spreadsheet for KTA drafts. It allows you to easily save your drafts quickly without it becoming a task and you end up not thinking anymore to do so because it's boring. At the same time, it allows us to search through all his drafts with much more clarity than a lamba spreadsheet allows. Ideally, it is supposed to give us a clear and simple view, while being complete, statistics of our searches (This is in WIP, explained in the Contribute page).",
+          "p2": "The second goal of the application is to add interest to the match train, by adding an elo system and an automatic search. 'an equivalent level, and not having to worry about spamming in-game channels.",
+          "p3": "The ranked games module works however with the help of the fair play of the players, although certain measures against cheating are taken, this is entirely impossible not having control over the truth of the results, it is therefore not to consider this game mode as really representable from a \"level\", here it is a bit like the Kolossium.",
+          "p4": "Please let me know if you encounter any problems on the site (the ranked games module is not fully tested, so it may be disabled during certain repair periods), and good game!",
+          "footer": "More info on the devblog."
         }
       },
-      "content": "<p>@text@</p>"
+      "content": "<h1>@intro@</h1><br/><b>@header@</b><br/><br/><p>@p1@</p><br/><p>@p2@</p><br/><p>@p3@</p><br/><p>@p4@</p><br/><p>@footer@</p>"
     }
   ]
 }
