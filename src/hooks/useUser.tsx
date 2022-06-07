@@ -29,11 +29,8 @@ export const UserContextProvider = (props) => {
           body: JSON.stringify({ event, session }),
         });
 
-        if (
-          event === "SIGNED_IN" &&
-          router.pathname === "/" &&
-          typeof window !== "undefined"
-        ) {
+        // Should work with good oauth settings
+        if (event === "SIGNED_IN" && router.pathname === "/") {
           // this is here because provider don't success to redirect to /home
           await router.push(
             `${router.locale === "fr" ? "" : "/" + router.locale}/home`

@@ -23,10 +23,10 @@
   "5.4": "Certains pays n'autorisent pas les exclusions ou les limitations de garantie. Ainsi, les limitations ou exclusions citées peuvent ne pas s'appliquer à vous.",
   "confidentialite": {
     "1": "Collecte de l’information",
-    "1-1": "Les seules informations privées recueillies sont votre adresse e-mail via le provider choisi (en outre Google).",
+    "1-1": "Les seules informations privées recueillies sont votre adresse e-mail. Votre mot de passe est crypté par un hash détenu par Supabase",
     "2": "Divulgation à des tiers",
-    "2-1": "Nous ne vendons, n’échangeons et ne transférons pas vos informations personnelles identifiables à des tiers. Les informations non privées, cependant, peuvent être fournies à d’autres parties pour divers besoins jugés légitimes.",
+    "2-1": "Aucune de vos informations personnelles identifiables ne sera vendu, échanger ou transferer des tiers. Les informations non privées, cependant, peuvent être fournies à d’autres parties pour divers besoins jugés légitimes.",
     "3": "Utilisation des cookies",
-    "3-1": "Le site rankedraft.com utilise des cookies pour son bon fonctionnement afin de permettre l'OAuth."
+    "3-1": "Le site utilise des cookies pour son bon fonctionnement."
   }
 }

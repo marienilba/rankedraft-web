@@ -50,28 +50,23 @@ import { FiLogOut } from "react-icons/fi";
 import { MobileBar } from "../components/navigation/MobileBar";
 
 export const Navigation = () => {
-  const { isFetchingUser, signOut } = useUser();
-
+  const { isFetchingUser } = useUser();
   const { isMobile } = useWindowSize();
   return (
     <Flex height="auto">
       <GlobalBackground />
       {isFetchingUser ? (
         <Loading />
+      ) : isMobile ? (
+        <MobileNavigation />
       ) : (
-        <>
-          {isMobile ? (
-            <MobileNavigation signOut={signOut} />
-          ) : (
-            <ScreenNavigation signOut={signOut} />
-          )}
-        </>
+        <ScreenNavigation />
       )}
     </Flex>
   );
 };
 
-export const ScreenNavigation = ({ signOut }: { signOut: () => void }) => {
+export const ScreenNavigation = () => {
   const { t } = useTranslation(["common"]);
   const { pathname } = useRouter();
   const { userRole } = useUser();
@@ -199,8 +194,8 @@ export const ScreenNavigation = ({ signOut }: { signOut: () => void }) => {
   );
 };
 
-export const MobileNavigation = ({ signOut }: { signOut: () => void }) => {
-  const { user, userRole } = useUser();
+export const MobileNavigation = () => {
+  const { signOut, userRole } = useUser();
   const { t } = useTranslation(["common"]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
