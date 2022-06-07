@@ -1,0 +1,26 @@
+{
+  "changelogs": [
+    {
+      "version": "0.1",
+      "created_at": "06-07-2022",
+      "logs": [
+        {
+          "type": "added",
+          "locales": { "fr": "Nouveau changement", "en": "New change" }
+        },
+        {
+          "type": "added",
+          "locales": { "fr": "Nouveau changement", "en": "New change" }
+        },
+        {
+          "type": "fixed",
+          "locales": { "fr": "Nouveau changement", "en": "New change" }
+        },
+        {
+          "type": "removed",
+          "locales": { "fr": "Nouveau changement", "en": "New change" }
+        }
+      ]
+    }
+  ]
+}

@@ -7,17 +7,18 @@ import {
   Collapse,
   Button,
   Image,
-  Link,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
-import { New } from "../../pages/home/Types";
+import { New } from "../../pages/api/news/Types";
 import { formatDate } from "../../utils/HelpersFunction";
+import { Parser } from "./Parser";
 
 export const NewCard = ({
+  locales,
   content,
-  created_at,
+  created_at: date,
   title,
   creator,
   imageUri,
@@ -29,6 +30,7 @@ export const NewCard = ({
   const [show, setShow] = useState(false);
 
   const handleToggle = () => setShow(!show);
+  const created_at = new Date(date);
 
   return (
     <Box
@@ -71,7 +73,9 @@ export const NewCard = ({
 
       <Box p="2" fontSize="xl">
         <Collapse startingHeight={"95px"} in={show}>
-          {content(null)}
+          <Box textAlign="justify">
+            <Parser locales={locales} content={content} />
+          </Box>
         </Collapse>
 
         <Button size="sm" onClick={handleToggle} mt="1rem">

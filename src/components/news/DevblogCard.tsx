@@ -14,12 +14,14 @@ import {
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useTheme } from "../../hooks/useTheme";
-import { Devblog } from "../../pages/home/Types";
+import { Devblog } from "../../pages/api/news/Types";
 import { formatDate } from "../../utils/HelpersFunction";
+import { Parser } from "./Parser";
 
 export const DevblogCard = ({
   content,
-  created_at,
+  locales,
+  created_at: date,
   title,
   creator,
   imageUri,
@@ -29,6 +31,7 @@ export const DevblogCard = ({
   const { backgroundColor: bg } = useTheme({ variant: "secondary" });
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
+  const created_at = new Date(date);
   return (
     <Box
       width="100%"
@@ -71,7 +74,9 @@ export const DevblogCard = ({
       <Divider />
       <Box p="2" fontSize="xl">
         <Collapse startingHeight={"95px"} in={show}>
-          {content(null)}
+          <Box textAlign="justify">
+            <Parser locales={locales} content={content} />
+          </Box>
         </Collapse>
         <Button size="sm" onClick={handleToggle} mt="1rem">
           Show {show ? "Less" : "More"}

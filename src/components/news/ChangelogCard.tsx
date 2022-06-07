@@ -1,12 +1,22 @@
-import { Box, Heading, Divider, UnorderedList } from "@chakra-ui/react";
-import { Fragment } from "react";
+import {
+  Box,
+  Heading,
+  Divider,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useTheme } from "../../hooks/useTheme";
-import { Changelog } from "../../pages/home/Types";
+import { Changelog } from "../../pages/api/news/Types";
 import { formatDate } from "../../utils/HelpersFunction";
 
-export const ChangelogCard = ({ version, created_at, logs }: Changelog) => {
+export const ChangelogCard = ({
+  version,
+  created_at: date,
+  logs,
+}: Changelog) => {
   const { backgroundColor: bg } = useTheme({ variant: "secondary" });
-
+  const { locale } = useRouter();
   const addedLogs = {
     type: "added",
     logs: logs.filter(({ type }) => type === "added"),
@@ -19,6 +29,7 @@ export const ChangelogCard = ({ version, created_at, logs }: Changelog) => {
     type: "removed",
     logs: logs.filter(({ type }) => type === "removed"),
   };
+  const created_at = new Date(date);
 
   return (
     <Box
@@ -50,9 +61,9 @@ export const ChangelogCard = ({ version, created_at, logs }: Changelog) => {
               </Heading>
             )}
             <UnorderedList spacing={1}>
-              {(logs.length ? logs : []).map(({ content }, index) => (
+              {(logs.length ? logs : []).map(({ locales }, index) => (
                 <Box key={`log-list-${index}-${type}-${version}`}>
-                  {content(null)}
+                  <ListItem> {locales[locale] || locales["fr"]}</ListItem>
                 </Box>
               ))}
             </UnorderedList>

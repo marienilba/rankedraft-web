@@ -1,16 +1,14 @@
-import { FC } from "react";
-
 export type Changelogs = Array<Changelog>;
 
 export type Changelog = {
   version: string;
-  created_at: Date;
+  created_at: string;
   logs: Log[];
 };
 
 export type Log = {
   type: "added" | "removed" | "fixed";
-  content: FC;
+  locales: object;
 };
 
 export type News = Array<New>;
@@ -18,9 +16,10 @@ export type News = Array<New>;
 export type New = {
   title: { fr?: string; en?: string };
   imageUri?: string;
-  created_at: Date;
+  created_at: string;
   creator: string;
-  content: FC;
+  locales: object;
+  content: string;
 };
 
 export type Devblogs = Array<Devblog>;
@@ -28,10 +27,10 @@ export type Devblogs = Array<Devblog>;
 export type Devblog = {
   title: { fr?: string; en?: string };
   imageUri?: string;
-  created_at: Date;
+  created_at: string;
   creator: string;
-  content: FC;
-  question?: string;
+  locales: object;
+  content: string;
 };
 
 export type ListItemLocales = {
