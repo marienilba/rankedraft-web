@@ -24,6 +24,7 @@ import {
 import { useState, useEffect, useCallback } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { useTranslation } from "next-i18next";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export const Transfer = ({
   tsv,
@@ -46,6 +47,8 @@ export const Transfer = ({
   const [progression, setProgression] = useState(0);
   const [indexAreGood, setIndexAreGood] = useBoolean(false);
   const [isRunning, setIsRunning] = useBoolean(false);
+  const [isFullComment, setIsFullComment] = useBoolean(false);
+  useHotkeys("shift+f", () => setIsFullComment.toggle());
 
   const queryClient = useQueryClient();
   const mutation = useMutation(postHistory);
@@ -344,7 +347,13 @@ export const Transfer = ({
       <Stack>
         {previewDraft.map((payload, idx) => {
           const props = getHistoryLineMissProps(payload, idx);
-          return <HistoryLine key={`line-histo-${idx}`} draft={props} />;
+          return (
+            <HistoryLine
+              key={`line-histo-${idx}`}
+              draft={props}
+              isFullwidth={isFullComment}
+            />
+          );
         })}
         {previewDraft.length === 0 && tsv.length > 0 && (
           <Flex justifyContent="center">
@@ -354,7 +363,7 @@ export const Transfer = ({
           </Flex>
         )}
         <Stack direction="column">
-          <Heading fontSize="md">Progression</Heading>
+          <Heading fontSize="md">Progression ⚠️ {t("warning")}</Heading>
           <Progress
             value={progression}
             size="xs"

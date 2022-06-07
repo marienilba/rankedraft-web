@@ -7,12 +7,12 @@
       "creator": "Nib",
       "locales": {
         "fr": {
-          "intro": "Voici après un petit mois de developpement, enfin terminé, et désormais, c'est pour vois le moment de tester RankeDraft !",
+          "intro": "Voici après un petit mois de développement, enfin terminé, et désormais, c'est pour vois le moment de tester RankeDraft !",
           "header": "À quoi sert RankeDraft ?",
-          "p1": "RankeDraft est un site/application ayant pour but initial d'être tel un tableur pour les drafts KTA. Il est permet de sauvegarder facilement ses drafts rapidement sans que çela deviennent une tâche et qu'on finisse par ne plus penser à le faire car cela est chiant. Par la même occassion, il permet de rechercher parmis toutes ses drafts avec beaucoup plus de clareté qu'un tableur lamba le permet. Idéalement, il est censé nous donner une vue clair et simple, tout en étant complète, des statistiques de nos recherches (Ceci est en WIP, expliqué dans la page Contribuer).",
-          "p2": "Le deuxième but de l'application est de rajouter un intêret au train de match, en y ajoutant un système d'élo et une recherche automatique. Cela donne de la motivation, permet de s'entrainer contre des joueurs d'un niveau équivalent, et de ne pas avoir à se soucier en spammant les canaux en jeu.",
-          "p3": "Le module de parties classées fonctionne cependant à l'aide du fair-play des joueurs, bien que certaines mesures contre la triche sont prise, çela est impossible entiérement n'ayant pas le contrôle sur la verité des résultats, il est donc à ne pas considérer ce mode de jeu comme réellement représentable d'un \"niveau\", voici le un peu comme le Kolizéum.",
-          "p4": "Merci de bien vouloir me remonter les problèmes si vous en rencontrer sur le site (le module de parties classées n'est pas entiérement testé, donc il peut être désactivé pendant certaines périodes de réparation), et bon jeu !",
+          "p1": "RankeDraft est un site/application ayant pour but initial d'être tel un tableur pour les drafts KTA. Il est permet de sauvegarder facilement ses drafts rapidement sans que çela devient une tâche et qu'on finisse par ne plus penser à le faire car cela est chiant. Par la même occasion, il permet de rechercher parmi toutes ses drafts avec beaucoup plus de clareté qu'un tableur lamba le permet. Idéalement, il est censé nous donner une vue claire et simple, tout en étant complète, des statistiques de nos recherches (ceci est en WIP, expliqué dans la page Contribuer).",
+          "p2": "Le deuxième but de l'application est de rajouter un intérêt au train de match, en y ajoutant un système d'élo et une recherche automatique. Cela donne de la motivation, permet de s'entrainer contre des joueurs d'un niveau équivalent, et de ne pas avoir à se soucier en spammant les canaux en jeu.",
+          "p3": "Le module de parties classées fonctionne cependant à l'aide du fair-play des joueurs, bien que certaines mesures contre la triche sont prise, cela est impossible entièrement n'ayant pas le contrôle sur la vérité des résultats, il est donc à ne pas considérer ce mode de jeu comme réellement représentable d'un \"niveau\", voici le un peu comme le Kolizéum.",
+          "p4": "Merci de bien vouloir me remonter les problèmes si vous en rencontrez sur le site (le module de parties classées n'est pas entièrement testé, donc il peut être désactivé pendant certaines périodes de réparation), et bon jeu !",
           "footer": "Plus d'infos sur le devblog."
         },
         "en": {

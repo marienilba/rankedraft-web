@@ -14,6 +14,8 @@ import {
   Text,
   Button,
   useBoolean,
+  IconButton,
+  Link,
 } from "@chakra-ui/react";
 import {
   useState,
@@ -29,6 +31,7 @@ import { SiGooglesheets } from "react-icons/si";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useTranslation } from "next-i18next";
+import { AiFillYoutube } from "react-icons/ai";
 
 export const ImportFromTsv = () => {
   const { isMobile } = useWindowSize();
@@ -84,9 +87,16 @@ export const ImportFromTsv = () => {
               ref.current.click();
             }}
             isDisabled={tsvParsed.length > 0 || !hasAutocplt}
+            mr="2"
           >
             {t("import_file")} .tsv
           </Button>
+          <Link href="https://youtu.be/lBlzKmqN0f4" isExternal>
+            <IconButton
+              aria-label="Video help"
+              icon={<AiFillYoutube color="red" />}
+            />
+          </Link>
         </Flex>
         <Text fontSize="sm">{!hasAutocplt && t("import_file_warning")}</Text>
       </Stack>

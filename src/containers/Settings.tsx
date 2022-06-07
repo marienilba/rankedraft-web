@@ -1,4 +1,4 @@
-import { Flex, Stack, Divider, Heading } from "@chakra-ui/react";
+import { Text, Stack, Divider, Heading, Kbd } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { PageHeading } from "../components/PageHeading";
 import { AutoCompleteSettings } from "../components/settings/AutoCompleteSettings";
@@ -27,6 +27,10 @@ export const Settings = () => {
           <AutoCompleteSettings />
           <ImportFromTsv />
           <DeleteHistories />
+          <Text>
+            <Kbd>shift</Kbd> + <Kbd>f</Kbd>{" "}
+            <span>{t("show-comments-text")}</span>
+          </Text>
         </Stack>
         <Heading fontSize="3xl">{t("page.ranked", { ns: "common" })}</Heading>
         <Stack pl={5}>

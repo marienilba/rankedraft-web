@@ -14,10 +14,12 @@
   "switch_sfx": "Disable ranked module sound notifications",
   "index_bads": "Indexes don't match",
   "transfer": "Transfer",
+  "warning": "Don't leave or change pages until it's done",
   "test_to_confirm": "Test to confirm",
   "url": "UrL",
   "result": "Result",
   "initiative": "initiative",
   "map": "Map",
-  "comments": "Comments"
+  "comments": "Comments",
+  "show-comments-text": "show all comments in the history preview"
 }

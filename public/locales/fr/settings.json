@@ -14,10 +14,12 @@
   "switch_sfx": "Désactiver les notifications sonores du module de ranked",
   "index_bads": "Les index ne correspondent pas",
   "transfer": "Transférer",
+  "warning": "Ne pas quitter ou changer de page avant la fin",
   "test_to_confirm": "Tester pour confirmer",
   "url": "URL",
   "result": "Résultat",
   "initiative": "Initiative",
   "map": "Map",
-  "comments": "Commentaires"
+  "comments": "Commentaires",
+  "show-comments-text": "Affiche l'entièreté des commentaires dans la prévisualisation de l'historique"
 }
