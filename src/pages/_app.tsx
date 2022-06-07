@@ -1,3 +1,4 @@
+import SEO from "../../next-seo.config";
 import "@fontsource/roboto/500.css";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
@@ -10,6 +11,7 @@ import { UserContextProvider } from "../hooks/useUser";
 import { Navigation } from "../containers/Navigation";
 import { Container } from "../components/Container";
 import { TitleContextProvider } from "../hooks/useTitle";
+import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -32,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <TitleContextProvider>
             <Hydrate state={pageProps.dehydratedState}>
               <Container>
+                <DefaultSeo {...SEO} />
                 <Component {...pageProps} />
               </Container>
             </Hydrate>
