@@ -1,9 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import { GlobalBackground } from "../components/navigation/GlobalBackground";
 import { useTheme } from "../hooks/useTheme";
-
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import { useRouter } from "next/router";
@@ -14,9 +12,9 @@ import { Sign } from "../containers/Sign";
 import { Showing } from "../containers/Showing";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { Layout } from "../components/Layout";
+import { Footer } from "../components/sign/Footer";
 
 const Index = () => {
-  const { t } = useTranslation(["home"]);
   const { backgroundColor } = useTheme({ invert: true, variant: "info" });
   const { isMobile, isPad, isScreen } = useWindowSize();
   const { isDark, theme } = useTheme();
@@ -51,6 +49,7 @@ const Index = () => {
         <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>
       <Showing />
+      <Footer />
     </Layout>
   );
 };
