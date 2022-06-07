@@ -62,8 +62,9 @@ export const BreedPick = ({ pick, onEdit, letter, index }: BreedPickProps) => {
             w="16rem"
             justifyContent="center"
             {...backgroundColor}
-            padding={2}
             borderRadius={5}
+            height="80%"
+            alignItems="center"
           >
             <Text fontWeight={600} textTransform="capitalize">
               {path === "placeholder" ? "" : translate(pick.breed)}

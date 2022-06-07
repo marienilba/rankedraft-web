@@ -22,7 +22,6 @@ import {
 import { useUser } from "../hooks/useUser";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { GlobalBackground } from "../components/navigation/GlobalBackground";
-import { Title } from "../components/Title";
 import { Loading } from "../components/Loading";
 import { SettingsIcon } from "@chakra-ui/icons";
 import { useTranslation } from "next-i18next";
@@ -84,8 +83,9 @@ export const ScreenNavigation = ({ signOut }: { signOut: () => void }) => {
       sx={{ position: "sticky", top: "0", ...zIndexPriority.Navigation }}
       height="100vh"
       direction="column"
+      maxW="260px"
     >
-      <Box width={!isPad ? "17vw" : "auto"}></Box>
+      <Box width={!isPad ? "17vw" : "auto"} maxW="260px"></Box>
       <Stack
         {...backgroundColor}
         height="100%"
