@@ -6,7 +6,6 @@ export const Footer = () => {
   const { t } = useTranslation(["sign"]);
   const { backgroundColor, color } = useTheme({
     invert: true,
-    variant: "info",
   });
   return (
     <Flex
