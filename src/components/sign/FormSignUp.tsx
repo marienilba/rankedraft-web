@@ -85,8 +85,8 @@ export const FormSignUp = () => {
         <Flex alignItems="center" direction="column">
           <Flex direction="column" alignItems="center">
             <Wrap justify="center">
-              <Heading size="sm">{t("ConfirmEmail1")} </Heading>
-              <Heading size="sm">{t("ConfirmEmail2")}</Heading>
+              <Heading size="sm">{t("ConfirmMail1")} </Heading>
+              <Heading size="sm">{t("ConfirmMail2")}</Heading>
             </Wrap>
             <Text>{t("CheckSpam")}</Text>
           </Flex>

@@ -81,10 +81,10 @@ export const Ladder = () => {
           <ErrorButton refetch={refetch} />
         ) : (
           <Stack>
-            {data?.pages.map((page, idx) => {
+            {data?.pages.map((page, index) => {
               if (!page.lines) return <></>;
               return (
-                <Fragment key={`page-${idx}-next-${page.nextId}`}>
+                <Fragment key={`page-${index}-next-${page.nextId}`}>
                   {page.lines.length === 0 && (
                     <Flex width="100%" justifyContent="center">
                       <Heading textAlign="center" fontSize="md">
@@ -97,7 +97,7 @@ export const Ladder = () => {
                       <LadderLine
                         key={`ladder-player-${player.id}-line-${idx}`}
                         player={player}
-                        position={idx + 1}
+                        position={10 * index + (idx + 1)}
                       />
                     );
                   })}
