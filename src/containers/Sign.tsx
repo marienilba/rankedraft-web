@@ -64,7 +64,7 @@ export const Sign = ({
             </Button>
           </Stack>
         )}
-        <Flex position="relative" overflow={"hidden"} height="800px">
+        <Flex position="relative" overflow={"hidden"} height="100vh">
           <motion.div
             {...getDisclosureProps()}
             hidden={hidden}
