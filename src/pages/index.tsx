@@ -34,7 +34,7 @@ const Index = () => {
 
   return (
     <Layout direction="column">
-      <Flex width="100%" height="100vh" {...backgroundColor} marginBottom={10}>
+      <Flex width="100%" height="100vh" {...backgroundColor}>
         <GlobalBackground />
         {isRedirect && <Loading />}
         <Flex
@@ -47,7 +47,9 @@ const Index = () => {
 
         <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>
-      <Showing />
+      <Flex marginTop={10} direction="column">
+        <Showing />
+      </Flex>
       <Footer />
     </Layout>
   );
