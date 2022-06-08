@@ -34,17 +34,16 @@ const Index = () => {
 
   return (
     <Layout direction="column">
-      <Flex width="100%" height="100vh" {...backgroundColor}>
+      <Flex width="100%" height="100vh" {...backgroundColor} marginBottom={10}>
         <GlobalBackground />
         {isRedirect && <Loading />}
-        {(isScreen || isPad || !isMobile) && (
-          <Flex
-            bgColor={isDark ? theme[500] : theme[700]}
-            flex={isPad ? 0.4 : 0.9}
-          >
-            <Background />
-          </Flex>
-        )}
+        <Flex
+          bgColor={isDark ? theme[500] : theme[700]}
+          flex={0.9}
+          hidden={isMobile}
+        >
+          <Background />
+        </Flex>
 
         <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>

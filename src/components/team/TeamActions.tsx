@@ -71,7 +71,11 @@ export const TeamActions = () => {
               animate={{ width: !isJoinOpen ? 0 : "auto" }}
               transition={{ duration: 0.5 }}
             >
-              <Input placeholder="Code d'invitation" {...invitation} />
+              <Input
+                placeholder="Code d'invitation"
+                type="password"
+                {...invitation}
+              />
             </motion.div>
           </Stack>
         </Flex>

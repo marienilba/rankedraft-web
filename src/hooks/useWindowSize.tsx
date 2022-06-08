@@ -1,7 +1,10 @@
 import { useBreakpointValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useDevice } from "./useDevice";
 
-export function useWindowSize() {
+export const WindowContext = createContext<any>(undefined);
+
+export const WindowContextProvider = (props) => {
   const size = useBreakpointValue({
     base: "base",
     md: "md",
@@ -9,7 +12,7 @@ export function useWindowSize() {
     xl: "xl",
     sm: "sm",
   });
-
+  const { isDesktop } = useDevice();
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
@@ -32,13 +35,24 @@ export function useWindowSize() {
     }
   }, []);
 
-  return {
+  const value = {
     size,
-    isScreen: size === "lg" || size === "xl" || windowSize.width >= 1020,
+    isScreen:
+      isDesktop || size === "lg" || size === "xl" || windowSize.width >= 1020,
     isPad:
       size === "md" ||
       size === "sm" ||
       (windowSize.width < 1020 && windowSize.width > 640),
-    isMobile: size === "base" && windowSize.width <= 640,
+    isMobile: !isDesktop || (size === "base" && windowSize.width <= 640),
   };
-}
+
+  return <WindowContext.Provider value={value} {...props} />;
+};
+
+export const useWindowSize = () => {
+  const context = useContext(WindowContext);
+  if (context === undefined) {
+    throw new Error(`useTitle must be used within a WindowContextProvider.`);
+  }
+  return context;
+};

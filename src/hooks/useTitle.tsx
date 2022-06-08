@@ -71,7 +71,7 @@ function reducer(state: State, action: Action) {
 }
 
 export const TitleContextProvider = (props) => {
-  const [title, dispatch] = useReducer<(state: State, action: Action) => State>(
+  const [state, dispatch] = useReducer<(state: State, action: Action) => State>(
     reducer,
     { title: "RankeDraft", previous: null }
   );
@@ -103,7 +103,7 @@ export const TitleContextProvider = (props) => {
   }, [locale, pathname]);
 
   const value = {
-    title: title.title,
+    title: state.title,
     dispatch,
   };
 

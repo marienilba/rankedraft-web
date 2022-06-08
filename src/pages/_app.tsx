@@ -8,10 +8,10 @@ import theme from "../theme/theme";
 import App, { AppContext, AppProps } from "next/app";
 import { useState } from "react";
 import { UserContextProvider } from "../hooks/useUser";
-import { Navigation } from "../containers/Navigation";
 import { Container } from "../components/Container";
 import { TitleContextProvider } from "../hooks/useTitle";
 import { DefaultSeo } from "next-seo";
+import { WindowContextProvider } from "../hooks/useWindowSize";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -32,12 +32,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         <UserContextProvider>
           <TitleContextProvider>
-            <Hydrate state={pageProps.dehydratedState}>
-              <Container>
-                <DefaultSeo {...SEO} />
-                <Component {...pageProps} />
-              </Container>
-            </Hydrate>
+            <WindowContextProvider>
+              <Hydrate state={pageProps.dehydratedState}>
+                <Container>
+                  <DefaultSeo {...SEO} />
+                  <Component {...pageProps} />
+                </Container>
+              </Hydrate>
+            </WindowContextProvider>
           </TitleContextProvider>
         </UserContextProvider>
       </QueryClientProvider>

@@ -64,40 +64,42 @@ export const Sign = ({
             </Button>
           </Stack>
         )}
-        <motion.div
-          {...getDisclosureProps()}
-          hidden={hidden}
-          initial={false}
-          onAnimationStart={() => setHidden(false)}
-          onAnimationComplete={() => setHidden(!isOpen)}
-          animate={{
-            left: isOpen ? 0 : "100%",
-            opacity: isOpen ? 1 : 0.2,
-          }}
-          transition={{ type: "tween", duration: 0.4 }}
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "auto",
-            left: "0",
-            top: "0",
-            whiteSpace: "nowrap",
-            opacity: 1,
-          }}
-        >
-          <Flex marginBottom={4} alignItems="center">
-            <IconButton
-              icon={<ArrowBackIcon />}
-              aria-label="back"
-              variant="ghost"
-              mr={6}
-              {...getButtonProps()}
-            />
-            <Heading size="lg">{t("CreateAccount")}</Heading>
-          </Flex>
-          <SignInWithProvider method="signUp" />
-          <FormSignUp />
-        </motion.div>
+        <Flex position="relative" overflow={"hidden"} height="800px">
+          <motion.div
+            {...getDisclosureProps()}
+            hidden={hidden}
+            initial={false}
+            onAnimationStart={() => setHidden(false)}
+            onAnimationComplete={() => setHidden(!isOpen)}
+            animate={{
+              left: isOpen ? 0 : 200,
+              opacity: isOpen ? 1 : 0.2,
+            }}
+            transition={{ type: "tween", duration: 0.4 }}
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "auto",
+              left: "0",
+              top: "0",
+              whiteSpace: "nowrap",
+              opacity: 1,
+            }}
+          >
+            <Flex marginBottom={4} alignItems="center">
+              <IconButton
+                icon={<ArrowBackIcon />}
+                aria-label="back"
+                variant="ghost"
+                mr={6}
+                {...getButtonProps()}
+              />
+              <Heading size="lg">{t("CreateAccount")}</Heading>
+            </Flex>
+            <SignInWithProvider method="signUp" />
+            <FormSignUp />
+          </motion.div>
+        </Flex>
       </div>
     </Flex>
   );

@@ -51,7 +51,8 @@ import { MobileBar } from "../components/navigation/MobileBar";
 
 export const Navigation = () => {
   const { isFetchingUser } = useUser();
-  const { isMobile } = useWindowSize();
+  const { isMobile, isScreen } = useWindowSize();
+
   return (
     <Flex height="auto">
       <GlobalBackground />
