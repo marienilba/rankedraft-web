@@ -1,6 +1,17 @@
 import { DefaultSeoProps } from "next-seo";
 
 export default {
+  canonical: "https://www.rankedraft.com/",
+  additionalMetaTags: [
+    {
+      name: "keywords",
+      content: "dofus, tournoi, kta, pvp",
+    },
+    {
+      name: "application-name",
+      content: "RankeDraft",
+    },
+  ],
   robotsProps: {
     noarchive: true,
     nosnippet: true,
