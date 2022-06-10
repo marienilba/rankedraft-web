@@ -1,17 +1,28 @@
-import { Stack, Button, Flex, Divider, Heading, Wrap } from "@chakra-ui/react";
+import {
+  Stack,
+  Button,
+  Flex,
+  Divider,
+  Heading,
+  Wrap,
+  useBoolean,
+} from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { FaDiscord } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useUser } from "../../hooks/useUser";
+import { useCookiesConsent } from "../CookiesConsent";
 
 export const SignInWithProvider = ({ method }) => {
   const { t } = useTranslation(["sign", "common"]);
   const { signInWithProvider } = useUser();
+  const { cookiesConsent } = useCookiesConsent();
 
   return (
     <Stack alignItems="center">
       <Wrap justify="center" padding={1}>
         <Button
+          isDisabled={!cookiesConsent}
           onClick={async () => {
             return await signInWithProvider("google");
           }}
@@ -29,6 +40,7 @@ export const SignInWithProvider = ({ method }) => {
             : t("SignUpWithProvider", { provider: "Google" })}
         </Button>
         <Button
+          isDisabled={!cookiesConsent}
           onClick={async () => {
             return await signInWithProvider("discord");
           }}

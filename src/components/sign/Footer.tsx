@@ -5,7 +5,7 @@ import NextLink from "next/link";
 export const Footer = () => {
   const { t } = useTranslation(["sign"]);
   const { backgroundColor } = useTheme({
-    invert: true,
+    variant: "secondary",
   });
   return (
     <Flex

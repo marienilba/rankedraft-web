@@ -44,7 +44,6 @@ const Index = () => {
         >
           <Background />
         </Flex>
-
         <Sign borderTopLeftRadius={isMobile ? 0 : "xl"} />
       </Flex>
       <Flex marginTop={10} direction="column">

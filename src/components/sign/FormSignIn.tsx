@@ -16,22 +16,24 @@ import { useTranslation } from "next-i18next";
 import { useState, useId } from "react";
 import { RiKeyLine } from "react-icons/ri";
 import { useUser } from "../../hooks/useUser";
+import { useCookiesConsent } from "../CookiesConsent";
 
 export const FormSignIn = () => {
   const { t } = useTranslation(["sign"]);
-
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [isRedirect, setIsRedirect] = useState(false);
   const email_id = useId();
   const password_id = useId();
-
   const { signInWithEmail } = useUser();
-
+  const { cookiesConsent } = useCookiesConsent();
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
       onSubmit={async (values, actions) => {
+        if (!cookiesConsent) {
+          return;
+        }
         const { email, password } = values;
         let fieldError = false;
         if (password === "") {
@@ -133,6 +135,7 @@ export const FormSignIn = () => {
               type="submit"
               w="100%"
               borderRadius="full"
+              isDisabled={!cookiesConsent}
             >
               {t("SignIn")}
             </Button>
