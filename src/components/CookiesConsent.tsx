@@ -40,7 +40,6 @@ export const CookiesRequest = () => {
   const { cookiesConsent, AllowCookies } = useCookiesConsent();
   return (
     <CookieConsent
-      debug
       onAccept={AllowCookies}
       location="bottom"
       buttonText="Allow cookies"
