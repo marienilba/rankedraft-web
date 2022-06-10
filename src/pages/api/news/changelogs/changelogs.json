@@ -1,6 +1,26 @@
 {
   "changelogs": [
     {
+      "version": "0.11",
+      "created_at": "06-10-2022",
+      "logs": [
+        {
+          "type": "added",
+          "locales": {
+            "fr": "Bannière d'acceptation des cookies",
+            "en": "Cookies consent banner"
+          }
+        },
+        {
+          "type": "removed",
+          "locales": {
+            "fr": "Joueurs présents dans le ladder sans n'avoir fait encore un match.",
+            "en": "Players in the ladder without did a match yet."
+          }
+        }
+      ]
+    },
+    {
       "version": "0.1",
       "created_at": "06-07-2022",
       "logs": [
