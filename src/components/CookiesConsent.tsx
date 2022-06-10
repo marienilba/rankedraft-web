@@ -36,15 +36,17 @@ export const useCookiesConsent = () => {
 };
 
 export const CookiesRequest = () => {
-  const { code } = useTheme({ invert: false });
+  const { code } = useTheme({ invert: true });
   const { cookiesConsent, AllowCookies } = useCookiesConsent();
   return (
     <CookieConsent
+      debug
       onAccept={AllowCookies}
       location="bottom"
       buttonText="Allow cookies"
       style={{
         backgroundColor: code[200],
+        color: code[700],
         borderRadius: 15,
         marginBottom: "20px",
         marginLeft: "20px",
