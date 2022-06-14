@@ -31,6 +31,7 @@ export const Background = () => {
           position="absolute"
           marginTop="100px"
           marginLeft="100px"
+          alt="Background"
         />
       </div>
     </>
