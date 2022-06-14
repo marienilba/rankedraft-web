@@ -35,7 +35,7 @@ export const MobileBar = ({ onOpen }) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Img src={"/icons/sword.png"} />
+                  <Img src={"/icons/sword.png"} alt="Logo" />
                 </Box>
                 <Spacer />
               </>
@@ -53,7 +53,7 @@ export const MobileBar = ({ onOpen }) => {
                   cursor: "pointer",
                 }}
               >
-                <Img src={"/icons/sword.png"} />
+                <Img src={"/icons/sword.png"} alt="Logo" />
               </Box>
             </>
           )}

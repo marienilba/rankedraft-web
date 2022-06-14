@@ -66,6 +66,7 @@ export const CardIntroduction = ({
             borderRadius={5}
             boxShadow={`2px 0px 33px -30px ${code[100]}`}
             alignSelf="center"
+            alt="Preview image"
           />
         </Fade>
       </Flex>

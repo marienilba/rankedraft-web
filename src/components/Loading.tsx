@@ -35,7 +35,7 @@ export const Loading = () => {
             borderRadius: "500px",
           }}
         >
-          <Img boxSize="2.5rem" src="/icons/sword.png" />
+          <Img boxSize="2.5rem" src="/icons/sword.png" alt="Logo" />
         </motion.div>
       </motion.div>
     </Flex>

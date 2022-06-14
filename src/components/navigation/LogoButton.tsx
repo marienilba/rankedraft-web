@@ -16,7 +16,7 @@ export const LogoButton = () => {
       <NextLink href="/" passHref>
         <Link>
           <Box boxSize="32px">
-            <Img src={"/icons/sword.png"} />
+            <Img src={"/icons/sword.png"} alt="Logo" />
           </Box>
         </Link>
       </NextLink>

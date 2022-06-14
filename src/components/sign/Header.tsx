@@ -13,7 +13,7 @@ export const Header = () => {
         borderRadius="full"
       >
         <Box boxSize="48px">
-          <Img src={"/icons/sword.png"} />
+          <Img src={"/icons/sword.png"} alt="Logo" />
         </Box>
       </Flex>
       <Flex

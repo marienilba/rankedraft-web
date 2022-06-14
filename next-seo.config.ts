@@ -2,6 +2,8 @@ import { DefaultSeoProps } from "next-seo";
 
 export default {
   canonical: "https://www.rankedraft.com/",
+  description:
+    "RankeDraft is a spreadsheet application and matchmaking module for the game Dofus.",
   additionalMetaTags: [
     {
       name: "keywords",
@@ -10,6 +12,10 @@ export default {
     {
       name: "application-name",
       content: "RankeDraft",
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
     },
   ],
   robotsProps: {

@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head>
           <link rel="shortcut icon" href="/icons/favicon.ico" />
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </Head>
         <body>
           <ColorModeScript />
